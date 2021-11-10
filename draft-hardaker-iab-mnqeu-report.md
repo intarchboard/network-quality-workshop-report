@@ -28,7 +28,7 @@ informative:
 
 The Measuring Network Quality for End-Users workshop was held
 virtually by the Internet Architecture Board (IAB) in September, 2021.
-This workshop summarizes the workshop, the topics discussed and some
+This report summarizes the workshop, the topics discussed, and some
 preliminary conclusions drawn at the end of the workshop. 
 
 --- middle
@@ -44,7 +44,7 @@ groups of the Internet Engineering Task Force (IETF).
 
 The Measuring Network Quality for End-Users workshop was held
 virtually by the Internet Architecture Board (IAB) in September, 2021.
-This workshop summarizes the workshop, the topics discussed and some
+This report summarizes the workshop, the topics discussed, and some
 preliminary conclusions drawn at the end of the workshop. 
 
 ## Problem space
@@ -64,7 +64,7 @@ remains at decade-old levels. Despite significant reliability
 improvements in data center environments, end users often see
 interruptions in service. Despite algorithmic advances in the field of
 control theory, one can often find that the queuing delay in the
-last-mile equipment exceeds the accumulted transit delay. Transport
+last-mile equipment exceeds the accumulated transit delay. Transport
 improvements, such as QUIC, Multipath TCP, and TCP Fast Open are still
 not fully supported in some networks. Likewise, various advances in
 the security and privacy of user data are not widely supported, such
@@ -79,11 +79,11 @@ discuss various questions:
 - How reliable is the connectivity across longer time periods?
 - Does the network allow the use of a broad range of protocols?
 - What services can be run by clients of the network?
-- What kind of IPv4, NAT or IPv6 connectivity is offered, and are
+- What kind of IPv4, NAT, or IPv6 connectivity is offered, and are
   there firewalls?
 - What security mechanisms are available for local services, such as
   DNS?
-- To what degree are the privacy, confidentiality, integrity and
+- To what degree are the privacy, confidentiality, integrity, and
   authenticity of user communications guarded?
 - Improving these aspects of network quality will likely depend on
   measurement and exposing metrics to all involved parties, including
@@ -100,7 +100,7 @@ discuss various questions:
 
 # Workshop Agenda
 
-The Measuring Network Quality for End-Users for divided into the
+The Measuring Network Quality for End-Users workshop was divided into the
 following main topic areas:
 
 - Introduction overviews and a keynote by Vint Cerf
@@ -142,8 +142,6 @@ following main topic areas:
 - Kalevi Kilkki, Benajamin Finley. "In Search of Lost QoS"
 - Neil Davies, Peter Thompson. "Measuring Network Impact on Application Outcomes using Quality Attenuation"
 - Mingrui Zhang, Vidhi Goel, Lisong Xu. "User-Perceived Latency to measure CCAs"
-- Discussion
-- Break
 - Christoph Paasch, Randall Meyer, Stuart Cheshire, Omer Shapira. "Responsiveness under Working Conditions"
 - Bob Briscoe, Greg White, Vidhi Goel and Koen De Schepper. "A single common metric to characterize varying packet delay"
 - Christoph Paasch, Kristen McIntyre, Randall Meyer, Stuart Cheshire, Omer Shapira. "An end-user approach to the Internet Score"
@@ -161,7 +159,7 @@ the problem space, existing mechanisms for QoS and QoE measurements.
 Also discussed was the interaction between multiple users within the
 Network, as well as the interaction between multiple layers of the OSI
 stack.  Some existing measurement works were presented.  Vint Cerf
-provided a key note support describing the history and importance of
+provided a key note describing the history and importance of
 the topic.
 
 ## Metrics considerations
@@ -174,13 +172,13 @@ users such as live, collaborative content and gaming.
 
 ## Cross-layer considerations
 
-In the Cross-layer section participants present material and discussed
+In the Cross-layer section participants presented material and discussed
 how accurately measuring exactly where problems occur is difficult
 when many components of a network connection can affect the
 measurement.  Discussion centered especially on the differences
 between physically wired and wireless connections and the difficulties
 of accurately determining problem spots when multiple different
-network types are responsible the quality.
+network types are responsible for the quality.
 
 ## Synthesis
 
@@ -192,7 +190,7 @@ decisions.
 
 # Conclusions
 
-During the final hour of the workshop we gathered statements that
+During the final hour of the workshop we gathered statements that the
 group thought were summary statements from the 3 day event.  We later
 discarded any that were in contention (listed further below for
 completeness).  For this document, the editor took the original list
@@ -202,7 +200,7 @@ provide context.
 
 ## General statements
 
-1. Bandwidth is necessary but not alone sufficient
+1. Bandwidth is necessary but not alone sufficient.
 2. In many cases, Internet users don’t need more bandwidth, but rather
    need "better bandwidth" -- i.e., they need other improvements to
    their connectivity.
@@ -213,17 +211,17 @@ provide context.
 5. A really meaningful metric for users is whether their application
    will work properly or fail because of a lack of a network with
    sufficient characteristics.
-6. An useful metric for goodness must actually incentive goodness --
-   good metrics should actionable to help drive industries toward
+6. A useful metric for goodness must actually incentive goodness --
+   good metrics should be actionable to help drive industries toward
    improvement.
-7. A lower latency internet, however achieved would benefit all end
+7. A lower latency Internet, however achieved would benefit all end
    users.
 
 ## Specific statements about detailed protocols/techniques
 
-8. Round trips Per Minute (RPM) is a useful, consumable metric
+8. Round trips Per Minute (RPM) is a useful, consumable metric.
 9. We need a usable tool that fills the current gap between network
-   reachability, latency and speed tests.
+   reachability, latency, and speed tests.
 10. End-users that want to be involved in QoS decisions should be able
     to voice their needs and desires.
 11. Applications are needed that can perform and report good quality
@@ -231,7 +229,7 @@ provide context.
     network access.
 12. Research done by regulators indicate that users/consumers prefer
     a simple metric per application, which frequently resolves to
-    whether the application will work properly not.
+    whether the application will work properly or not.
 13. New measurements and QoS or QoE techniques should not rely only or
     depend on reading TCP headers.
 10. It is clear from developers of interactive applications and from
@@ -249,24 +247,24 @@ provide context.
     access.  Measurements may be one step toward driving competitive
     market incentive.
 18. For future-proof networking, measuring ecological impact of
-    measuring material and energy usage is important.
+    material and energy usage is important.
 19. We do not have incontrovertible evidence that any one metric
-    (e.g. latency or speed) is more important than others to persuade
+    (e.g., latency or speed) is more important than others to persuade
     device vendors to concentrate on any one optimization.
 
 ## No-consensus reached statements
 
 Additional statements were recorded that did not have consensus of the
-group at the time, but we list here for completeness about the fact
+group at the time, but we list them here for completeness about the fact
 they were discussed:
 
 1. We do not have incontrovertible evidence that buffer bloat is a
-   prevalent problem
+   prevalent problem.
 2. The measurement needs to support reporting localization in order to
    find problems.  Specifically:
     - Detecting a problem is not sufficient if you can’t find the location
-    - Need more than just english – different localization concerns
-3. Stakeholder incentives aren’t aligned for easy wins in this space
+    - Need more than just English – different localization concerns
+3. Stakeholder incentives aren’t aligned for easy wins in this space.
 
 # Follow on work
 
@@ -289,7 +287,7 @@ including but not limited to:
 
 # Participants List
 
-The following is a list of participants attended the workshop over a remote connection:
+The following is a list of participants who attended the workshop over a remote connection:
 
     Ahmed Aldabbagh
     Al Morton
@@ -445,8 +443,8 @@ The program committee consisted of:
 
 # Github Version of this document
 
-While this document is under development, it can be viewed, tracked,
-fill here:
+While this document is under development, it can be viewed and tracked
+here:
 
 https://github.com/intarchboard/network-quality-workshop-report
 
