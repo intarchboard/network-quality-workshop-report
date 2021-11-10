@@ -383,7 +383,7 @@ The following is a list of participants attended the workshop over a remote conn
 - Zhenbin Li
 
 
-IAB Members at the Time of Approval
+# IAB Members at the Time of Approval
 
 Internet Architecture Board members at the time this document was
 approved for publication were:
@@ -404,11 +404,44 @@ approved for publication were:
     Russ White
     Jiankang Yao
 
-Acknowledgements
+# Acknowledgements
 
 The authors would like to thank the workshop participants, the members
 of the IAB, and the program committee for creating and participating
 in many interesting discussions.
+
+## Workshop Chairs
+
+The workshop chairs consisted of:
+
+- Evgeny Khorov
+- Omer Shapira
+- Wes Hardaker
+
+## Program Committee
+
+The program committee consisted of:
+
+- Christoph Paasch 
+- Cullen Jennings 
+- Geoff Huston 
+- Greg White 
+- Jari Arkko 
+- Jason Livingood 
+- Jim Gettys 
+- Katarzyna Kosek-Szott 
+- Kathleen Nichols 
+- Keith Winstein
+- Matt Mathis 
+- Mirja Kuehlewind 
+- Nick Feamster 
+- Olivier Bonaventure 
+- Randall Meyer 
+- Sam Crowford 
+- Stuart Cheshire 
+- Toke Hoiland-Jorgensen 
+- Tommy Pauly 
+- Vint Cerf 
 
 # Github Version of this document
 
