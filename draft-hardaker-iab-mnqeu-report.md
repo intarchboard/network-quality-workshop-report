@@ -241,9 +241,9 @@ provide context.
 
 ## Problem statements and concerns
 
-15. Latency mean and medians are distractions from better measurements
+15. Latency mean and medians are distractions from better measurements.
 16. It is frustrating to only measure network services without
-    simultaneously improving those services
+    simultaneously improving those services.
 17. Stakeholder incentives aren’t aligned for easy wins in this space.
     Incentives are needed to motivate improvements in public network
     access.  Measurements may be one step toward driving competitive
