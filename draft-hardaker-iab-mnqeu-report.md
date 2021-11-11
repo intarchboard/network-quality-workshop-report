@@ -142,8 +142,6 @@ following main topic areas:
 - Kalevi Kilkki, Benajamin Finley. "In Search of Lost QoS"
 - Neil Davies, Peter Thompson. "Measuring Network Impact on Application Outcomes using Quality Attenuation"
 - Mingrui Zhang, Vidhi Goel, Lisong Xu. "User-Perceived Latency to measure CCAs"
-- Discussion
-- Break
 - Christoph Paasch, Randall Meyer, Stuart Cheshire, Omer Shapira. "Responsiveness under Working Conditions"
 - Bob Briscoe, Greg White, Vidhi Goel and Koen De Schepper. "A single common metric to characterize varying packet delay"
 - Christoph Paasch, Kristen McIntyre, Randall Meyer, Stuart Cheshire, Omer Shapira. "An end-user approach to the Internet Score"
