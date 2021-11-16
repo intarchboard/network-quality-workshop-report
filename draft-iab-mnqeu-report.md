@@ -246,8 +246,8 @@ provide context.
     Incentives are needed to motivate improvements in public network
     access.  Measurements may be one step toward driving competitive
     market incentive.
-18. For future-proof networking, measuring ecological impact of
-    material and energy usage is important.
+18. For future-proof networking, it is important to measure the
+    ecological impact of material and energy usage.
 19. We do not have incontrovertible evidence that any one metric
     (e.g., latency or speed) is more important than others to persuade
     device vendors to concentrate on any one optimization.
@@ -262,11 +262,11 @@ they were discussed:
    prevalent problem.
 2. The measurement needs to support reporting localization in order to
    find problems.  Specifically:
-    - Detecting a problem is not sufficient if you can’t find the location
-    - Need more than just English – different localization concerns
+    - Detecting a problem is not sufficient if you can’t find the location.
+    - Need more than just English – different localization concerns.
 3. Stakeholder incentives aren’t aligned for easy wins in this space.
 
-# Follow on work
+# Follow-on work
 
 There was discussion during the workshop about where future work
 should be performed.  The group agreed that some work could be done
@@ -407,6 +407,15 @@ approved for publication were:
 The authors would like to thank the workshop participants, the members
 of the IAB, and the program committee for creating and participating
 in many interesting discussions.
+
+## Draft contributors
+
+Thank you to the people that contributed edits to this draft:
+
+    Brian Trammell
+    Erik Auerswald
+    Simon Leinen
+
 
 ## Workshop Chairs
 
