@@ -270,8 +270,8 @@ they were discussed:
 
 There was discussion during the workshop about where future work
 should be performed.  The group agreed that some work could be done
-more immediately within existing IETF working groups, while other
-longer-term research may be needed in IRTF groups.
+more immediately within existing IETF working groups (e.g. IPPM),
+while other longer-term research may be needed in IRTF groups.
 
 # Security considerations
 
