@@ -278,7 +278,7 @@ informative:
 --- abstract
 
 The Measuring Network Quality for End-Users workshop was held
-virtually by the Internet Architecture Board (IAB) in September, 2021.
+virtually by the Internet Architecture Board (IAB) from September 14-16, 2021.
 This report summarizes the workshop, the topics discussed, and some
 preliminary conclusions drawn at the end of the workshop. 
 
@@ -293,10 +293,11 @@ architecture.  This long-term planning function of the IAB is
 complementary to the ongoing engineering efforts performed by working
 groups of the Internet Engineering Task Force (IETF).
 
-The Measuring Network Quality for End-Users workshop was held
-virtually by the Internet Architecture Board (IAB) in September, 2021.
-This report summarizes the workshop, the topics discussed, and some
-preliminary conclusions drawn at the end of the workshop. 
+The Measuring Network Quality for End-Users workshop {{WORKSHOP}} was
+held virtually by the Internet Architecture Board (IAB) in
+September 14-16, 2021.  This report summarizes the workshop, the topics
+discussed, and some preliminary conclusions drawn at the end of the
+workshop.
 
 ## Problem space
 
