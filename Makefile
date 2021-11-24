@@ -1,3 +1,5 @@
+all: draft-iab-mnqeu-report.txt
+
 submissions.list.md: submissions.fsdb Makefile
 	cat $< | \
 	dbcol Title Authors_with_affiliations | \

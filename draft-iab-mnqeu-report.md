@@ -23,6 +23,13 @@ normative:
 informative:
   RFC1111:
 
+  WORKSHOP:
+    title: "IAB Workshop: Measuring Network Quality for End-Users, 2021"
+    author:
+      -
+        ins: IAB
+        name: IAB
+    date: September, 2021
 
 --- abstract
 
@@ -101,7 +108,7 @@ discuss various questions:
 # Workshop Agenda
 
 The Measuring Network Quality for End-Users workshop was divided into the
-following main topic areas:
+following main topic areas, further discussion in {{discussions}}:
 
 - Introduction overviews and a keynote by Vint Cerf
 - Metrics considerations
@@ -110,6 +117,10 @@ following main topic areas:
 - Group conclusions
 
 # Position Papers
+
+The following position papers were received for consideration by the
+workshop attendees.  The workshop's web-page {{WORKSHOP}} contains
+archives of the papers, presentations and recorded videos.
 
 - Ahmed Aldabbagh. "Regulartory perspective on measuring network quality for the end users (abstract)   Full presentation"
 - Al Morton. "Dream-Pipe or Pipe-Dream: What Do Users Want (and how can we assure it)?"
@@ -154,7 +165,7 @@ following main topic areas:
 - Vijay Sivaraman, Sharat Madanapalli, Himal Kumar. "Measuring Network Experience Meaningfully, Accurately, and Scalably"
 - Yaakov (J) Stein . "The Futility of QoS "
 
-# Discussions
+# Discussions {#discussions}
 
 The three day workshop was broken into four separate sections,
 including introductory material and conclusions, that each played a
