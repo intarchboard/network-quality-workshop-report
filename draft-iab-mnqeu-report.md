@@ -14,6 +14,11 @@ author:
     name: Wes Hardaker
     org: USC/ISI
     email: ietf@hardakers.net
+  -
+    ins: O. Shapira
+    name: Omer Shapira
+    org: Apple
+    email: omer_shapira@apple.com
 
 normative:
   RFC2119:
