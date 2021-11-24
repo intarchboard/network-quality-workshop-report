@@ -1,3 +1,11 @@
+submissions.list.md: submissions.fsdb Makefile
+	cat $< | \
+	dbcol Title Authors_with_affiliations | \
+	dbsort Authors_with_affiliations | \
+	pdbformat -f '- {Authors_with_affiliations}. "{Title}"' | \
+	perl -p -e 's/\s+camera.*/"/i' > $@
+
+
 # Original makefile from https://github.com/martinthomson/i-d-template 
 
 # Edited by wkumari to remove a bunch of the extra stuff I'll never use.
