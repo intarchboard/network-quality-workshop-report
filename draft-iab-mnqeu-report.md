@@ -22,7 +22,244 @@ normative:
 
 informative:
   RFC1111:
-
+  Cheshire2021:
+    title: "The Internet is a Shared Network"
+    date: February 2021
+    author:
+      - ins: S. Cheshire
+    seriesinfo: https://www.iab.org/wp-content/IAB-uploads/2021/09/draft-cheshire-internet-is-shared-00b.pdf
+  Iyengar2021:
+    title: "The Internet Exists In Its Use"
+    date: August 2021
+    author:
+      - ins: J. Iyengar
+    seriesinfo: https://www.iab.org/wp-content/IAB-uploads/2021/09/The-Internet-Exists-In-Its-Use.pdf
+  Stein2021:
+    title: "The Futility of QoS"
+    date: August 2021
+    author:
+      - ins: J. Stein
+    seriesinfo: https://www.iab.org/wp-content/IAB-uploads/2021/09/QoS-futility.pdf
+  Casas2021:
+    title: "10 Years of Internet-QoE Measurements. Video, Cloud, Conferencing, Web and Apps. What do we need from the Network Side?"
+    date: August 2021
+    author:
+      - ins: P. Casas
+    seriesinfo: https://www.iab.org/wp-content/IAB-uploads/2021/09/net_quality_internet_qoe_CASAS.pdf
+  Pardue2021:
+    title: "Lower-layer performance is not indicative of upper-layer success"
+    date: February 2021
+    author:
+      - ins: L. Pardue
+      - ins: S. Tellakula
+    seriesinfo: https://www.iab.org/wp-content/IAB-uploads/2021/09/Lower-layer-performance-is-not-indicative-of-upper-layer-success-20210906-00-1.pdf
+  Aldabbagh2021:
+    title: "Regulatory perspective on measuring network quality for end users"
+    date: September 2021
+    author:
+      - ins: A. Aldabbagh
+    seriesinfo: https://www.iab.org/wp-content/IAB-uploads/2021/09/2021-09-07-Aldabbagh-Ofcom-presentationt-to-IAB-1v00-1.pdf
+  Welzl2021:
+    title: "A Case for Long-Term Statistics"
+    date: February 2021
+    author:
+      - ins: M. Welzl
+    seriesinfo: https://www.iab.org/wp-content/IAB-uploads/2021/09/iab-longtermstats_cameraready.docx-1.pdf
+  Fabini2021:
+    title: "Network Quality from an End User Perspective"
+    date: February 2021
+    author:
+      - ins: J. Fabini
+    seriesinfo: https://www.iab.org/wp-content/IAB-uploads/2021/09/Fabini-IAB-NetworkQuality.txt
+  Mathis2021:
+    title: "Preliminary Longitudinal Study of Internet Responsiveness"
+    date: August 2021
+    author:
+      - ins: M. Mathis
+    seriesinfo: https://www.iab.org/wp-content/IAB-uploads/2021/09/Preliminary-Longitudinal-Study-of-Internet-Responsiveness-1.pdf
+  Schlinker2019:
+    title: "Internet's performance from Facebook's edge"
+    date: February 2019
+    author:
+      - ins: B. Schlinker
+      - ins: I. Cunha
+      - ins: Y. Chiu
+      - ins: S. Sundaresan
+      - ins: E. Katz-Basset
+    seriesinfo: https://www.iab.org/wp-content/IAB-uploads/2021/09/Internet-Performance-from-Facebooks-Edge.pdf
+  Foulkes2021:
+    title: "Metrics helpful in assessing Internet Quality"
+    date: September 2021
+    author:
+      - ins: J. Foulkes
+    seriesinfo: https://www.iab.org/wp-content/IAB-uploads/2021/09/IAB_Metrics_helpful_in_assessing_Internet_Quality.pdf
+  Sivaraman2021:
+    title: "Measuring Network Experience Meaningfully, Accurately, and Scalably"
+    date: February 2021
+    author:
+      - ins: V. Sivaraman
+      - ins: S. Madanapalli
+      - ins: H. Kumar
+    seriesinfo: https://www.iab.org/wp-content/IAB-uploads/2021/09/CanopusPositionPaperCameraReady.pdf
+  Reed2021:
+    title: "Measuring IKSP Performance in Broadband America: A Study of Latency Under Load"
+    date: February 2021
+    author:
+      - ins: D. P. Reed
+      - ins: L. Perigo
+    seriesinfo: https://www.iab.org/wp-content/IAB-uploads/2021/09/Camera_Ready_-Measuring-ISP-Performance-in-Broadband-America.pdf
+  MacMillian2021:
+    title: "Beyond Speed Test: Measuring Latency Under Load Across Different Speed Tiers"
+    date: February 2021
+    author:
+      - ins: K. MacMillian
+      - ins: N. Feamster
+    seriesinfo: https://www.iab.org/wp-content/IAB-uploads/2021/09/2021_nqw_lul.pdf
+  Mirsky2021:
+    title: "The Error Performance Metric in a Packet-Switched Network"
+    date: February 2021
+    author:
+      - ins: G. Mirsky
+      - ins: X. Min
+      - ins: G. Mishra
+      - ins: L. Han
+    seriesinfo: https://www.iab.org/wp-content/IAB-uploads/2021/09/IAB-worshop-Error-performance-measurement-in-packet-switched-networks.pdf
+  Dion2021:
+    title: "Focusing on latency, not throughput, to provide a better internet experience and network quality"
+    date: August 2021
+    author:
+      - ins: G. Dion
+    seriesinfo: https://www.iab.org/wp-content/IAB-uploads/2021/09/Nokia-IAB-Measuring-Network-Quality-Improving-and-focusing-on-latency-.pdf
+  Balasubramanian2021:
+    title: "Transport Layer Statistics for Network Quality"
+    date: February 2021
+    author:
+      - ins: P. Balasubramanian
+    seriesinfo: https://www.iab.org/wp-content/IAB-uploads/2021/09/transportstatsquality.pdf
+  Arkko2021:
+    title: "Observability is needed to improve network quality"
+    date: August 2021
+    author:
+      - ins: J. Arkko
+      - ins: M. Kühlewind
+    seriesinfo: https://www.iab.org/wp-content/IAB-uploads/2021/09/iab-position-paper-observability.pdf
+  Marx2021:
+    title: "Merge Those Metrics: Towards Holistic (Protocol) Logging"
+    date: February 2021
+    author:
+      - ins: R. Marx
+      - ins: J. Herbots
+    seriesinfo: https://www.iab.org/wp-content/IAB-uploads/2021/09/MergeThoseMetrics_Marx_Jul2021.pdf
+  Ghai2021:
+    title: "Using TCP Connect Latency for Measuring CX and Network Optimization"
+    date: February 2021
+    author:
+      - ins: R. Ghai
+    seriesinfo: https://www.iab.org/wp-content/IAB-uploads/2021/09/xfinity-wifi-ietf-iab-v2-1.pdf
+  DeSchepper2021:
+    title: "Challenges and opportunities of hardware support for Low Queuing Latency without Packet Loss"
+    date: February 2021
+    author:
+      - ins: K. De Schepper
+      - ins: O. Tilmans
+      - ins: G. Dion
+    seriesinfo: https://www.iab.org/wp-content/IAB-uploads/2021/09/Nokia-IAB-Measuring-Network-Quality-Low-Latency-measurement-workshop-20210802.pdf
+  Michel2021:
+    title: "Packet delivery time as a tie-breaker for assessing Wi-Fi access points"
+    date: February 2021
+    author:
+      - ins: F. Michel
+      - ins: O. Bonaventure
+    seriesinfo: https://www.iab.org/wp-content/IAB-uploads/2021/09/camera_ready_Packet_delivery_time_as_a_tie_breaker_for_assessing_Wi_Fi_access_points.pdf
+  Kerpez2021:
+    title: "Wi-Fi and Broadband Data"
+    date: September 2021
+    author:
+      - ins: J. Shafiei
+      - ins: K. Kerpez
+      - ins: J. Cioffi
+      - ins: P. Chow
+      - ins: D. Bousaber
+    seriesinfo: https://www.iab.org/wp-content/IAB-uploads/2021/09/Wi-Fi-Report-ASSIA.pdf
+  Liubogoshchev2021:
+    title: "Cross-layer cooperation for Better Network Service"
+    date: February 2021
+    author:
+      - ins: M. Liubogoshchev
+    seriesinfo: https://www.iab.org/wp-content/IAB-uploads/2021/09/Cross-layer-Cooperation-for-Better-Network-Service-2.pdf
+  Laki2021:
+    title: "Incentive-Based Traffic Management and QoS Measurements"
+    date: February 2021
+    author:
+      - ins: S. Nadas
+      - ins: B. Varga
+      - ins: L. M. Contreras
+      - ins: S. Laki
+    seriesinfo: https://www.iab.org/wp-content/IAB-uploads/2021/11/CamRdy-IAB_user_meas_WS_Nadas_et_al_IncentiveBasedTMwQoS.pdf
+  Sengupta2021:
+    title: "Fine-Grained RTT Monitoring Inside the Network"
+    date: February 2021
+    author:
+      - ins: S. Sengupta
+      - ins: H. Kim
+      - ins: J. Rexford
+    seriesinfo: https://www.iab.org/wp-content/IAB-uploads/2021/09/Camera_Ready__Fine-Grained_RTT_Monitoring_Inside_the_Network.pdf
+  Morton2021:
+    title: "Dream-Pipe or Pipe-Dream: What Do Users Want (and how can we assure it)?"
+    date: September 2021
+    author:
+      - ins: A. Morton
+    seriesinfo: https://www.iab.org/wp-content/IAB-uploads/2021/09/draft-morton-ippm-pipe-dream-01.pdf
+  Kilkki2021:
+    title: "In Search of Lost QoS"
+    date: February 2021
+    author:
+      - ins: K. Kilkki
+      - ins: B. Finley
+    seriesinfo: https://www.iab.org/wp-content/IAB-uploads/2021/09/Kilkki-In-Search-of-Lost-QoS.pdf
+  Davies2021:
+    title: "Measuring Network Impact on Application Outcomes using Quality Attenuation"
+    date: September 2021
+    author:
+      - ins: N. Davies
+      - ins: P. Thompson
+    seriesinfo: https://www.iab.org/wp-content/IAB-uploads/2021/09/PNSol-et-al-Submission-to-Measuring-Network-Quality-for-End-Users-1.pdf
+  Zhang2021:
+    title: "User-Perceived Latency to measure CCAs"
+    date: September 2021
+    author:
+      - ins: M. Zhang
+      - ins: V. Goel
+      - ins: L. Xu
+    seriesinfo: https://www.iab.org/wp-content/IAB-uploads/2021/09/User_Perceived_Latency-1.pdf
+  Paasch2021:
+    title: "Responsiveness under Working Conditions"
+    date: February 2021
+    author:
+      - ins: C. Paasch
+      - ins: R. Meyer
+      - ins: S. Cheshire
+      - ins: O. Shapira
+    seriesinfo: https://www.iab.org/wp-content/IAB-uploads/2021/09/draft-cpaasch-ippm-responsiveness-1-1.pdf
+  Briscoe2021:
+    title: "A Single Common Metric to Characterize Varying Packet Delay"
+    date: September 2021
+    author:
+      - ins: B. Briscoe
+      - ins: G. White
+      - ins: V. Goel
+      - ins: K. De Schepper
+    seriesinfo: https://www.iab.org/wp-content/IAB-uploads/2021/09/single-delay-metric-1.pdf
+  McIntyre2021:
+    title: "An end-user approach to an Internet Score"
+    date: September 2021
+    author:
+      - ins: C. Paasch
+      - ins: K. McIntyre
+      - ins: O. Shapira
+      - ins: R. Meyer
+      - ins: S. Cheshire
+    seriesinfo: https://www.iab.org/wp-content/IAB-uploads/2021/09/Internet-Score-2.pdf
 
 --- abstract
 
@@ -109,42 +346,41 @@ following main topic areas:
 - Synthesis
 - Group conclusions
 
-# Position Papers
+# Position Papers {#positionpapers}
 
-- Stuart Cheshire. "The Internet is a Shared Network"
-- Jana Iyengar. "The Internet Exists In Its Use"
-- Yaakov (J) Stein. "The Futility of QoS"
-- Keynote by Vint Cerf
-- Pedro Casas. "10 Years of Internet-QoE Measurements. Video, Cloud, Conferencing, Web and Apps. What do we need from the Network Side?"
-- Lucas Pardue, Sreeni Tellakula. "Lower layer performance not indicative of upper layer success"
-- Ahmed Aldabbagh. "Regulatory perspective on measuring network quality for end users"
-- Michael Welzl. "A Case for Long-Term Statistics"
-- Joachim Fabini. "Objective and subjective network quality"
-- Matt Mathis. "Preliminary Longitudinal Study of Internet Responsiveness"
-- Brandon Schlinker. "Internet’s performance from Facebook’s edge"
-- Jonathan Foulkes. "Metrics helpful in assessing Internet Quality"
-- Vijay Sivaraman, Sharat Madanapalli, Himal Kumar. "Measuring Network Experience Meaningfully, Accurately, and Scalably"
-- Dave Reed, Levi Perigo. "Measuring ISP Performance in Broadband America: a Study of Latency Under Load"
-- Kyle MacMillian, Nick Feamster. "Beyond Speed Test: Measuring Latency Under Load Across Different Speed Tiers"
-- Gregory Mirsky, Xiao Min, Gyan Mishra, Liuyan Han. "Error Performance Measurement in Packet-Switched Networks"
-- Gino Dion. "Focusing on latency, not throughput, to provide better internet experience and network quality"
-- Praveen Balasubramanian. "Transport Layer Statistics for Network Quality"
-- Jari Arkko, Mirja Kuehlewind. "Observability is needed to improve network quality"
-- Robin Marx, Joris Herbots. "Merge Those Metrics: Towards Holistic (Protocol) Logging"
-- Rajat Ghai. "Measuring & Improving QoE on the Xfinity Wi-Fi Network"
-- Koen De Schepper, Olivier Tilmans, Gino Dion. "Challenges and opportunities of hardware support for Low Queuing Latency without Packet Loss"
-- Olivier Bonaventure, Francois Michel. "Packet delivery time as a tie-breaker for assessing Wi-Fi access points"
-- Ken Kerpez, Jinous Shafiei, John Cioffi, Pete Chow, Djamel Bousaber. "State of Wi-Fi Reporting"
-- Mikhail Liubogoshchev. "Cross-layer Cooperation for Better Network Service"
-- Sandor Laki, Szilveszter Nadas, Balazs Varga, Luis M. Contreras. "Incentive-Based Traffic Management and QoS Measurements"
-- Satadal Segupta, Hyojoon Kim, Jennifer Rexford. "Fine-Grained RTT Monitoring Inside the Network"
-- Al Morton. "Dream-Pipe or Pipe-Dream: What Do Users Want (and how can we assure it)?"
-- Kalevi Kilkki, Benajamin Finley. "In Search of Lost QoS"
-- Neil Davies, Peter Thompson. "Measuring Network Impact on Application Outcomes using Quality Attenuation"
-- Mingrui Zhang, Vidhi Goel, Lisong Xu. "User-Perceived Latency to measure CCAs"
-- Christoph Paasch, Randall Meyer, Stuart Cheshire, Omer Shapira. "Responsiveness under Working Conditions"
-- Bob Briscoe, Greg White, Vidhi Goel and Koen De Schepper. "A single common metric to characterize varying packet delay"
-- Christoph Paasch, Kristen McIntyre, Randall Meyer, Stuart Cheshire, Omer Shapira. "An end-user approach to the Internet Score"
+- Stuart Cheshire. "The Internet is a Shared Network" {{Cheshire2021}}
+- Jana Iyengar. "The Internet Exists In Its Use" {{Iyengar2021}}
+- Yaakov (J) Stein. "The Futility of QoS" {{Stein2021}}
+- Pedro Casas. "10 Years of Internet-QoE Measurements. Video, Cloud, Conferencing, Web and Apps. What do we need from the Network Side?" {{Casas2021}}
+- Lucas Pardue, Sreeni Tellakula. "Lower layer performance not indicative of upper layer success" {{Pardue2021}}
+- Ahmed Aldabbagh. "Regulatory perspective on measuring network quality for end users" {{Aldabbagh2021}}
+- Michael Welzl. "A Case for Long-Term Statistics" {{Welzl2021}}
+- Joachim Fabini. "Objective and subjective network quality" {{Fabini2021}}
+- Matt Mathis. "Preliminary Longitudinal Study of Internet Responsiveness" {{Mathis2021}}
+- Brandon Schlinker. "Internet’s performance from Facebook’s edge" {{Schlinker2019}}
+- Jonathan Foulkes. "Metrics helpful in assessing Internet Quality" {{Foulkes2021}}
+- Vijay Sivaraman, Sharat Madanapalli, Himal Kumar. "Measuring Network Experience Meaningfully, Accurately, and Scalably" {{Sivaraman2021}}
+- Dave Reed, Levi Perigo. "Measuring ISP Performance in Broadband America: a Study of Latency Under Load" {{Reed2021}}
+- Kyle MacMillian, Nick Feamster. "Beyond Speed Test: Measuring Latency Under Load Across Different Speed Tiers" {{MacMillian2021}}
+- Gregory Mirsky, Xiao Min, Gyan Mishra, Liuyan Han. "Error Performance Measurement in Packet-Switched Networks" {{Mirsky2021}}
+- Gino Dion. "Focusing on latency, not throughput, to provide better internet experience and network quality" {{Dion2021}}
+- Praveen Balasubramanian. "Transport Layer Statistics for Network Quality" {{Balasubramanian2021}}
+- Jari Arkko, Mirja Kuehlewind. "Observability is needed to improve network quality" {{Arkko2021}}
+- Robin Marx, Joris Herbots. "Merge Those Metrics: Towards Holistic (Protocol) Logging" {{Marx2021}}
+- Rajat Ghai. "Measuring & Improving QoE on the Xfinity Wi-Fi Network" {{Ghai2021}}
+- Koen De Schepper, Olivier Tilmans, Gino Dion. "Challenges and opportunities of hardware support for Low Queuing Latency without Packet Loss" {{DeSchepper2021}}
+- Olivier Bonaventure, Francois Michel. "Packet delivery time as a tie-breaker for assessing Wi-Fi access points" {{Michel2021}}
+- Ken Kerpez, Jinous Shafiei, John Cioffi, Pete Chow, Djamel Bousaber. "State of Wi-Fi Reporting" {{Kerpez2021}}
+- Mikhail Liubogoshchev. "Cross-layer Cooperation for Better Network Service" {{Liubogoshchev2021}}
+- Sandor Laki, Szilveszter Nadas, Balazs Varga, Luis M. Contreras. "Incentive-Based Traffic Management and QoS Measurements" {{Laki2021}}
+- Satadal Sengupta, Hyojoon Kim, Jennifer Rexford. "Fine-Grained RTT Monitoring Inside the Network" {{Sengupta2021}}
+- Al Morton. "Dream-Pipe or Pipe-Dream: What Do Users Want (and how can we assure it)?" {{Morton2021}}
+- Kalevi Kilkki, Benajamin Finley. "In Search of Lost QoS" {{Kilkki2021}}
+- Neil Davies, Peter Thompson. "Measuring Network Impact on Application Outcomes using Quality Attenuation" {{Davies2021}}
+- Mingrui Zhang, Vidhi Goel, Lisong Xu. "User-Perceived Latency to measure CCAs" {{Zhang2021}}
+- Christoph Paasch, Randall Meyer, Stuart Cheshire, Omer Shapira. "Responsiveness under Working Conditions" {{Paasch2021}}
+- Bob Briscoe, Greg White, Vidhi Goel and Koen De Schepper. "A single common metric to characterize varying packet delay" {{Briscoe2021}}
+- Christoph Paasch, Kristen McIntyre, Randall Meyer, Stuart Cheshire, Omer Shapira. "An end-user approach to the Internet Score" {{McIntyre2021}}
 
 # Discussions
 
