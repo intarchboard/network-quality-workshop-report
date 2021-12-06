@@ -27,6 +27,54 @@ normative:
 
 informative:
   RFC1111:
+  RFC765:
+    title: "FILE TRANSFER PROTOCOL"
+    author: 
+      - ins: Jonathan B. Postel 
+    date: June 1980
+    seriesinfo: https://datatracker.ietf.org/doc/html/rfc765
+  RFC821:
+    title: "SIMPLE MAIL TRANSFER PROTOCOL"
+    author:
+      - ins: Jonathan B. Postel
+    date: August 1982
+    seriesinfo: https://datatracker.ietf.org/doc/html/rfc821
+  RFC977:
+    title: "Network News Transfer Protocol"
+    author:
+      - ins: Brian Kantor
+      - ins: Phil Lapsley
+    date: February 1986
+    seriesinfo: https://datatracker.ietf.org/doc/html/rfc977
+  RFC1436:
+    title: "Internet Gopher Protocol"
+    author:
+      - ins: M. McCahill
+      - ins: P. Lindner
+      - ins: D. Johnson
+      - ins: B. Alberti
+    date: March 1993
+    seriesinfo: https://datatracker.ietf.org/doc/html/rfc1436
+  RFC1945:
+    title: "Hypertext Transfer Protocol -- HTTP/1.0"
+    author:
+      - ins: T. Berners-Lee
+      - ins: R. Fielding
+      - ins: H. Frystyk
+    date: May 1996
+    seriesinfo: https://datatracker.ietf.org/doc/html/rfc1945
+
+  FCC_MBA:
+    title: "Measuring Broadband America"
+    seriesinfo: https://www.fcc.gov/general/measuring-broadband-america
+
+  FCC_MBA.methodology:
+    title: "Measuring Broadband America - Open Methodology"
+    seriesinfo: https://www.fcc.gov/general/measuring-broadband-america-open-methodology
+
+  FB_Scuba:
+    title: "Facebook Scuba"
+    target: https://research.facebook.com/publications/scuba-diving-into-data-at-facebook/ 
 
   WORKSHOP:
     title: "IAB Workshop: Measuring Network Quality for End-Users, 2021"
@@ -275,79 +323,85 @@ informative:
       - ins: S. Cheshire
     seriesinfo: https://www.iab.org/wp-content/IAB-uploads/2021/09/Internet-Score-2.pdf
 
+  tools.ookla_speedtest:
+     title: "Speedtest by Ookla"
+     target: https://www.speedtest.net
+  tools.apple_networkQuality:
+     title: "Apple Network Quality"
+  tools.ping:
+    title: "ping -- send ICMP ECHO_REQUEST packets to network hosts"
+
 --- abstract
 
 The Measuring Network Quality for End-Users workshop was held
 virtually by the Internet Architecture Board (IAB) from September 14-16, 2021.
 This report summarizes the workshop, the topics discussed, and some
-preliminary conclusions drawn at the end of the workshop. 
+preliminary conclusions drawn at the end of the workshop.
 
 --- middle
 
 # Introduction
 
-The Internet Architecture Board (IAB) holds occasional workshops
-designed to consider long-term issues and strategies for the
-Internet, and to suggest future directions for the Internet
-architecture.  This long-term planning function of the IAB is
-complementary to the ongoing engineering efforts performed by working
-groups of the Internet Engineering Task Force (IETF).
+The Internet Architecture Board (IAB) holds occasional workshops designed to
+consider long-term issues and strategies for the Internet, and to suggest
+future directions for the Internet architecture.  This long-term planning
+function of the IAB is complementary to the ongoing engineering efforts
+performed by working groups of the Internet Engineering Task Force (IETF).
 
-The Measuring Network Quality for End-Users workshop {{WORKSHOP}} was
-held virtually by the Internet Architecture Board (IAB) in
-September 14-16, 2021.  This report summarizes the workshop, the topics
-discussed, and some preliminary conclusions drawn at the end of the
-workshop.
+The Measuring Network Quality for End-Users workshop {{WORKSHOP}} was held
+virtually by the Internet Architecture Board (IAB) in September 14-16, 2021.
+This report summarizes the workshop, the topics discussed, and some preliminary
+conclusions drawn at the end of the workshop.
 
 ## Problem space
 
-The Internet in 2021 is quite different from what it was 10 years
-ago. Today, it is a crucial part of everyone’s daily life. People use
-the Internet for their social life, for their daily jobs, for routine
-shopping, and for keeping up with major events. An increasing number
-of people can access a Gigabit connection, which would be hard to
-imagine a decade ago. And, thanks to improvements in security, people
-trust the Internet for both planning their finances and for everyday
-payments.
+The Internet in 2021 is quite different from what it was 10 years ago. Today, it
+is a crucial part of everyone’s daily life. People use the Internet for their
+social life, for their daily jobs, for routine shopping, and for keeping up
+with major events. An increasing number of people can access a Gigabit
+connection, which would be hard to imagine a decade ago. And, thanks to
+improvements in security, people trust the Internet for both planning their
+finances and for everyday payments.
 
-At the same time, some aspects of end-user experience have not
-improved as much. Many users have typical connection latency that
-remains at decade-old levels. Despite significant reliability
-improvements in data center environments, end users often see
-interruptions in service. Despite algorithmic advances in the field of
-control theory, one can often find that the queuing delay in the
+At the same time, some aspects of end-user experience have not improved as much.
+Many users have typical connection latency that remains at decade-old levels.
+Despite significant reliability improvements in data center environments, end
+users often see interruptions in service. Despite algorithmic advances in the
+field of control theory, one can often find that the queuing delay in the
 last-mile equipment exceeds the accumulated transit delay. Transport
-improvements, such as QUIC, Multipath TCP, and TCP Fast Open are still
-not fully supported in some networks. Likewise, various advances in
-the security and privacy of user data are not widely supported, such
-as encrypted DNS to the local resolver.
+improvements, such as QUIC, Multipath TCP, and TCP Fast Open are still not
+fully supported in some networks. Likewise, various advances in the security
+and privacy of user data are not widely supported, such as encrypted DNS to the
+local resolver.
 
-Some of the major factors behind this lack of progress is the popular
-perception that throughput is the often sole measure of the quality of
-Internet connectivity. With such narrow focus, the workshop aimed to
-discuss various questions:
+Some of the major factors behind this lack of progress is the popular perception
+that throughput is the often sole measure of the quality of Internet
+connectivity. With such narrow focus, the workshop aimed to discuss various
+questions:
 
 - What is the latency under typical working conditions?
 - How reliable is the connectivity across longer time periods?
 - Does the network allow the use of a broad range of protocols?
 - What services can be run by clients of the network?
-- What kind of IPv4, NAT, or IPv6 connectivity is offered, and are
-  there firewalls?
-- What security mechanisms are available for local services, such as
-  DNS?
-- To what degree are the privacy, confidentiality, integrity, and
-  authenticity of user communications guarded?
-- Improving these aspects of network quality will likely depend on
-  measurement and exposing metrics to all involved parties, including
-  to end users in a meaningful way. Such measurements and exposure of
-  the right metrics will allow service providers and network operators
-  to focus on the aspects that impacts the users’ experience most and
-  at the same time empowers users to choose the Internet service that
-  will give them the best experience.
-- What are the fundamental properties of a network that contribute to good user experience?
-- What metrics quantify these properties, and how to collect such metrics in a practical way?
-- What are the best practices for interpreting those metrics, and incorporating those in a decision making process?
-- What are the best ways to communicate these properties to service providers and network operators?
+- What kind of IPv4, NAT, or IPv6 connectivity is offered, and are there
+  firewalls?
+- What security mechanisms are available for local services, such as DNS?
+- To what degree are the privacy, confidentiality, integrity, and authenticity
+  of user communications guarded?
+- Improving these aspects of network quality will likely depend on measurement
+  and exposing metrics to all involved parties, including to end users in a
+  meaningful way. Such measurements and exposure of the right metrics will
+  allow service providers and network operators to focus on the aspects that
+  impacts the users’ experience most and at the same time empowers users to
+  choose the Internet service that will give them the best experience.
+- What are the fundamental properties of a network that contribute to good user
+  experience?
+- What metrics quantify these properties, and how to collect such metrics in a
+  practical way?
+- What are the best practices for interpreting those metrics, and incorporating
+  those in a decision making process?
+- What are the best ways to communicate these properties to service providers
+  and network operators?
 - How can these metrics be displayed to users in a meaningful way?
 
 # Workshop Agenda
@@ -375,9 +429,9 @@ archives of the papers, presentations and recorded videos.
 - Brandon Schlinker. "Internet’s performance from Facebook’s edge" {{Schlinker2019}}
 - Christoph Paasch, Kristen McIntyre, Randall Meyer, Stuart Cheshire, Omer Shapira. "An end-user approach to the Internet Score" {{McIntyre2021}}
 - Christoph Paasch, Randall Meyer, Stuart Cheshire, Omer Shapira. "Responsiveness under Working Conditions" {{Paasch2021}}
-- Dave Reed, Levi Perigo. "Measuring ISP Performance in Broadband America: a Study of Latency Under Load" {{Reed2021}}
+- Dave Reed, Levi Perigo. "Measuring ISP Performance in Broadband America: a  Study of Latency Under Load" {{Reed2021}}
 - Eve M. Schooler, Rick Taylor. "Non-traditional Network Metrics"
-- Gino Dion. "Focusing on latency, not throughput, to provide better internet experience and network quality" {{Dion2021}}
+- Gino Dion. "Focusing on latency, not throughput, to provide better internet  experience and network quality" {{Dion2021}}
 - Gregory Mirsky, Xiao Min, Gyan Mishra, Liuyan Han. "Error Performance Measurement in Packet-Switched Networks" {{Mirsky2021}}
 - Jana Iyengar. "The Internet Exists In Its Use" {{Iyengar2021}}
 - Jari Arkko, Mirja Kuehlewind. "Observability is needed to improve network quality" {{Arkko2021}}
@@ -386,10 +440,10 @@ archives of the papers, presentations and recorded videos.
 - Kalevi Kilkki, Benajamin Finley. "In Search of Lost QoS" {{Kilkki2021}}
 - Karthik Sundaresan, Greg White, Steve Glennon . "Latency Measurement: What is latency and how do we measure it?"
 - Keith Winstein. "Five Observations on Measuring Network Quality for Users of Real-Time Media Applications"
-- Ken Kerpez, Jinous Shafiei, John Cioffi, Pete Chow, Djamel Bousaber. "State of Wi-Fi Reporting" {{Kerpez2021}}
+- Ken Kerpez, Jinous Shafiei, John Cioffi, Pete Chow, Djamel Bousaber. "State of  Wi-Fi Reporting" {{Kerpez2021}}
 - Kenjiro Cho. "Access Network Quality as Fitness for Purpose"
 - Koen De Schepper, Olivier Tilmans, Gino Dion. "Challenges and opportunities of hardware support for Low Queuing Latency without Packet Loss" {{DeSchepper2021}}
-- Kyle MacMillian, Nick Feamster. "Beyond Speed Test: Measuring Latency Under Load Across Different Speed Tiers" {{MacMillian2021}}
+- Kyle MacMillian, Nick Feamster. "Beyond Speed Test: Measuring Latency Under  Load Across Different Speed Tiers" {{MacMillian2021}}
 - Lucas Pardue, Sreeni Tellakula. "Lower layer performance not indicative of upper layer success" {{Pardue2021}}
 - Matt Mathis. "Preliminary Longitudinal Study of Internet Responsiveness" {{Mathis2021}}
 - Michael Welzl. "A Case for Long-Term Statistics" {{Welzl2021}}
@@ -397,11 +451,13 @@ archives of the papers, presentations and recorded videos.
 - Mingrui Zhang, Vidhi Goel, Lisong Xu. "User-Perceived Latency to measure CCAs" {{Zhang2021}}
 - Neil Davies, Peter Thompson. "Measuring Network Impact on Application Outcomes using Quality Attenuation" {{Davies2021}}
 - Olivier Bonaventure, Francois Michel. "Packet delivery time as a tie-breaker for assessing Wi-Fi access points" {{Michel2021}}
-- Pedro Casas. "10 Years of Internet-QoE Measurements. Video, Cloud, Conferencing, Web and Apps. What do we need from the Network Side?" {{Casas2021}}
+- Pedro Casas. "10 Years of Internet-QoE Measurements. Video, Cloud,
+  Conferencing, Web and Apps. What do we need from the Network Side?" {{Casas2021}}
 - Praveen Balasubramanian. "Transport Layer Statistics for Network Quality" {{Balasubramanian2021}}
 - Rajat Ghai. "Measuring & Improving QoE on the Xfinity Wi-Fi Network" {{Ghai2021}}
 - Robin Marx, Joris Herbots. "Merge Those Metrics: Towards Holistic (Protocol) Logging" {{Marx2021}}
-- Sandor Laki, Szilveszter Nadas, Balazs Varga, Luis M. Contreras. "Incentive-Based Traffic Management and QoS Measurements" {{Laki2021}}
+- Sandor Laki, Szilveszter Nadas, Balazs Varga, Luis M.
+  Contreras. "Incentive-Based Traffic Management and QoS Measurements" {{Laki2021}}
 - Satadal Sengupta, Hyojoon Kim, Jennifer Rexford. "Fine-Grained RTT Monitoring Inside the Network" {{Sengupta2021}}
 - Stuart Cheshire. "The Internet is a Shared Network" {{Cheshire2021}}
 - Toerless Eckert, Alex Clemm. "network-quality-eckert-clemm-00.4"
@@ -411,29 +467,122 @@ archives of the papers, presentations and recorded videos.
 
 # Discussions {#discussions}
 
-The three day workshop was broken into four separate sections,
-including introductory material and conclusions, that each played a
-role in framing the discussions.
+The three day workshop was broken into four separate sections, including
+introductory material and conclusions, that each played a role in framing the
+discussions.
 
 ## Introduction and overviews
 
-The Introduction section allowed participants to introduce and discuss
-the problem space, existing mechanisms for QoS and QoE measurements.
-Also discussed was the interaction between multiple users within the
-Network, as well as the interaction between multiple layers of the OSI
-stack.  Some existing measurement works were presented.  Vint Cerf
-provided a key note describing the history and importance of
-the topic.
+The Introduction section allowed participants to introduce and discuss the
+problem space, existing mechanisms for QoS and QoE measurements. Also discussed
+was the interaction between multiple users within the Network, as well as the
+interaction between multiple layers of the OSI stack.  Some existing
+measurement works were presented.  Vint Cerf provided a key note describing the
+history and importance of the topic.
 
-## Metrics considerations
+# Workshop Topics and Discussion {#discussion-topics}
 
-The Metrics section of the workshop concentrated on both defining new
-and existing measures and how they might apply to different sections
-of the Internet.  The need for improvements to latency and its
-measurements was heavily discussed, especially for certain classes of
-users such as live, collaborative content and gaming.
+## Key points from the keynote by Vint Cerf {#dicsucssion-intro-keynote}
 
-## Cross-layer considerations
+We may be operating in a space with dramatically different parameters compared to 30 years ago. This differentiation justifies re-considering not only the importance of one metric over the other, but also re-considering the entire metaphore.
+
+Very timely for the experts to look not only at adjusting TCP, but also at exploring other protocols, such as QUIC (but others as well). It's important to feel free to consider alternatives to TCP. TCP is not a teddy bear, and one should not be afraid to replace it. 
+
+Suggestion - desireable properties exercises. As we are looking at the parametric spaces, one can identify the “desireable properties”, as opposed to “fundamental properties”. Among such properties, there may be a low-latency. ARPA example - you want to know where the missile is now, not where it was. Understanding what is driving the particular parameter in the design space.
+
+When the parameters are changed to the extreme, such as conectedness, some other designs will emerge. One case study is the Interplatnetary Protocol, where "ping" is no long indicative of anything. While we look at responsiveness, we should not ignore connectivity.
+
+Backward compatibility is painful. IPv6/IPv4 could have been done better if the backward compatibility was considered. If Vint was able to talking to his 25-year younger self, he would stress the importance of the 192.168 space. May be too late for IPv6, but not too late for the future laying problems.
+
+IPv6 is still not implemented fully, it’s been a long road since 1996, and we are still not there. 1996 the thinking was that it was quite easy to implmenet IPv6, but that did not happen. In 1996 the dot-com boom happened, lots of money went fast, and the moment was not caught in time while the market had expanded exponentially. A cautionary tale.
+
+Last points - performance across multiple hops in the Internet. We’ve not seen many end-to-end metrics, because this is quite hard to achieve across different network and business boundaries. A good question to ask - will the new protocol work across multiple network hops.
+
+Multi-hop networks are gradually replaced by humongous flat networks with sufficient connectivity to other operators so that the system becomes 1 hop or 2 hop at most (e.g. Google, Facebook, Amazon). Architecture of the Internet is changing.
+
+## Introductory talks  {#discussion-introductions}
+
+The workshop started with a broad focus on the state of the Internet today.
+
+The Internet is a shared network, that's based on the IP protocol and packet-switching to interconnect multiple autonomous networks. Departure from circuit-switching allowed the Internet to scale beyond any other known network. On the other hand, the lack of in-network regulation made it difficult to ensure that every user has the best experience.
+
+As the use cases of the Internet continue to expand, it becomes increasingly more difficult to predict which network characteristics will lead to the best user experience. When used simultaneously, the different application classes, e.g., video streaming and teleconferencing, can affect the experience of their users in complex ways. The Internet utilization is shifting rapidly during the course of a day, week and year, which further complicates identifying key metrics which can predict good user experience.
+
+Quality of Service (QoS) initiatives attempted to overcome those difficulties by strictly prioritzing the different types of traffic. However, the QoS metrics do not always correlate with the user experience. The utility of QoS is further limited by the difficulties in building solutions with the desired QoS characteristics.
+
+Quality of Experience (QoE) initiatives attempted to integrate the psychological aspects of how quality is perceived, and to create statistical model which can be useful to optimize the user experience. Despite the high modeling efforts, QoE approach have reached some success in certain application classes. Unfortunately, it is still difficult to generalize the models, and the question of how different applications affect each other when sharing the same network remains open.
+
+The focus of the industry on giving the end-user more throughput had led to remarkable advances. In many places around the world, a home user can enjoy a Gigabit link to their Internet Service Provider, something so remarkable that it would be brushed off as science fiction a decade ago. However, this focus came at the expense of neglecting the other important core metric, the latency in working conditions. As a result, end-user whose experience is negatively affected by latency will be advised to upgrade their equipment to get more throughput. {{MacMillian2021}} showed that sometimes such upgrade can lead to latency improvements, due to the economical reasons of overselling the "value-priced" data plans.
+
+As the industry continues to give the end user more throughput, while neglecting the latency, the application design starts to employ various techniques to hide latency and short disruption in service, e.g., web browsers relying on the local cache. While such techniques can clearly improve the user experience when using stale data is acceptable, this development is further decoupling user experience from the core metrics.
+
+In the recent 10 years, efforts by Dave Taht and the bufferbloat society had led to significant progress in the queuing algorithms that can reduce the latency under load compared to the simipler FIFO queues. Unfortunately, the home router industry is yet to implement these algorithms, due to the market reasons. Most home router manufacturers depend on SoC acceleration to be able to make products with the desired throughput. The SoC manufacturers opt to use simpler algorithms and aggressive aggregation, reasoning that a higher-throughput chip will have guaranteed demand. Because what consumers get is a choice between different high throughput devices, the perception of higher throughput leads to higher quality continues to strengthen.
+
+The "home router front" is not the only place that can benefit from clearer indication of what matters more for the users. Since users perceive the Internet via the lens of applications, its important to appeal to the application vendors to adopt solutions that stress lower working latency. Unfortunately, while bandwidth is straightforward to measure, responsiveness is tricky. Many applications have found a set of metrics which they see helpful, but those don't seem to be universally applicable. Further, due to the high competiveness of the application space, application vendors may have economic reasons to avoid sharing the most useful metrics.
+
+Finally, the Internet infrastructure that connects the applictions to the users is yet another place where better measurements may help driving towards the better Internet.
+
+## Introductory talks - key points  {#discussion-introductions-summary}
+
+1. Measuring bandwidth is necessary but not sufficient.
+2. In many cases, Internet users don’t need more bandwidth, but rather
+   need "better bandwidth" -- i.e., they need other improvements to
+   their connectivity.
+3. The users perceive the quality of their Internet connection through the behavior of applications they use, which are affected by a combination of factors. There's little value in exposing the typical user to the entire spectrum of possible reasons, as the users thinking of the Internet in terms of their use cases.
+4. Many of the factors that affect the user experience are out of the users' hand. It's unclear whether exposing the users to these factors will help. Users prefer simple, categorical choices.
+5. The Internet content market is highly competitive, and many applications develop their own "secret sauce."
+
+## Metrics considerations {#discussion-metrics}
+
+The workshop continued to discuss the various metrics that can be used instead of or in addition to bandwidth. Several workshop attendees presented deep-dive studies on measurement methodology.
+
+### Traditional performance metrics
+
+Losing Internet access is a bad user experience. Unfortunately, unless rebooting the home router restores connectivity, there is little a user can do other than contact their service provider. Nevertheless, there is value in the systematic collection of the availability metrics on the client side: these can help the ISP localize and resolve issue faster, while enabling users to better chose their next ISP. One can measure the availabilty directly, by attempting a connection from the cilent-side to the location of interest. For example, {{tools.ookla_speedtest}} uses a large number of Android devices to measure network and cellular availabilty around the globe. Ookla collects hundreds of millions of data points per day, and uses these for accurate availability reporting. The alternative approach is to derive avaiability from the failure rates of other tests. For example, {{FCC_MBA}} uses thousands of off-the shelf routers, called "Whiteboxes" with measurement software developed by SamKnows. The "Whiteboxes" perorm an array of network tests, then the availability is decided based the tests which failed to connect.
+
+Measuring available capacity can be helpful to the end-users, but it is much more valuable for service providers and application developers. High-definition video streaming requires much more capacity than any other type of traffic. At the time of the workshop, video traffic constituted 90% of the overall Internet traffic and contributed to 95% of the revenues from monetization (via subscriptions, fees, or ads). As a result, video streaming services, such as Netflix, need to cope with rapid changes in the available capacity. The ability to probe capacity in real-time allows leveraging the different adaptive bitrate (ABR) compression algorithms to ensure the best possible user experience. The Internet Service providers benefit from measuring the aggregated capacity demand to be ready for the spikes in traffic. For example, during the end-of-year holiday season, the global demand for capacity grows 5-7x. For the end-users, knowledge of their capacity needs can help them choose a data plan that best suits them. In many cases, however, end-users have more than enough capacity, and adding more bandwidth will not improve their experience. Finally, ability to differentiate between the "throughput" and the "goodput" can be helpful in identifying when the network is saturated.
+
+In measuring the Internet quality, latency is the time that it takes a network packet to traverse the entire network path. At the time of the report, users in many places worldwide can enjoy Internet access that has adequately high capacity and availability. For these users, latency improvements can lead to the most significant improvements in the quality of experience. The traditional latency metric is a round-trip time (RTT), commonly measured in milliseconds. However, users often find the RTT unintuitive since, unlike other performance metrics, high RTT values indicate poor latency. {{Paasch2021}} and {{Mathis2021}} presented an inverse metric, called "Round-trips per minute" (RPM). 
+
+There is an essential distinction between the "idle latency" and "latency under working conditions." The former is measured when the network is not used and reflects the best-case scenario. The latter is measured when the network is under a typical workload. Until recently, the typical case was to present the idle latency. However, these numbers can be misleading. For example, data presented at the workshop shows that the idle latency can be up to 25 times lower than the latency under typical working conditions. Because of that, when presenting latency to the end-user, it is essential to make a clear distinction between the two.
+
+Data shows that rapid changes in capacity affect latency. {{Foulkes2021}} attempts to quantify how often a rapid change in capacity can cause a line to become "unstable", i.e., having high latency but very little throughput. Such cahnges in capacity can be caused by infrastructure failures, but much more often by the in-network phenomena, such as different traffic engineering policies, or rapid changes in the cross-traffic.
+
+Data presented at the workshop shows that 36% of measured lines have capacity metrics that vary by more than 10% throughout the day and across multiple days. These differences are caused by many variables, including local connectivity (WiFi vs. Ethernet), competing LAN traffic, device load/configuration, time of day (Local loop/backhaul capacity). These factors make measuring capacity on an end-user device difficult. A network router that sees aggregated traffic from multiple devices provides a better vantage point for capacity measurements. Such test can account for the totality of local traffic and perform an independent capacity test. And even then, various factors might limit the accuracy of said test. Accurate capacity measurement requires a multiple samples.
+
+As the users perceive the Internet through the lens of applications, it may be difficult to correlate changes in capacity and latency with the quality of the end-user experience. For example, web browsers rely on cached page versions to shorten page load times and mitigate connectivity losses. In addition, social networking applications often rely on pre-fetching the "feed" items. These techniques make the traditional in-network metrics less indicative of the users' experience and necessitate collecting data in-application. 
+
+It is helpful to distinguish between applications that operate on a "fixed latency budget" from those that have more tolerance to latency variance. Using cloud gaming as an example of "fixed latency budget", a sudden latency spike can decide the "win/lose" ratio for a player. Companies that compete in the lucrative cloud gaming market make significant infrastructure investments, such as buiding entire datacenters closer to the users bases. These data centers indicate that the economic benefits of having fewer latency spikes outweigh the costs. On the other hand, applications that are more tolerant to latency spike can sometimes operate reasonably well when the latency spikes. Yet even those applications can benefit from consistently low latency. For example, Video-on-demand (VOD) apps can work reasonably well when the video is consumed linearly, but once the user tries to "switch a channel", or to "skip ahead", the user experience would suffer unless the latency is sufficiently low.
+
+Finally, as the applications continue to evolve, the in-application metrics are gaining more importance. Using the VOD as an example, one can assess the quality of experience by checking whether the video player can use the highest possible resolution, whether the video is smooth or freezing, and similar metrics. Then, the application developer can effectively use these metrics to prioritize future work. All popular video platforms (Youtube, Instagram, Netflix, and others) developed frameworks to collect and analyze such metrics at scale. One example is the Scuba framework used by Meta {{FB_Scuba}}. 
+
+Unfortunately, the in-application metrics can be challenging to use for comparative research purposes. Firstly, different applications often use different metrics to measure the same phenomena. For example, application A can measure the smoothness of video via "mean time to re-buffer." In contrast, application B can rely on the "probability of re-buffering per second" for the same purpose. A different challenge with using in-application metrics is that at the time of the workshop, VOD is a significant source of revenue for companies such as YouTube, Facebook, and Netflix, which places incentives against exchanging the in-application data. Finally, in-application metrics can accurately describe the activities and preferences of an individual end-user, leading to privacy infringements.
+
+### Measurement case studies
+
+{{Paasch2021}} introduced a methodology for measuring working latency from the end-user vantage point. The suggested method incrementally adds network flows between the user device and a server endpoint until a bottleneck capacity is reached. Then, a round trip latency is measured and reported to the end-user. Authors chose ot report results with the RPM metric. The methodology had been implemented in Apple Monterey OS.
+
+{{Mathis2021}} have applied the RPM metric to the results of more than 4 billion download tests that M-Lab performed in 2010-2021. During this time frame, the M-Lab measurement platform underwent several upgrades, allowing the research team to compare the effect of different TCP congestion control algorithms (CCAs) on the end-to-end latency. The study showed that the use Cubic CCA leads to increased working latency, which is attributed to its use of larger queues. 
+
+{{Schlinker2019}} presented a large-scale study that aimed to establish a correlation between goodput and quality of experience on a large social network. The authors performed the measurements at multiple data centers from which video segments of a set size were streamed to a large number of end users. The authors used the goodput and the throughput to determine whether particular paths are congested. 
+
+{{Reed2021}} presented the analysis of working latency measurements collected as part of the FCC's "Measuring Broadband America" (MBA) program. FCC does not include the working latency in its yearly report but offers it in the raw data files. The authors {{Reed2021}} used a subset of the raw data to identify important differences in the working latencies across different ISPs.
+
+{{MacMillian2021}} presented analysis of working latency across multiple service tiers. They found that unsurprisingly, "premium" tier users experienced lower working latency compared to the "value" tier. The data had demosntrated that working latency varies significantly within each tier; one possible explanation is the difference in the home equipment.
+
+These studies have stressed the importance of measurement of the working latency. At the time of this report, many home router manufacturers relied on hardware-accelerated routing which used FIFO queues. Focusing the working latency measurements on those devices, and making the consumer aware of the effect of chosing one manufacturer vs. other can help improving the home router situation. The ideal test would be able to identify the working latency, and to pinpoint to the source of delay (home router, ISP, server side, or some network node in between).
+
+Another source of high working latency is in the network routers that are exposed to cross-traffic. As {{Schlinker2019}} indicated, these become saturated during the peak hours of the day. Systematic testing of the working latency can help improve the infrastructure.
+
+### Key points {#discussions-metrics-key-points}
+
+1. Availability and capacity are "hygienic factors" - unless the application is capable of using extra capacity, the end-users see little benefit in overprovisioning.
+2. The working latency has stronger correlation with user experience than the idle latency. The working latency can exceed the idle latency by order of magnitude.
+2. The RPM metric is a stable metric that can be effective to communicate latency to the end-users.
+3. The relationship between throughput and goodput can be effective in finding the saturation points, both in client-side {{Paasch2021}} and server-side {{Schlinker2019}} settings.
+4. Working latency depends on the choice of the algorithms for endpoint congestion control and for router queuing.
+
+## Cross-layer considerations {#discussions-cross-layer}
 
 In the Cross-layer section participants presented material and discussed
 how accurately measuring exactly where problems occur is difficult
@@ -443,6 +592,30 @@ between physically wired and wireless connections and the difficulties
 of accurately determining problem spots when multiple different
 network types are responsible for the quality.
 
+Presentation by {{Kerpez2021}} showed that as the Internet access becomes the norm, the limited bandwidth of 2.4Ghz wifi is more often than not the bottleneck. In comparison, the wider bandwidth of the 5Ghz WiFi have only been the bottleneck in 20% of the observations.
+
+### Towards future cross-layer observability {#discussions-cross-observability}
+
+The ownership of the Internet is spread across multiple administrative domains, making access to performance data difficult. Furthermore, the immense scale of the Internet makes aggregation and analysis of such data difficult. {{Marx2021}}  presented a simple logging format that could potentially be used to collect and aggregate data from different layers.
+
+The other aspect of cross-layer collaboration is that majority of current alogrithms do not explicitly provide performance data that can be part of a cross-layer analysis. The IETF community can be more diligent in identifying the key performance indicators, and exposing those as part of the protocol specification.
+
+Despite all the challenges, it should still be possible to perform limited-scope studies to have a better understanding of how user quality is affected by the interaction of the different components that constitute the Internet. Recent development of federated learning algorithms suggests that it might be possible to perform cross-layer performance measurements while preserving the privacy of the users.
+
+On the server side, the `tcp_info` structure can be decorated with performance information from other layers to give richer data set.
+
+### Efficient collaboration between hardware and transport protocols {#discussions-cross-layer-hw-tp}
+
+With the advent of the L4S congestion notification and control, there's even higher need for the transport protocols and the underlying hardware to work in unison.
+
+At the time of the workshop, the typical home router used a single FIFO queue, large enough to allow amortizing the lower-layer header overhead across multiple transport PDUs. These designs worked well with the Cubic congestion control algorithm, yet the newer generation of CCAs can operate on much smaller queues. To fully support <1ms latency, the home router needs to work efficiently on sequential transmissions of just a few segments, vs. being optimized for large packet bursts.
+
+Another design trait that's common in the home routers is use of packet aggregation, to further amortize the overhead added by the lower-layer headers. Multiple IP datagrams are combined into a single large tranfer frame. This aggregation can add up to 10ms to the packet sojourn delay.
+
+Following the famous "you can't improve what you don't measure" adage, it is important to expose these aggregation delays in a way that would allow identifying the bottlenecks, and making the hardware more suitable for the next generation transport protocols.
+
+### Key points {#cross-layer-keypoints}
+
 ## Synthesis
 
 Finally, in the Synthesis section presentations and discussions
@@ -450,6 +623,10 @@ concentrated on the next steps likely needed to make forward
 progress. Of particular concern is how to bring forward measurements
 that can make sense to end users trying to make subscription
 decisions.
+
+
+
+### Key points
 
 # Conclusions
 
@@ -488,7 +665,7 @@ provide context.
 10. End-users that want to be involved in QoS decisions should be able
     to voice their needs and desires.
 11. Applications are needed that can perform and report good quality
-    measurements in order to identify insufficient points in 
+    measurements in order to identify insufficient points in
     network access.
 12. Research done by regulators indicate that users/consumers prefer
     a simple metric per application, which frequently resolves to
@@ -693,26 +870,26 @@ The workshop chairs consisted of:
 
 The program committee consisted of:
 
-    Christoph Paasch 
-    Cullen Jennings 
-    Geoff Huston 
-    Greg White 
-    Jari Arkko 
-    Jason Livingood 
-    Jim Gettys 
-    Katarzyna Kosek-Szott 
-    Kathleen Nichols 
+    Christoph Paasch
+    Cullen Jennings
+    Geoff Huston
+    Greg White
+    Jari Arkko
+    Jason Livingood
+    Jim Gettys
+    Katarzyna Kosek-Szott
+    Kathleen Nichols
     Keith Winstein
-    Matt Mathis 
-    Mirja Kuehlewind 
-    Nick Feamster 
-    Olivier Bonaventure 
-    Randall Meyer 
-    Sam Crowford 
-    Stuart Cheshire 
-    Toke Hoiland-Jorgensen 
-    Tommy Pauly 
-    Vint Cerf 
+    Matt Mathis
+    Mirja Kuehlewind
+    Nick Feamster
+    Olivier Bonaventure
+    Randall Meyer
+    Sam Crowford
+    Stuart Cheshire
+    Toke Hoiland-Jorgensen
+    Tommy Pauly
+    Vint Cerf
 
 # Github Version of this document
 
