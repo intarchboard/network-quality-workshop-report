@@ -280,7 +280,7 @@ informative:
 The Measuring Network Quality for End-Users workshop was held
 virtually by the Internet Architecture Board (IAB) from September 14-16, 2021.
 This report summarizes the workshop, the topics discussed, and some
-preliminary conclusions drawn at the end of the workshop. 
+preliminary conclusions drawn at the end of the workshop.
 
 --- middle
 
@@ -488,7 +488,7 @@ provide context.
 10. End-users that want to be involved in QoS decisions should be able
     to voice their needs and desires.
 11. Applications are needed that can perform and report good quality
-    measurements in order to identify insufficient points in 
+    measurements in order to identify insufficient points in
     network access.
 12. Research done by regulators indicate that users/consumers prefer
     a simple metric per application, which frequently resolves to
@@ -693,26 +693,26 @@ The workshop chairs consisted of:
 
 The program committee consisted of:
 
-    Christoph Paasch 
-    Cullen Jennings 
-    Geoff Huston 
-    Greg White 
-    Jari Arkko 
-    Jason Livingood 
-    Jim Gettys 
-    Katarzyna Kosek-Szott 
-    Kathleen Nichols 
+    Christoph Paasch
+    Cullen Jennings
+    Geoff Huston
+    Greg White
+    Jari Arkko
+    Jason Livingood
+    Jim Gettys
+    Katarzyna Kosek-Szott
+    Kathleen Nichols
     Keith Winstein
-    Matt Mathis 
-    Mirja Kuehlewind 
-    Nick Feamster 
-    Olivier Bonaventure 
-    Randall Meyer 
-    Sam Crowford 
-    Stuart Cheshire 
-    Toke Hoiland-Jorgensen 
-    Tommy Pauly 
-    Vint Cerf 
+    Matt Mathis
+    Mirja Kuehlewind
+    Nick Feamster
+    Olivier Bonaventure
+    Randall Meyer
+    Sam Crowford
+    Stuart Cheshire
+    Toke Hoiland-Jorgensen
+    Tommy Pauly
+    Vint Cerf
 
 # Github Version of this document
 
