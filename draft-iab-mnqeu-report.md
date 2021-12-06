@@ -275,6 +275,9 @@ informative:
       - ins: S. Cheshire
     seriesinfo: https://www.iab.org/wp-content/IAB-uploads/2021/09/Internet-Score-2.pdf
 
+  ping:
+    title: "PING(8)"
+
 --- abstract
 
 The Measuring Network Quality for End-Users workshop was held
@@ -432,6 +435,50 @@ and existing measures and how they might apply to different sections
 of the Internet.  The need for improvements to latency and its
 measurements was heavily discussed, especially for certain classes of
 users such as live, collaborative content and gaming.
+
+### Latency considerations
+
+End-to-end latency is the time it takes for a particular segment to traverse
+the entire network path from the user to their destionation. The end-to-end
+latency comprises several components:
+
+1. The propagation delay, which reflects the path distance and the individual
+   link technologies (e.g. fibre vs satellite). The propagation doesn't depend
+   on the utilization of the network, to the extent that the network path
+   remains constant.
+2. The buffering delay, which reflects the time segments spend in the memory of
+   the network equipment that connect the individual network links, as well as
+   in the memory of the transmitting endpoint. The buffering delay depends on
+   the network utilization, as well as on the algorithms that govern the queued segments.
+3. The transport protocol delays, which reflects the time spent in
+   retransmission and reassembly, as well as the time spent when the transport
+   is "head-of-line blocked."
+4. Some of the workshop sumbissions have explicitly called out the application
+   delay, which reflects the inefficiencies in the application layer.
+
+### Idle latency vs. working latency.
+
+Tradionally, end-to-end latency is measured with tools such as {{ping}}, as
+well as with services such as {{speedtest}} or {{ookla}}.
+Such measurements are typically performed when the network is idle, and as a
+result, such measurements reflect mostly the propagation delay.
+
+A different way to measure end-to-end latency is to perform the test when the
+network is not idle, but in its typical working conditions.
+
+The workshop participants used the term "Idle latency" when referring to the
+subject of the former measurement methods, and "Working latency" when referring
+to the latter.
+
+### Metrics - conclusions
+
+Through the course of the workshop, the following statements have emerged:
+
+1. There's a dramatic difference between the idle latency and the working
+   latency measurements.
+2. The variance in idle latency is not high, while the working latency varies
+   wildly.
+3. Most of the tools to measure end-to-end latency focus on the idle latency.
 
 ## Cross-layer considerations
 
