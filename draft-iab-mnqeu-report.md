@@ -441,29 +441,55 @@ of the Internet.  The need for improvements to latency and its
 measurements was heavily discussed, especially for certain classes of
 users such as live, collaborative content and gaming.
 
-Historically, the primary metrics for assessing the network quality were the
-throughput (or sometimes goodput) and the idle latency (often referred to as
-"ping time", following the name of the popular UNIX tool).
-
-### Throughput considerations
-
-The throughput have enjoyed being the primary optimization target over the
-yaers, and as a result, it is not uncommon for the common public to have access
-to the Internet at multiple Gbps. As a result, the relative importance of
-throughput to the end users is gradually decreasing - once the network provides
-the user with sufficient throughput to perform their daily tasks, the latency
-becomes more important.
-
 With the onset of COVID-19, the global population became more dependent on
-vairous forms of collaboration and telepresence. At today's state of the
-collaboration technology, high quality videoconference software requires only
-single digit Mbps throughput. Once the sufficient throughput is available, the
-videoconference experience will not improve with further throughput increases.
+vairous forms of collaboration and telepresence to get their work.
+
+The metrics for network quality can be roughly grouped into:
+
+1. Availability metrics, which indicate whether the user can access the network
+   at all.
+2. Capacity metrics, which indicate whether the actual line capacity is
+   sufficient to meet the user demands.
+3. Latency metrics, which indicate whether the user gets the data in time.
+4. Higher-order metrics, which include both the network metrics, such as
+   inter-packet arrival time, and the applicaiton metrics, such as the mean
+   time between rebuffering for video streaming.
+
+The availabiltiy metrics can be seen as derivative of either the capacity (zero
+capacity leading to zero availability) or the latency (infinite latency
+leading to zero availability).
+
+Finally, the best metrics are those that are actionable.
+
+### Availability metrics
+TBD:
+
+- Was the line down and for how long?
+- Was the line unstable and for how long?
+
+### Capacity metrics
+
+To achieve the desireable network quality, the line capacity must be sufficient
+to meet the user demands. If the line capacity isn't sufficient, adding
+capacity may improve the quality of the connection. Once sufficient, further
+capacity increases will not lead to improvements in quality, as the line will
+become underutilized.
+
+The actual line capacity varies throughput the day and across multiple days.
+The variance is not uniform across the different technologies and across the
+different service levels. For example, data indicates that the variance have
+increased for the DSL lines that were upgraded to 100Mbps and above.
+
+Similarly, the user demands vary through the course of the day, depending on the
+number of users, as well as on the way in which they use the network.
+
+To measure both accurately, multiple measurements must be run through the
+course of each day.
 
 Other types of traffic, such as browsing the web, can benefit from increases in
 throughput, up to a certain point.
 
-### Latency considerations
+### Latency metrics
 
 End-to-end latency is the time it takes for a particular segment to traverse
 the entire network path from the user to their destionation. The end-to-end
@@ -499,7 +525,7 @@ While historically the tooling available for measuring latency focused on
 measuring the idle latency, there is a trend in the industry to start measuring
 the working latency as well, e.g. {{tools.apple_networkQuality}}.
 
-### Measurement considerations
+### Measurement methodologies
 
 The participants have proposed several concrete methodologies for measuring the
 network quality for the end users.
@@ -532,10 +558,8 @@ in the M-Lab platform were found to be consistent and lasting for several
 months, which suggests that these were caused by ISPs upgrading their
 equipment, or other events to the similar effect.
 
-
 {{Schlinker2019}} presented a large scale study of the correlation between the
-network quality and the quality of the experience of users of a large social
-network.
+goodput and the quality of the experience of users of a large social network.
 
 The authors performed the measurements at multiple datacenters from which video
 segmetns of a set size were streamed to a large number of end users. The
@@ -544,8 +568,10 @@ goodput G" as the metric. Goodput is highly dependent on the transport delays,
 but is less sensitive to the latency. Further, the goodput is highly dependent
 on the choice of the transport protocol (the authors used QUIC with BBRv1.)
 
-Specifically, the authors suggested `P(G, S) <- [0, 1)` - the probabilty of
-achieving desired goodput `G` when transmitting object of set size `S`.
+Specifically, the authors suggested using the probabilty of
+achieving desired goodput G when transmitting object of set size S.
+
+TODO: insert formula
 
 The choice of goodput and the logicistical metric were driven by the need to
 assess the maximal quality of the content that can be effectively served by the
@@ -574,6 +600,8 @@ streaming services, either when estimated the needed network capacity, or when
 deciding what bitrate values to use in order to deliver the content at the
 highest quality without stretching the capacity of the network.
 
+
+{{Reed2021}} presents the results of FCC's "Measuring the Broadband America" (MBA) study.
 ### RPM metric considerations
 
 The workshop participants have agreed that the RPM metric is an effective way
