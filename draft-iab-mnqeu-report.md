@@ -501,8 +501,10 @@ capacity than high-definition video streaming.
 
 ### Latency metrics
 
-End-to-end latency is the time it takes for a particular segment to traverse
-the entire network path from the user to their destionation. The end-to-end
+/* Maybe move to appendix ? */
+
+End-to-end latency is the time that a particular packet takes to traverse the
+network path from the user to their destination and back.  The end-to-end
 latency comprises several components:
 
 1. The propagation delay, which reflects the path distance and the individual
@@ -519,21 +521,32 @@ latency comprises several components:
 4. Some of the workshop sumbissions have explicitly called out the application
    delay, which reflects the inefficiencies in the application layer.
 
-Tradionally, end-to-end latency is measured with tools such as {{tools.ping}}, as
-well as with services such as {{tools.ookla_speedtest}}.
-Such measurements are typically performed when the network is idle, and as a
-result, such measurements reflect mostly the propagation delay.
+/* Idle latency vs. LUL - shorten */
+Tradionally, end-to-end latency is measured when the network is idle. Results of such
+measurements reflect mostly the propagation delay, but not other kinds of
+delay. This report uses the term "Idle latency" to refer to results achieved
+under idle network conditions.
 
-A different way to measure the end-to-end latency is to perform the test when
-the network is not idle, but in its typical working conditions.
+Alternatively, if the latency is measured when the network is under its typical working conditions, the results reflect all kinds of delays. This report uses the term "Working latency" to refer to such results. Other sources use the term "Latency under load" (LUL) as a synonym.
 
-The workshop participants used the term "Idle latency" when referring to the
-subject of the former measurement methods, and "Working latency" when referring
-to the latter.
+Data presented at the workshop reveals a substantial difference between the
+idle latency and the working latency. Depending on the traffic direciton and
+the technology type, the working latency is between 6 to 25 times
+higher than the idle latency:
+
+| Direction | Technology type | Working latency | Idle latency | Working - Idle difference | Working / Idle ratio |
+| Downstream | FTTH | 148 | 10 | 138 | 15 |
+| Dowstream | Cable | 103 | 13 | 90 | 8 |
+| Downstream | DSL | 194 | 10 | 184 | 19 |
+| Upstream | FTTH | 207 | 12 | 195 | 17 |
+| Upstream | Cable | 176 | 27 | 149 | 6 |
+| Upstream | DSL | 686 | 27 | 659 | 25 |
+
 
 While historically the tooling available for measuring latency focused on
 measuring the idle latency, there is a trend in the industry to start measuring
 the working latency as well, e.g. {{tools.apple_networkQuality}}.
+
 
 ### Measurement methodologies
 
@@ -611,7 +624,13 @@ deciding what bitrate values to use in order to deliver the content at the
 highest quality without stretching the capacity of the network.
 
 
-{{Reed2021}} presents the results of FCC's "Measuring the Broadband America" (MBA) study.
+{{Reed2021}} presents analysis of working latency measurements that were collected as part of "Measuring Broadband America" (MBA) program.
+
+The MBA program is run by FCC, and it has been publishing a yearly report that compares the capacity (referred to as "speed") and the idle latency of major US ISPs.
+While the MBA report does not include working latency comparison, the platform it uses for the measurements does collect the data. {{Reed2021}} used a subset of the collected data to identify important variations of the working latency across different ISPs. Their study had 
+
+By analyzing the working latency data from the MBA datasets, {{Reed2021}} have found that  
+While the 
 ### RPM metric considerations
 
 The workshop participants have agreed that the RPM metric is an effective way
