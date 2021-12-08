@@ -275,12 +275,20 @@ informative:
       - ins: S. Cheshire
     seriesinfo: https://www.iab.org/wp-content/IAB-uploads/2021/09/Internet-Score-2.pdf
 
+  tools.ookla_speedtest:
+     title: "Speedtest by Ookla"
+     target: https://www.speedtest.net
+  tools.apple_networkQuality:
+     title: "Apple Network Quality"
+  tools.ping:
+    title: "ping -- send ICMP ECHO_REQUEST packets to network hosts"
+
 --- abstract
 
 The Measuring Network Quality for End-Users workshop was held
 virtually by the Internet Architecture Board (IAB) from September 14-16, 2021.
 This report summarizes the workshop, the topics discussed, and some
-preliminary conclusions drawn at the end of the workshop. 
+preliminary conclusions drawn at the end of the workshop.
 
 --- middle
 
@@ -433,6 +441,260 @@ of the Internet.  The need for improvements to latency and its
 measurements was heavily discussed, especially for certain classes of
 users such as live, collaborative content and gaming.
 
+With the onset of COVID-19, the global population became more dependent on
+vairous forms of collaboration and telepresence to get their work.
+
+The metrics for network quality can be roughly grouped into:
+
+1. Availability metrics, which indicate whether the user can access the network
+   at all.
+2. Capacity metrics, which indicate whether the actual line capacity is
+   sufficient to meet the user demands.
+3. Latency metrics, which indicate whether the user gets the data in time.
+4. Higher-order metrics, which include both the network metrics, such as
+   inter-packet arrival time, and the applicaiton metrics, such as the mean
+   time between rebuffering for video streaming.
+
+The availabiltiy metrics can be seen as derivative of either the capacity (zero
+capacity leading to zero availability) or the latency (infinite latency
+leading to zero availability).
+
+Finally, the best metrics are those that are actionable.
+
+### Availability metrics
+TBD:
+
+- Was the line down and for how long?
+- Was the line unstable and for how long?
+
+### Capacity metrics
+
+If the network capacity does not meet the user demands, the network quality
+will be impacted. Once the capacity meets the demands, increasing capacity
+won't lead to further quality improvements.
+
+The actual network connection capacity is determined by the equipment and the
+lines along the network path, and it varies throughout the day and across
+mutliple days. Studies involving DSL lines in North America indicate that over
+30% of the DSL lines have capacity metrics that vary by more than 10%
+throughout the day and accross multiple days.
+
+Some factors that affect the actual capacity are:
+1. Presence of a competing traffic, either in the LAN or in the WAN
+   environments. In the LAN setting, the competing traffic reflects the
+   multiple devices that share the Internet connection. In the WAN setting the
+   competing traffic often originates from the unrelated network flows that
+   happen to share the same network path.
+2. Capabilities of the equipment along the path of the network connection,
+   including the data transfer rate and the amount of memory used for
+   buffering.
+3. Active traffic management measures, such as traffic shapers and policers
+   that are often used by the network providers.
+
+There are other factors that can negatively affect the actual line capacities.
+
+The user demands of the traffic follow the usage patterns and preferences of
+the particular users. For example, large data transfers can use any available
+capacity, while the media streaming applicaitons require limited capacity to
+function correclty. Video-conferencing applications typically need less
+capacity than high-definition video streaming.
+
+### Latency metrics
+
+/* Maybe move to appendix ? */
+
+End-to-end latency is the time that a particular packet takes to traverse the
+network path from the user to their destination and back.  The end-to-end
+latency comprises several components:
+
+1. The propagation delay, which reflects the path distance and the individual
+   link technologies (e.g. fibre vs satellite). The propagation doesn't depend
+   on the utilization of the network, to the extent that the network path
+   remains constant.
+2. The buffering delay, which reflects the time segments spend in the memory of
+   the network equipment that connect the individual network links, as well as
+   in the memory of the transmitting endpoint. The buffering delay depends on
+   the network utilization, as well as on the algorithms that govern the queued segments.
+3. The transport protocol delays, which reflects the time spent in
+   retransmission and reassembly, as well as the time spent when the transport
+   is "head-of-line blocked."
+4. Some of the workshop sumbissions have explicitly called out the application
+   delay, which reflects the inefficiencies in the application layer.
+
+/* Idle latency vs. LUL - shorten */
+Tradionally, end-to-end latency is measured when the network is idle. Results of such
+measurements reflect mostly the propagation delay, but not other kinds of
+delay. This report uses the term "Idle latency" to refer to results achieved
+under idle network conditions.
+
+Alternatively, if the latency is measured when the network is under its typical working conditions, the results reflect all kinds of delays. This report uses the term "Working latency" to refer to such results. Other sources use the term "Latency under load" (LUL) as a synonym.
+
+Data presented at the workshop reveals a substantial difference between the
+idle latency and the working latency. Depending on the traffic direciton and
+the technology type, the working latency is between 6 to 25 times
+higher than the idle latency:
+
+| Direction | Technology type | Working latency | Idle latency | Working - Idle difference | Working / Idle ratio |
+| Downstream | FTTH | 148 | 10 | 138 | 15 |
+| Dowstream | Cable | 103 | 13 | 90 | 8 |
+| Downstream | DSL | 194 | 10 | 184 | 19 |
+| Upstream | FTTH | 207 | 12 | 195 | 17 |
+| Upstream | Cable | 176 | 27 | 149 | 6 |
+| Upstream | DSL | 686 | 27 | 659 | 25 |
+
+
+While historically the tooling available for measuring latency focused on
+measuring the idle latency, there is a trend in the industry to start measuring
+the working latency as well, e.g. {{tools.apple_networkQuality}}.
+
+
+### Measurement methodologies
+
+The participants have proposed several concrete methodologies for measuring the
+network quality for the end users.
+
+{{Paasch2021}} introduced a new dimensionless metric, called RPM
+(which stands for "round-trips per minute"), to communicate the quality of the
+network to the end users. The metric represents the number of round trips a
+segment can make within a minute when the network is under its typical working
+conditions. The RPM metric reflects the combination of the propagation delay,
+the buffering delay and the transport protocol delays. The RPM metric is designed
+to be easy to explain to the general public - the higher values reflect better
+network conditions, and the typical values are 3-4 digits.
+
+{{Mathis2021}} have applied the RPM metric to the results of more than 4
+billion download tests that were performed by M-Lab betwen 2010 and 2021.
+During this timeframe, the measurement platform that M-Lab uses underwent
+several upgrades, which allowed the research team to compare different versions
+of the TCP CCAs. The study have demonstrated that the Cubic CCA have lowered
+the responsiveness, which is attributed to the fact that Cubic uses large
+network queues to maximize throughput.  A subsequent upgrade to the BBR CCA
+have demonstrated increased responsivness (with the exception of several
+locations such as NYC), which is consitent with the BBR design that makes
+efforts to estimate the network capacity better, and relies on the capacity
+estimations and pacing to maximize the throuhgput, vs. large queues.
+
+The study have demonstrated that aside from the platform upgrades, the reported
+RPM values are similar between the adjacent months, which suggests that the RPM
+metric is stable. Changes in RPM metric that could not be attributed to changes
+in the M-Lab platform were found to be consistent and lasting for several
+months, which suggests that these were caused by ISPs upgrading their
+equipment, or other events to the similar effect.
+
+{{Schlinker2019}} presented a large scale study of the correlation between the
+goodput and the quality of the experience of users of a large social network.
+
+The authors performed the measurements at multiple datacenters from which video
+segmetns of a set size were streamed to a large number of end users. The
+authors used "the probability of transmitting vvideo segment of size S at
+goodput G" as the metric. Goodput is highly dependent on the transport delays,
+but is less sensitive to the latency. Further, the goodput is highly dependent
+on the choice of the transport protocol (the authors used QUIC with BBRv1.)
+
+Specifically, the authors suggested using the probabilty of
+achieving desired goodput G when transmitting object of set size S.
+
+TODO: insert formula
+
+The choice of goodput and the logicistical metric were driven by the need to
+assess the maximal quality of the content that can be effectively served by the
+network. Specifically, the suggested metric has several properties that are
+desireable for operators of large scale video streaming service:
+
+1. The suggested metric is easy to aggregate, and therefore can be used to
+   reflect the network quality across multiple connections - up to the scale of
+   entire autonomous systems.
+2. The suggested metric is directly applicable to the operators of streaming
+   media services, since it allows to choose the most appropriate compression
+   algorithms and bitrates to achieve the highest quality for a given network
+   connection (or an aggregate, such as AS), without significant degradation of
+   goodput.
+
+The study have found that the short video clips, which constitute the majority
+of the traffic, are typically consumed in a sequential way. Since the
+sequential consumption of video is less sensitive to the buffering delays than
+random-access consumption, the goodput metric may not be as sensitive to the
+buffering delay as the RPM metric. It is, however, influenced by all types of
+delay, and in particular is useful for identifying infrstructure nodes that are
+shared by multiple forms of traffic.
+
+As such, the suggested metric seems highly valuable to the operators of
+streaming services, either when estimated the needed network capacity, or when
+deciding what bitrate values to use in order to deliver the content at the
+highest quality without stretching the capacity of the network.
+
+
+{{Reed2021}} presents analysis of working latency measurements that were collected as part of "Measuring Broadband America" (MBA) program.
+
+The MBA program is run by FCC, and it has been publishing a yearly report that compares the capacity (referred to as "speed") and the idle latency of major US ISPs.
+While the MBA report does not include working latency comparison, the platform it uses for the measurements does collect the data. {{Reed2021}} used a subset of the collected data to identify important variations of the working latency across different ISPs. Their study had 
+
+By analyzing the working latency data from the MBA datasets, {{Reed2021}} have found that  
+While the 
+### RPM metric considerations
+
+The workshop participants have agreed that the RPM metric is an effective way
+to communicate the network quality to the end users.
+
+There's remaining work to be done before the RPM metric can be used as an
+industry standard:
+
+- The use of natural traffic vs. synthetic traffic.
+
+The RPM metric, as defined in {{Paasch2021}}, relies on synthetic traffic to
+bring the network into the working conditions.
+
+There are pros and cons of the use of the synthetic traffic when compared to
+the natural traffic that's generated by the applications which the end user
+runs.
+
+Using natural traffic to measure the responsiveness of the network is more
+reflective of the interactions of users with the specific application.
+Additionally, utilizing natural traffic to measure the network responsiveness
+does not consume any additional resources beyond what is required by the
+applications. Finally, using the natural traffic minimizes any potential impact
+of the measurement on other applications.
+
+Using the synthetic traffic to measure the responsiveness has the benefit of
+reliably assessing the responsiveness when used by any particular applicaiton,
+or by multiple applicaitons at once. The results of responsiveness
+test that utilizes synthetic traffic allow comparing different
+equipment or different locaitons in a fair way. Additionally, using a
+synthetic traffic makes it easier to standardize the responsiveness
+test - both the specific protocols that are used, as well as the test dynamics.
+Finally, the use of active measurement alleviates the privacy concerns
+that may arise if the users were not aware that their activities are used
+to measure the quality of the network.
+
+Work remains on making the RPM methodology more robust, as well as on
+reconciling the two fundamental ways of measuring the network responsivenes.
+This work had been taken to the IPPM working group within the IETF.
+
+The workshop participants believe that it would be valuable to develop
+methodology which could be used by the community to reconcile the RPM metric
+with the goodput metric.
+
+### Metrics considerations - conclusions
+
+Through the course of the workshop, the following statements have emerged:
+
+Both the goodput and the latency are important to measure. Today, users in many
+locations around the world have access to gigabit throughput, and measuring the
+latency is more important for these. Otehr users can not (yet) benefit from the
+high-bandwidth network access. For these users, both throughput and latency
+should be measured.
+
+When measuring the latency, one should measure the latency under typical
+working conditions, since the idle latency is not a good estimator of the user
+experience. Data shows that there is dramatic difference between the idle
+latency and the working latency. The RPM metric, described in {{Paasch2021}}
+is one way to communicate the working latency to the users.
+
+Most of existing tools today focus on measuring idle latency. It is important
+to continue invsesting into a standard methodology (and a toolkit) to make
+it possible for anyone to measure the working latency.
+
+
 ## Cross-layer considerations
 
 In the Cross-layer section participants presented material and discussed
@@ -488,7 +750,7 @@ provide context.
 10. End-users that want to be involved in QoS decisions should be able
     to voice their needs and desires.
 11. Applications are needed that can perform and report good quality
-    measurements in order to identify insufficient points in 
+    measurements in order to identify insufficient points in
     network access.
 12. Research done by regulators indicate that users/consumers prefer
     a simple metric per application, which frequently resolves to
@@ -693,26 +955,26 @@ The workshop chairs consisted of:
 
 The program committee consisted of:
 
-    Christoph Paasch 
-    Cullen Jennings 
-    Geoff Huston 
-    Greg White 
-    Jari Arkko 
-    Jason Livingood 
-    Jim Gettys 
-    Katarzyna Kosek-Szott 
-    Kathleen Nichols 
+    Christoph Paasch
+    Cullen Jennings
+    Geoff Huston
+    Greg White
+    Jari Arkko
+    Jason Livingood
+    Jim Gettys
+    Katarzyna Kosek-Szott
+    Kathleen Nichols
     Keith Winstein
-    Matt Mathis 
-    Mirja Kuehlewind 
-    Nick Feamster 
-    Olivier Bonaventure 
-    Randall Meyer 
-    Sam Crowford 
-    Stuart Cheshire 
-    Toke Hoiland-Jorgensen 
-    Tommy Pauly 
-    Vint Cerf 
+    Matt Mathis
+    Mirja Kuehlewind
+    Nick Feamster
+    Olivier Bonaventure
+    Randall Meyer
+    Sam Crowford
+    Stuart Cheshire
+    Toke Hoiland-Jorgensen
+    Tommy Pauly
+    Vint Cerf
 
 # Github Version of this document
 
