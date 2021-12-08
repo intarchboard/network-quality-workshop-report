@@ -469,25 +469,35 @@ TBD:
 
 ### Capacity metrics
 
-To achieve the desireable network quality, the line capacity must be sufficient
-to meet the user demands. If the line capacity isn't sufficient, adding
-capacity may improve the quality of the connection. Once sufficient, further
-capacity increases will not lead to improvements in quality, as the line will
-become underutilized.
+If the network capacity does not meet the user demands, the network quality
+will be impacted. Once the capacity meets the demands, increasing capacity
+won't lead to further quality improvements.
 
-The actual line capacity varies throughput the day and across multiple days.
-The variance is not uniform across the different technologies and across the
-different service levels. For example, data indicates that the variance have
-increased for the DSL lines that were upgraded to 100Mbps and above.
+The actual network connection capacity is determined by the equipment and the
+lines along the network path, and it varies throughout the day and across
+mutliple days. Studies involving DSL lines in North America indicate that over
+30% of the DSL lines have capacity metrics that vary by more than 10%
+throughout the day and accross multiple days.
 
-Similarly, the user demands vary through the course of the day, depending on the
-number of users, as well as on the way in which they use the network.
+Some factors that affect the actual capacity are:
+1. Presence of a competing traffic, either in the LAN or in the WAN
+   environments. In the LAN setting, the competing traffic reflects the
+   multiple devices that share the Internet connection. In the WAN setting the
+   competing traffic often originates from the unrelated network flows that
+   happen to share the same network path.
+2. Capabilities of the equipment along the path of the network connection,
+   including the data transfer rate and the amount of memory used for
+   buffering.
+3. Active traffic management measures, such as traffic shapers and policers
+   that are often used by the network providers.
 
-To measure both accurately, multiple measurements must be run through the
-course of each day.
+There are other factors that can negatively affect the actual line capacities.
 
-Other types of traffic, such as browsing the web, can benefit from increases in
-throughput, up to a certain point.
+The user demands of the traffic follow the usage patterns and preferences of
+the particular users. For example, large data transfers can use any available
+capacity, while the media streaming applicaitons require limited capacity to
+function correclty. Video-conferencing applications typically need less
+capacity than high-definition video streaming.
 
 ### Latency metrics
 
