@@ -492,7 +492,7 @@ Suggestion - desireable properties exercises. As we are looking at the parametri
 
 When the parameters are changed to the extreme, such as conectedness, some other designs will emerge. One case study is the Interplatnetary Protocol, where "ping" is no long indicative of anything. While we look at responsiveness, we should not ignore connectivity.
 
-Backward compatibility is painful. IPv6/IPv4 could have been done better if the backward compatibility was considered. If Vint was able to talking to his 25-year younger self, he would stress the importance of the 192.168 space. May be too late for IPv6, but not too late for the future laying problems.
+Backward compatibility is painful. IPv6/IPv4 could have been done better if the backward compatibility was considered. May be too late for IPv6, but not too late for the future laying problems.
 
 IPv6 is still not implemented fully, it’s been a long road since 1996, and we are still not there. 1996 the thinking was that it was quite easy to implmenet IPv6, but that did not happen. In 1996 the dot-com boom happened, lots of money went fast, and the moment was not caught in time while the market had expanded exponentially. A cautionary tale.
 
