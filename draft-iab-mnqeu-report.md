@@ -592,6 +592,93 @@ between physically wired and wireless connections and the difficulties
 of accurately determining problem spots when multiple different
 network types are responsible for the quality.
 
+
+he participants have agreed that no single component of a network connection
+has all the data to be able to measure the effects of the network performance
+on the quality of the end user experience.
+
+- The applications that are running on the end-user devices have the best
+  insight into their respective performance, but have limited visibility into
+  the behavior of the network, and are not able to act on the limited information
+  about the network performance.
+- The Internet service providers have good insight into the QoS considerations,
+  but are not able to infer the effect of the QoS metrics on the quality of the
+  end user experience.
+- The content providers have good insight into the aggregated behavior of the
+  end users, but lack the insight on what aspects of the network performance
+  are the leading indicators of the users behavior.
+
+The workshop had identified the need for a standard and extensible way to
+exchange the network performance. Such exchnage standard should address the
+folowing aspects:
+
+- Scalable way to capture the performance of multiple (potentially thousandsof) endpoints.
+- Accompanying set of tools to analyze the data.
+- A transparent model for giving the different actors on the network connection
+  an incentive to share the performance data they collect.
+- Prservation of the privacy of the end users. In particular, federated
+  learning approaches, where no centralized entity has the access to the whole
+  picture, are preferred.
+- The data exchange format should include precautions against data
+  manipulations, so that the different actors won't be tempted to game the
+  mechanism.
+
+### Separation of concerns
+
+Commonly, there's a tight coupling between 
+a. collecting performance metrics,
+b. interpreteting those metrics and 
+c. acting upon the intrepretation of the metrics.
+
+Unfortunately, such model is not the best for achieving exchange of the
+cross-layer data:
+- The actors that have the ability to collect particular performance metrics
+  (e.g. the TCP RTT) do not necessarily have the context necessary for a
+  meaningful interpretation.
+- The actors that have the context and the computational/storage capacity for
+  the interpretation do not necessarily have the abilty to control the behavior
+  of network / application.
+- The actors that can control the behavior of network / application typically
+  do not have access to the data. 
+
+The participatns have agreed that it is important to separate the above three
+aspects, so that:
+- The different actors that have the data but not the ability to interpret /
+  act upon will be able to publish the measured data
+- The actors that have the expertise in interpreting and synthesizing the
+  performanace data will be able to publish the results of the interpetation /
+  synthesis
+- The actors that act upon the interpretation are 
+
+### Security and privacy considerations
+
+Preserving the privacy of the end users is a hard requirement. There is an intrinsic tradeoff between collecting more data about the activities of the users, and infringing their privacy.
+
+
+### Concrete suggestsions
+
+- The TCP protocol makes several metrics available for the passive measurement,
+  and the following metrics were found effective:
+  - TCP connection latency using SACK/ACK measurements, as well as the timing
+    between the TCP retransmission events, are good proxies for the end-to-end
+    RTT.
+  - On Linux platform, the tcp_info structure is the de-facto standard for the
+    application to introspect the performance of kernel-space networking. There
+    is no equivalent de-facto standard for the user-space networking.
+- The QUIC/MASQUE protocols make passive performance measurment more difficult.
+  For these protocols, an approach that uses federated measurement /
+  hierarchical aggregation appears more valuable. 
+  - The QLOG format seems to be the most mature candidate for souch exchange.
+
+
+Security, privacy and data protections considerations make the cross-layer 
+The participants agreed that observability across multiple layers is necessary for measurement of the network quality.
+
+
+One sentiment shared by sevearal participants is that 
+
+
+
 Presentation by {{Kerpez2021}} showed that as the Internet access becomes the norm, the limited bandwidth of 2.4Ghz wifi is more often than not the bottleneck. In comparison, the wider bandwidth of the 5Ghz WiFi have only been the bottleneck in 20% of the observations.
 
 ### Towards future cross-layer observability {#discussions-cross-observability}
