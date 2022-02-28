@@ -360,43 +360,47 @@ is a crucial part of everyone’s daily life. People use the Internet for their
 social life, for their daily jobs, for routine shopping, and for keeping up
 with major events. An increasing number of people can access a Gigabit
 connection, which would be hard to imagine a decade ago. And, thanks to
-improvements in security, people trust the Internet for both planning their
-finances and for everyday payments.
+improvements in security, people trust the Internet for financial
+banking transactions, purchasing goods and everyday bill payments.
 
-At the same time, some aspects of end-user experience have not improved as much.
-Many users have typical connection latency that remains at decade-old levels.
-Despite significant reliability improvements in data center environments, end
-users often see interruptions in service. Despite algorithmic advances in the
-field of control theory, one can often find that the queuing delay in the
-last-mile equipment exceeds the accumulated transit delay. Transport
-improvements, such as QUIC, Multipath TCP, and TCP Fast Open are still not
-fully supported in some networks. Likewise, various advances in the security
-and privacy of user data are not widely supported, such as encrypted DNS to the
-local resolver.
+At the same time, some aspects of end-user experience have not
+improved as much.  Many users have typical connection latencies that
+remain at decade-old levels.  Despite significant reliability
+improvements in data center environments, end users also still often see
+interruptions in service. Despite algorithmic advances in the field of
+control theory, one still finds that the queuing delays in the
+last-mile equipment exceeds the accumulated transit delays. Transport
+improvements, such as QUIC, Multipath TCP, and TCP Fast Open are still
+not fully supported in some networks.
+<!-- I'm not sure there is agreement about this next sentence - Wes -->
+Likewise, various advances in
+the security and privacy of user data are not widely supported, such
+as encrypted DNS to the local resolver.
 
-Some of the major factors behind this lack of progress is the popular perception
-that throughput is the often sole measure of the quality of Internet
-connectivity. With such narrow focus, the workshop aimed to discuss various
-questions:
+Some of the major factors behind this lack of progress is the popular
+perception that throughput is the often sole measure of the quality of
+Internet connectivity. With such narrow focus, the Measuring Network
+Quality for End-Users workshop aimed to discuss various questions:
 
-- What is the latency under typical working conditions?
-- How reliable is the connectivity across longer time periods?
-- Does the network allow the use of a broad range of protocols?
-- What services can be run by clients of the network?
+- What is user latency under typical working conditions?
+- How reliable is connectivity across longer time periods?
+- Do networks allow the use of a broad range of protocols?
+- What services can be run by network clients?
 - What kind of IPv4, NAT, or IPv6 connectivity is offered, and are there
   firewalls?
 - What security mechanisms are available for local services, such as DNS?
 - To what degree are the privacy, confidentiality, integrity, and authenticity
   of user communications guarded?
-- Improving these aspects of network quality will likely depend on measurement
-  and exposing metrics to all involved parties, including to end users in a
-  meaningful way. Such measurements and exposure of the right metrics will
-  allow service providers and network operators to focus on the aspects that
-  impacts the users’ experience most and at the same time empowers users to
-  choose the Internet service that will give them the best experience.
-- What are the fundamental properties of a network that contribute to good user
-  experience?
-- What metrics quantify these properties, and how to collect such metrics in a
+- Improving these aspects of network quality will likely depend on
+  measurement and exposing metrics in a meaningful way to all involved
+  parties, including to end users. Such measurement and exposure of
+  the right metrics will allow service providers and network operators
+  to concentrate focus on their users’ experience and will
+  simultaneously empower users to choose the Internet service
+  providers that can deliver the best experience based on their needs.
+- What are the fundamental properties of a network that contributes to
+  a good user experience?
+- What metrics quantify these properties, and how can we collect such metrics in a
   practical way?
 - What are the best practices for interpreting those metrics, and incorporating
   those in a decision making process?
@@ -465,24 +469,24 @@ archives of the papers, presentations and recorded videos.
 - Yaakov (J) Stein. "The Futility of QoS" {{Stein2021}}
 
 
-# Discussions {#discussions}
+# Workshop Topics and Discussion {#discussions}
 
-The three day workshop was broken into four separate sections, including
-introductory material and conclusions, that each played a role in framing the
-discussions.
+The three day workshop was broken into four separate sections,
+including introductory material, that each played a role in framing
+the discussions. This was followed by a discussion about conclusions
+that could be agreed upon by workshop participants ({{conclusions}}).
 
 ## Introduction and overviews
 
-The Introduction section allowed participants to introduce and discuss the
-problem space, existing mechanisms for QoS and QoE measurements. Also discussed
-was the interaction between multiple users within the Network, as well as the
+The Introduction section allowed participants to introduce and discuss
+the problem space, existing mechanisms for Quality of Service (QoS)
+and Quality of Experience (QoE) measurements. Also discussed was the
+interaction between multiple users within the network, as well as the
 interaction between multiple layers of the OSI stack.  Some existing
-measurement works were presented.  Vint Cerf provided a key note describing the
-history and importance of the topic.
+measurement works were presented.  Vint Cerf provided a key note
+describing the history and importance of the topic.
 
-# Workshop Topics and Discussion {#discussion-topics}
-
-## Key points from the keynote by Vint Cerf {#dicsucssion-intro-keynote}
+### Key points from the keynote by Vint Cerf {#dicsucssion-intro-keynote}
 
 We may be operating in a space with dramatically different parameters compared to 30 years ago. This differentiation justifies re-considering not only the importance of one metric over the other, but also re-considering the entire metaphore.
 
@@ -500,17 +504,29 @@ Last points - performance across multiple hops in the Internet. We’ve not seen
 
 Multi-hop networks are gradually replaced by humongous flat networks with sufficient connectivity to other operators so that the system becomes 1 hop or 2 hop at most (e.g. Google, Facebook, Amazon). Architecture of the Internet is changing.
 
-## Introductory talks  {#discussion-introductions}
+### Introductory talks  {#discussion-introductions}
 
 The workshop started with a broad focus on the state of the Internet today.
 
-The Internet is a shared network, that's based on the IP protocol and packet-switching to interconnect multiple autonomous networks. Departure from circuit-switching allowed the Internet to scale beyond any other known network. On the other hand, the lack of in-network regulation made it difficult to ensure that every user has the best experience.
+The Internet is a shared network, built on the IP protocols using
+packet-switching to interconnect multiple autonomous networks. The
+Internet's departure from circuit-switching technologies allowed it to
+scale beyond any other known network. On the other hand, the lack of
+in-network regulation made it difficult to ensure the best experience
+for every user.
 
 As the use cases of the Internet continue to expand, it becomes increasingly more difficult to predict which network characteristics will lead to the best user experience. When used simultaneously, the different application classes, e.g., video streaming and teleconferencing, can affect the experience of their users in complex ways. The Internet utilization is shifting rapidly during the course of a day, week and year, which further complicates identifying key metrics which can predict good user experience.
 
 Quality of Service (QoS) initiatives attempted to overcome those difficulties by strictly prioritzing the different types of traffic. However, the QoS metrics do not always correlate with the user experience. The utility of QoS is further limited by the difficulties in building solutions with the desired QoS characteristics.
 
-Quality of Experience (QoE) initiatives attempted to integrate the psychological aspects of how quality is perceived, and to create statistical model which can be useful to optimize the user experience. Despite the high modeling efforts, QoE approach have reached some success in certain application classes. Unfortunately, it is still difficult to generalize the models, and the question of how different applications affect each other when sharing the same network remains open.
+Quality of Experience (( QoE)) initiatives attempted to integrate the
+psychological aspects of how quality is perceived, and to create
+statistical model which can be useful to optimize the user
+experience. Despite the high modeling efforts, QoE approach have
+reached some success in certain application classes. Unfortunately, it
+is still difficult to generalize the models, and the question of how
+different applications affect each other when sharing the same network
+remains open.
 
 The focus of the industry on giving the end-user more throughput had led to remarkable advances. In many places around the world, a home user can enjoy a Gigabit link to their Internet Service Provider, something so remarkable that it would be brushed off as science fiction a decade ago. However, this focus came at the expense of neglecting the other important core metric, the latency in working conditions. As a result, end-user whose experience is negatively affected by latency will be advised to upgrade their equipment to get more throughput. {{MacMillian2021}} showed that sometimes such upgrade can lead to latency improvements, due to the economical reasons of overselling the "value-priced" data plans.
 
@@ -522,7 +538,7 @@ The "home router front" is not the only place that can benefit from clearer indi
 
 Finally, the Internet infrastructure that connects the applictions to the users is yet another place where better measurements may help driving towards the better Internet.
 
-## Introductory talks - key points  {#discussion-introductions-summary}
+### Introductory talks - key points  {#discussion-introductions-summary}
 
 1. Measuring bandwidth is necessary but not sufficient.
 2. In many cases, Internet users don’t need more bandwidth, but rather
@@ -574,7 +590,7 @@ These studies have stressed the importance of measurement of the working latency
 
 Another source of high working latency is in the network routers that are exposed to cross-traffic. As {{Schlinker2019}} indicated, these become saturated during the peak hours of the day. Systematic testing of the working latency can help improve the infrastructure.
 
-### Key points {#discussions-metrics-key-points}
+### Metrics Key Points {#discussions-metrics-key-points}
 
 1. Availability and capacity are "hygienic factors" - unless the application is capable of using extra capacity, the end-users see little benefit in overprovisioning.
 2. The working latency has stronger correlation with user experience than the idle latency. The working latency can exceed the idle latency by order of magnitude.
@@ -582,7 +598,7 @@ Another source of high working latency is in the network routers that are expose
 3. The relationship between throughput and goodput can be effective in finding the saturation points, both in client-side {{Paasch2021}} and server-side {{Schlinker2019}} settings.
 4. Working latency depends on the choice of the algorithms for endpoint congestion control and for router queuing.
 
-## Cross-layer considerations {#discussions-cross-layer}
+## Cross-layer Considerations {#discussions-cross-layer}
 
 In the Cross-layer section participants presented material and discussed
 how accurately measuring exactly where problems occur is difficult
@@ -623,7 +639,7 @@ folowing aspects:
   manipulations, so that the different actors won't be tempted to game the
   mechanism.
 
-### Separation of concerns
+### Separation of Concerns
 
 Commonly, there's a tight coupling between 
 a. collecting performance metrics,
@@ -650,12 +666,12 @@ aspects, so that:
   synthesis
 - The actors that act upon the interpretation are 
 
-### Security and privacy considerations
+### Security and Privacy Considerations
 
-Preserving the privacy of the end users is a hard requirement. There is an intrinsic tradeoff between collecting more data about the activities of the users, and infringing their privacy.
+Preserving the privacy of the end users is a hard requirement. There is an intrinsic trade-off between collecting more data about the activities of the users, and infringing their privacy.
 
 
-### Concrete suggestsions
+### Concrete Suggestions
 
 - The TCP protocol makes several metrics available for the passive measurement,
   and the following metrics were found effective:
@@ -681,7 +697,7 @@ One sentiment shared by sevearal participants is that
 
 Presentation by {{Kerpez2021}} showed that as the Internet access becomes the norm, the limited bandwidth of 2.4Ghz wifi is more often than not the bottleneck. In comparison, the wider bandwidth of the 5Ghz WiFi have only been the bottleneck in 20% of the observations.
 
-### Towards future cross-layer observability {#discussions-cross-observability}
+### Towards Future Cross-layer Observability {#discussions-cross-observability}
 
 The ownership of the Internet is spread across multiple administrative domains, making access to performance data difficult. Furthermore, the immense scale of the Internet makes aggregation and analysis of such data difficult. {{Marx2021}}  presented a simple logging format that could potentially be used to collect and aggregate data from different layers.
 
@@ -691,7 +707,7 @@ Despite all the challenges, it should still be possible to perform limited-scope
 
 On the server side, the `tcp_info` structure can be decorated with performance information from other layers to give richer data set.
 
-### Efficient collaboration between hardware and transport protocols {#discussions-cross-layer-hw-tp}
+### Efficient Collaboration Between Hardware and Transport Protocols {#discussions-cross-layer-hw-tp}
 
 With the advent of the L4S congestion notification and control, there's even higher need for the transport protocols and the underlying hardware to work in unison.
 
@@ -701,7 +717,9 @@ Another design trait that's common in the home routers is use of packet aggregat
 
 Following the famous "you can't improve what you don't measure" adage, it is important to expose these aggregation delays in a way that would allow identifying the bottlenecks, and making the hardware more suitable for the next generation transport protocols.
 
-### Key points {#cross-layer-keypoints}
+### Cross-Layer Key Points {#cross-layer-keypoints}
+
+TBD
 
 ## Synthesis
 
@@ -712,10 +730,9 @@ that can make sense to end users trying to make subscription
 decisions.
 
 
+### Synthesis Key Points
 
-### Key points
-
-# Conclusions
+# Conclusions {#conclusions}
 
 During the final hour of the workshop we gathered statements that the
 group thought were summary statements from the 3 day event.  We later
