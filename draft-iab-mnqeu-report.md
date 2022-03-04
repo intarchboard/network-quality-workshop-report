@@ -515,38 +515,91 @@ scale beyond any other known network. On the other hand, the lack of
 in-network regulation made it difficult to ensure the best experience
 for every user.
 
-As the use cases of the Internet continue to expand, it becomes increasingly more difficult to predict which network characteristics will lead to the best user experience. When used simultaneously, the different application classes, e.g., video streaming and teleconferencing, can affect the experience of their users in complex ways. The Internet utilization is shifting rapidly during the course of a day, week and year, which further complicates identifying key metrics which can predict good user experience.
+As the Internet use cases continue to expand, it becomes increasingly
+more difficult to predict which network characteristics correlate with
+better user experiences. Different application classes, e.g., video
+streaming and teleconferencing, can affect user experience in complex,
+and difficult to measure ways. Internet utilization shifts rapidly
+during the course of each day, week and year, which further
+complicates identifying key metrics capable of predicting a good user experience.
 
-Quality of Service (QoS) initiatives attempted to overcome those difficulties by strictly prioritzing the different types of traffic. However, the QoS metrics do not always correlate with the user experience. The utility of QoS is further limited by the difficulties in building solutions with the desired QoS characteristics.
+Quality of Service (QoS) initiatives attempted to overcome these
+difficulties by strictly prioritizing different types of
+traffic. However, QoS metrics do not always correlate with user
+experience. The utility of the QoS metric is further limited by the difficulties in building solutions with the desired QoS characteristics.
 
 Quality of Experience (( QoE)) initiatives attempted to integrate the
-psychological aspects of how quality is perceived, and to create
-statistical model which can be useful to optimize the user
-experience. Despite the high modeling efforts, QoE approach have
-reached some success in certain application classes. Unfortunately, it
-is still difficult to generalize the models, and the question of how
-different applications affect each other when sharing the same network
-remains open.
+psychological aspects of how quality is perceived, and created
+statistical models designed to optimize the user experience. Despite
+these high modeling efforts, the QoE approach proved beneficial in
+certain application classes. Unfortunately, generalizing the models
+proved to be difficult, and the question of how different applications
+affect each other when sharing the same network remains open.
 
-The focus of the industry on giving the end-user more throughput had led to remarkable advances. In many places around the world, a home user can enjoy a Gigabit link to their Internet Service Provider, something so remarkable that it would be brushed off as science fiction a decade ago. However, this focus came at the expense of neglecting the other important core metric, the latency in working conditions. As a result, end-user whose experience is negatively affected by latency will be advised to upgrade their equipment to get more throughput. {{MacMillian2021}} showed that sometimes such upgrade can lead to latency improvements, due to the economical reasons of overselling the "value-priced" data plans.
+The industry's focus on giving the end-user more throughput/bandwidth
+led to remarkable advances. In many places around the world, a home
+user enjoys gigabit speeds to their Internet Service Provider.  This
+is so remarkable that it would have been brushed off as science
+fiction a decade ago. However, the focus on increased capacity came at
+the expense of neglecting the other important core metric: latency. As
+a result, end-users whose experience is negatively affected by high
+lateness were advised to upgrade their equipment to get more
+throughput instead. {{MacMillian2021}} showed that sometimes such an upgrade can lead to latency improvements, due to the economical reasons of overselling the "value-priced" data plans.
 
-As the industry continues to give the end user more throughput, while neglecting the latency, the application design starts to employ various techniques to hide latency and short disruption in service, e.g., web browsers relying on the local cache. While such techniques can clearly improve the user experience when using stale data is acceptable, this development is further decoupling user experience from the core metrics.
+As the industry continued to give the end user more throughput, while
+neglecting the latency metric, application designs started to employ
+various latency and short service disruption hiding techniques.  For
+example, user experience of web browser performance is closely tired
+to the content in the local cache. While such techniques can clearly
+improve the user experience when using stale data is acceptable, this
+development is further decoupling user experience from the core
+metrics.
 
-In the recent 10 years, efforts by Dave Taht and the bufferbloat society had led to significant progress in the queuing algorithms that can reduce the latency under load compared to the simipler FIFO queues. Unfortunately, the home router industry is yet to implement these algorithms, due to the market reasons. Most home router manufacturers depend on SoC acceleration to be able to make products with the desired throughput. The SoC manufacturers opt to use simpler algorithms and aggressive aggregation, reasoning that a higher-throughput chip will have guaranteed demand. Because what consumers get is a choice between different high throughput devices, the perception of higher throughput leads to higher quality continues to strengthen.
+In the most recent 10 years, efforts by Dave Taht and the bufferbloat
+society had led to significant progress updating queuing algorithms to
+reduce latencies under load compared to simipler FIFO
+queues. Unfortunately, the home router industry has yet to implement
+these algorithms, mostly due to marketing and cost reasons. Most home
+router manufacturers depend on System on a Chip (SoC) acceleration to
+to make products with a desired throughput. The SoC manufacturers opt
+for simpler algorithms and aggressive aggregation, reasoning that a
+higher-throughput chip will have guaranteed demand. Because consumers
+are offered choices primarily between different high throughput
+devices, the perception that a higher throughput leads to higher a
+quality of service continues to strengthen.
 
-The "home router front" is not the only place that can benefit from clearer indication of what matters more for the users. Since users perceive the Internet via the lens of applications, its important to appeal to the application vendors to adopt solutions that stress lower working latency. Unfortunately, while bandwidth is straightforward to measure, responsiveness is tricky. Many applications have found a set of metrics which they see helpful, but those don't seem to be universally applicable. Further, due to the high competiveness of the application space, application vendors may have economic reasons to avoid sharing the most useful metrics.
+The home router is not the only place that can benefit from clearer
+indications of acceptable performance for users. Since users perceive
+the Internet via the lens of applications, its important to appeal to
+the application vendors that they should adopt solutions that stress
+lower latencies. Unfortunately, while bandwidth is straightforward to
+measure, responsiveness is trickier. Many applications have found a
+set of metrics which are helpful to their realm, but these are not
+generalizable and universally applicable. Furthermore, due to the
+highly competitive application space, vendors may have economic
+reasons to avoid sharing their most useful metrics.
 
+<!-- incomplete: suggest we leave it out
 Finally, the Internet infrastructure that connects the applictions to the users is yet another place where better measurements may help driving towards the better Internet.
+-->
 
 ### Introductory talks - key points  {#discussion-introductions-summary}
 
-1. Measuring bandwidth is necessary but not sufficient.
+1. Measuring bandwidth is necessary, but is not alone sufficient.
 2. In many cases, Internet users don’t need more bandwidth, but rather
-   need "better bandwidth" -- i.e., they need other improvements to
-   their connectivity.
-3. The users perceive the quality of their Internet connection through the behavior of applications they use, which are affected by a combination of factors. There's little value in exposing the typical user to the entire spectrum of possible reasons, as the users thinking of the Internet in terms of their use cases.
-4. Many of the factors that affect the user experience are out of the users' hand. It's unclear whether exposing the users to these factors will help. Users prefer simple, categorical choices.
-5. The Internet content market is highly competitive, and many applications develop their own "secret sauce."
+   need "better bandwidth" -- i.e., they need other connectivity improvements.
+3. The users perceive the quality of their Internet connection based
+   on the applications they use, which are affected by a combination
+   of factors. There's little value in exposing a typical user to the
+   entire spectrum of possible reasons for the poor performance
+   perceived in their application-centric view.
+4. Many factors affecting user experience are outside the users'
+   sphere of control. It's unclear whether exposing the users to these
+   other factors will help user's understand their performance
+   state. In general, users prefer simple, categorical choices
+   (e.g. "good", "better", and "best" options).
+5. The Internet content market is highly competitive, and many
+   applications develop their own "secret sauce."
 
 ## Metrics considerations {#discussion-metrics}
 
