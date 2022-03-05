@@ -497,21 +497,56 @@ topic.
 
 ### Key points from the keynote by Vint Cerf {#dicsucssion-intro-keynote}
 
-We may be operating in a space with dramatically different parameters compared to 30 years ago. This differentiation justifies re-considering not only the importance of one metric over the other, but also re-considering the entire metaphore.
+We may be operating in a networking space with dramatically different
+parameters compared to 30 years ago. This differentiation justifies
+re-considering not only the importance of one metric over the other,
+but also re-considering the entire metaphor.
 
-Very timely for the experts to look not only at adjusting TCP, but also at exploring other protocols, such as QUIC (but others as well). It's important to feel free to consider alternatives to TCP. TCP is not a teddy bear, and one should not be afraid to replace it.
+It is time for the experts to look at not only at adjusting TCP, but
+also at exploring other protocols, such as QUIC and others as
+well. It's important that we feel free to consider alternatives to
+TCP. TCP is not a teddy bear, and one should not be afraid to replace
+it with a transport later with better properties benefiting users.
 
-Suggestion - desireable properties exercises. As we are looking at the parametric spaces, one can identify the “desireable properties”, as opposed to “fundamental properties”. Among such properties, there may be a low-latency. ARPA example - you want to know where the missile is now, not where it was. Understanding what is driving the particular parameter in the design space.
+A suggestion: we should consider desirable properties exercises. As we
+are looking at the parametric spaces, one can identify “desirable
+properties”, as opposed to “fundamental properties”. Among such
+properties, there may be a low-latency property. An example coming
+from ARPA: you want to know where the missile is now, not where it
+was. Understanding what is driving the particular parameter in the
+design space.
 
-When the parameters are changed to the extreme, such as conectedness, some other designs will emerge. One case study is the Interplatnetary Protocol, where "ping" is no long indicative of anything. While we look at responsiveness, we should not ignore connectivity.
+When the parameter values are changed in extreme, such as
+connectiveness, some other designs will emerge. One case study is the
+interplanetary protocol, where "ping" is no long indicative of
+anything useful. While we look at responsiveness, we should not ignore
+connectivity.
 
-Backward compatibility is painful. IPv6/IPv4 could have been done better if the backward compatibility was considered. May be too late for IPv6, but not too late for the future laying problems.
+Unfortunately, maintaining backward compatibility is painful. The work
+on designing IPv6 so as to transition from IPv4 could have been done
+better if the backward compatibility was considered. This is too late
+for IPv6, but this problem space is not too late for the future laying
+problems.
 
-IPv6 is still not implemented fully, it’s been a long road since 1996, and we are still not there. 1996 the thinking was that it was quite easy to implmenet IPv6, but that did not happen. In 1996 the dot-com boom happened, lots of money went fast, and the moment was not caught in time while the market had expanded exponentially. A cautionary tale.
+IPv6 is still not implemented fully everywhere.  It’s been a long road
+since starting work in 1996, and we are still not there. In 1996, the
+thinking was that it was quite easy to implement IPv6, but that failed
+to hold true. In 1996 the dot-com boom started and lots of money was
+spent quickly, and the moment was not caught in time while the market
+expanded exponentially. This should serve as a cautionary tale.
 
-Last points - performance across multiple hops in the Internet. We’ve not seen many end-to-end metrics, because this is quite hard to achieve across different network and business boundaries. A good question to ask - will the new protocol work across multiple network hops.
+One last point: consider performance across multiple hops in the
+Internet. We’ve not seen many end-to-end metrics, as successfully
+developing end-to-end measurements across different network and
+business boundaries is quite hard to achieve. A good question to ask
+when developing new protocols is "will the new protocol work across
+multiple network hops?"
 
-Multi-hop networks are gradually replaced by humongous flat networks with sufficient connectivity to other operators so that the system becomes 1 hop or 2 hop at most (e.g. Google, Facebook, Amazon). Architecture of the Internet is changing.
+Multi-hop networks are being gradually replaced by humongous flat
+networks with sufficient connectivity between operators so that
+systems become 1 hop or 2 hop at most away from each other
+(e.g. Google, Facebook, Amazon). The fundamental architecture of the
+Internet is changing.
 
 ### Introductory talks  {#discussion-introductions}
 
