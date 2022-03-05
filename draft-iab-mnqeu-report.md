@@ -670,23 +670,123 @@ software developed by {{tools.samknows}}. These Whiteboxes perform an
 array of network tests and report availability based whether test
 connections were successful or n.o
 
-Measuring available capacity can be helpful to the end-users, but it is much more valuable for service providers and application developers. High-definition video streaming requires much more capacity than any other type of traffic. At the time of the workshop, video traffic constituted 90% of the overall Internet traffic and contributed to 95% of the revenues from monetization (via subscriptions, fees, or ads). As a result, video streaming services, such as Netflix, need to cope with rapid changes in the available capacity. The ability to probe capacity in real-time allows leveraging the different adaptive bitrate (ABR) compression algorithms to ensure the best possible user experience. The Internet Service providers benefit from measuring the aggregated capacity demand to be ready for the spikes in traffic. For example, during the end-of-year holiday season, the global demand for capacity grows 5-7x. For the end-users, knowledge of their capacity needs can help them choose a data plan that best suits them. In many cases, however, end-users have more than enough capacity, and adding more bandwidth will not improve their experience. Finally, ability to differentiate between the "throughput" and the "goodput" can be helpful in identifying when the network is saturated.
+Measuring available capacity can be helpful to the end-users, but it
+is even more valuable for service providers and application
+developers. High-definition video streaming requires significantly
+more capacity than any other type of traffic. At the time of the
+workshop, video traffic constituted 90% of overall Internet traffic
+and contributed to 95% of the revenues from monetization (via
+subscriptions, fees, or ads). As a result, video streaming services,
+such as Netflix, need to continuously cope with rapid changes in the
+available capacity. The ability to measure available capacity in
+real-time allows leveraging the different adaptive bitrate (ABR)
+compression algorithms to ensure the best possible user
+experience. Measuring the aggregated capacity demand allows Internet
+Service Provider's to be ready for traffic spikes. For example, during
+the end-of-year holiday season, the global demand for capacity has
+been shown to be 5-7 times higher than other seasons.  For end-users,
+knowledge of their capacity needs can help them choose a data plan
+best suited for them. In many cases, however, end-users have more than
+enough capacity, and adding more bandwidth will not improve their
+experience as after a point it is no longer the limiting factor in
+user experience. Finally, the ability to differentiate between the
+"throughput" and the "goodput" can be helpful in identifying when the
+network is saturated.
 
-In measuring the Internet quality, latency is the time that it takes a network packet to traverse the entire network path. At the time of the report, users in many places worldwide can enjoy Internet access that has adequately high capacity and availability. For these users, latency improvements can lead to the most significant improvements in the quality of experience. The established latency metric is a round-trip time (RTT), commonly measured in milliseconds. However, users often find the RTT unintuitive since, unlike other performance metrics, high RTT values indicate poor latency. {{Paasch2021}} and {{Mathis2021}} presented an inverse metric, called "Round-trips per minute" (RPM).
+In measuring network quality, latency is the time that it takes a
+network packet to traverse the path from one end to the other through
+the network. At the time of this report, users in many places
+worldwide can enjoy Internet access that has adequately high capacity
+and availability for their current needs. For these users, latency
+improvements, rather than bandwidth improvements, can lead to the most
+significant improvements in the quality of experience. The established
+latency metric is a round-trip time (RTT), commonly measured in
+milliseconds. However, users often find the RTT unintuitive since,
+unlike other performance metrics, high RTT values indicate poor
+latency. {{Paasch2021}} and {{Mathis2021}} presented an inverse
+metric, called "Round-trips per minute" (RPM).
 
-There is an essential distinction between the "idle latency" and "latency under working conditions." The former is measured when the network is not used and reflects the best-case scenario. The latter is measured when the network is under a typical workload. Until recently, the typical case was to present the idle latency. However, these numbers can be misleading. For example, data presented at the workshop shows that the idle latency can be up to 25 times lower than the latency under typical working conditions. Because of that, when presenting latency to the end-user, it is essential to make a clear distinction between the two.
+There is an essential distinction between the "idle latency" and
+"latency under working conditions." The former is measured when the
+network is not used and reflects the best-case scenario. The latter is
+measured when the network is under a typical workload. Until recently,
+the typical case was to present the idle latency. However, these
+numbers can be misleading. For example, data presented at the workshop
+shows that the idle latency can be up to 25 times lower than the
+latency under typical working conditions. Because of that, when
+presenting latency to the end-user, it is essential to make a clear
+distinction between the two.
 
-Data shows that rapid changes in capacity affect latency. {{Foulkes2021}} attempts to quantify how often a rapid change in capacity can cause a line to become "unstable", i.e., having high latency but very little throughput. Such cahnges in capacity can be caused by infrastructure failures, but much more often by the in-network phenomena, such as different traffic engineering policies, or rapid changes in the cross-traffic.
+Data shows that rapid changes in capacity affect
+latency. {{Foulkes2021}} attempts to quantify how often a rapid change
+in capacity can cause connectivity to become "unstable", i.e., having
+high latency but very little throughput. Such changes in capacity can
+be caused by infrastructure failures, but are much more often caused
+by in-network phenomena, such changing traffic engineering
+policies, or rapid changes in cross-traffic.
 
-Data presented at the workshop shows that 36% of measured lines have capacity metrics that vary by more than 10% throughout the day and across multiple days. These differences are caused by many variables, including local connectivity (WiFi vs. Ethernet), competing LAN traffic, device load/configuration, time of day (Local loop/backhaul capacity). These factors make measuring capacity on an end-user device difficult. A network router that sees aggregated traffic from multiple devices provides a better vantage point for capacity measurements. Such test can account for the totality of local traffic and perform an independent capacity test. And even then, various factors might limit the accuracy of said test. Accurate capacity measurement requires a multiple samples.
+Data presented at the workshop shows that 36% of measured lines have
+capacity metrics that vary by more than 10% throughout the day and
+across multiple days. These differences are caused by many variables,
+including local connectivity methods (WiFi vs. Ethernet), competing
+LAN traffic, device load/configuration, time of day and local
+loop/backhaul capacity. These factors make measuring capacity only
+using an end-user device or network difficult. A network router that
+sees aggregated traffic from multiple devices provides a better
+vantage point for capacity measurements. Such a test can account for
+the totality of local traffic and perform an independent capacity
+test. And even then, various factors might limit the accuracy of said
+test. Accurate capacity measurement requires a multiple samples.
 
-As the users perceive the Internet through the lens of applications, it may be difficult to correlate changes in capacity and latency with the quality of the end-user experience. For example, web browsers rely on cached page versions to shorten page load times and mitigate connectivity losses. In addition, social networking applications often rely on pre-fetching the "feed" items. These techniques make the core in-network metrics less indicative of the users' experience and necessitate collecting data in-application.
+As users perceive the Internet through the lens of applications, it
+may be difficult to correlate changes in capacity and latency with the
+quality of the end-user experience. For example, web browsers rely on
+cached page versions to shorten page load times and mitigate
+connectivity losses. In addition, social networking applications often
+rely on pre-fetching their "feed" items. These techniques make the
+core in-network metrics less indicative of the users' experience and
+necessitates collecting data in-application.
 
-It is helpful to distinguish between applications that operate on a "fixed latency budget" from those that have more tolerance to latency variance. Using cloud gaming as an example of "fixed latency budget", a sudden latency spike can decide the "win/lose" ratio for a player. Companies that compete in the lucrative cloud gaming market make significant infrastructure investments, such as buiding entire datacenters closer to the users bases. These data centers indicate that the economic benefits of having fewer latency spikes outweigh the costs. On the other hand, applications that are more tolerant to latency spike can sometimes operate reasonably well when the latency spikes. Yet even those applications can benefit from consistently low latency. For example, Video-on-demand (VOD) apps can work reasonably well when the video is consumed linearly, but once the user tries to "switch a channel", or to "skip ahead", the user experience would suffer unless the latency is sufficiently low.
+It is helpful to distinguish between applications that operate on a
+"fixed latency budget" from those that have more tolerance to latency
+variance. Cloud gaming serves as an example application that requires
+a "fixed latency budget", as a sudden latency spike can decide the
+"win/lose" ratio for a player. Companies that compete in the lucrative
+cloud gaming market make significant infrastructure investments, such
+as buiding entire datacenters closer to their users. These data
+centers highlight the economic benefits that having fewer latency
+spikes outweigh the associated deployment cost. On the other hand,
+applications that are more tolerant to latency spikes can sometimes
+operate reasonably well through short spikes. Yet even those
+applications can benefit from consistently low latency. For example,
+Video-on-Demand (VOD) apps can work reasonably well when the video is
+consumed linearly, but once the user tries to "switch a channel", or
+to "skip ahead", the user experience suffers unless the latency
+is sufficiently low.
 
-Finally, as the applications continue to evolve, the in-application metrics are gaining more importance. Using the VOD as an example, one can assess the quality of experience by checking whether the video player can use the highest possible resolution, whether the video is smooth or freezing, and similar metrics. Then, the application developer can effectively use these metrics to prioritize future work. All popular video platforms (Youtube, Instagram, Netflix, and others) developed frameworks to collect and analyze such metrics at scale. One example is the Scuba framework used by Meta {{FB_Scuba}}.
+Finally, as the applications continue to evolve, in-application
+metrics are gaining in importance. Using VOD as an example, one
+can assess the quality of experience by checking whether the video
+player can use the highest possible resolution, whether the video is
+smooth or freezing, and other similar metrics. Then, the application
+developer can effectively use these metrics to prioritize future
+work. All popular video platforms (Youtube, Instagram, Netflix, and
+others) have developed frameworks to collect and analyze such metrics at
+scale. One example is the Scuba framework used by Meta {{FB_Scuba}}.
 
-Unfortunately, the in-application metrics can be challenging to use for comparative research purposes. Firstly, different applications often use different metrics to measure the same phenomena. For example, application A can measure the smoothness of video via "mean time to re-buffer." In contrast, application B can rely on the "probability of re-buffering per second" for the same purpose. A different challenge with using in-application metrics is that at the time of the workshop, VOD is a significant source of revenue for companies such as YouTube, Facebook, and Netflix, which places incentives against exchanging the in-application data. Finally, in-application metrics can accurately describe the activities and preferences of an individual end-user, leading to privacy infringements.
+Unfortunately, the in-application metrics can be challenging to use
+for comparative research purposes. Firstly, different applications
+often use different metrics to measure the same phenomena. For
+example, application A can measure the smoothness of video via "mean
+time to re-buffer." In contrast, application B can rely on the
+"probability of re-buffering per second" for the same purpose. A
+different challenge with using in-application metrics is that at the
+time of the workshop, VOD is a significant source of revenue for
+companies such as YouTube, Facebook, and Netflix, which places
+proprietary incentives against exchanging the in-application
+data. Finally, in-application metrics can also accurately describe the
+activities and preferences of an individual end-user, leading to
+privacy infringements.
 
 ### Measurement case studies
 
