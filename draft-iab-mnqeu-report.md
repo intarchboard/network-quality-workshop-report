@@ -478,13 +478,19 @@ that could be agreed upon by workshop participants ({{conclusions}}).
 
 ## Introduction and overviews
 
-The Introduction section allowed participants to introduce and discuss
-the problem space, existing mechanisms for Quality of Service (QoS)
-and Quality of Experience (QoE) measurements. Also discussed was the
-interaction between multiple users within the network, as well as the
-interaction between multiple layers of the OSI stack.  Some existing
-measurement works were presented.  Vint Cerf provided a key note
-describing the history and importance of the topic.
+The workshop started with a broad focus on the state of user Quality
+of Service (QoS) and quality of experience (QoE) the Internet today.
+The goal of the introductory talks was to set the stage for the
+workshop by describing both the problem space and the current
+solutions in place and their limitations.
+
+The introduction presentations by participants provided views of
+existing QoS and QoE measurements and their effectiveness. Also
+discussed was the interaction between multiple users within the
+network, as well as the interaction between multiple layers of the OSI
+stack.  Some existing measurement work was also presented.  Vint Cerf
+provided a key note describing the history and importance of the
+topic.
 
 ### Key points from the keynote by Vint Cerf {#dicsucssion-intro-keynote}
 
@@ -505,8 +511,6 @@ Last points - performance across multiple hops in the Internet. We’ve not seen
 Multi-hop networks are gradually replaced by humongous flat networks with sufficient connectivity to other operators so that the system becomes 1 hop or 2 hop at most (e.g. Google, Facebook, Amazon). Architecture of the Internet is changing.
 
 ### Introductory talks  {#discussion-introductions}
-
-The workshop started with a broad focus on the state of the Internet today.
 
 The Internet is a shared network, built on the IP protocols using
 packet-switching to interconnect multiple autonomous networks. The
