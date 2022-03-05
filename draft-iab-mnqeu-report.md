@@ -330,6 +330,9 @@ informative:
      title: "Apple Network Quality"
   tools.ping:
     title: "ping -- send ICMP ECHO_REQUEST packets to network hosts"
+  tools.samknows:
+     title: "SamKnows"
+     target: https://www.samknows.com/  
 
 --- abstract
 
@@ -607,11 +610,30 @@ Finally, the Internet infrastructure that connects the applictions to the users 
 
 ## Metrics considerations {#discussion-metrics}
 
-The workshop continued to discuss the various metrics that can be used instead of or in addition to bandwidth. Several workshop attendees presented deep-dive studies on measurement methodology.
+The workshop continued to discuss various metrics that can be used
+instead of or in addition to available bandwidth. Several workshop
+attendees presented deep-dive studies on measurement methodology.
 
 ### Common performance metrics
 
-Losing Internet access is a bad user experience. Unfortunately, unless rebooting the home router restores connectivity, there is little a user can do other than contact their service provider. Nevertheless, there is value in the systematic collection of the availability metrics on the client side: these can help the ISP localize and resolve issue faster, while enabling users to better chose their next ISP. One can measure the availabilty directly, by attempting a connection from the cilent-side to the location of interest. For example, {{tools.ookla_speedtest}} uses a large number of Android devices to measure network and cellular availabilty around the globe. Ookla collects hundreds of millions of data points per day, and uses these for accurate availability reporting. The alternative approach is to derive avaiability from the failure rates of other tests. For example, {{FCC_MBA}} uses thousands of off-the shelf routers, called "Whiteboxes" with measurement software developed by SamKnows. The "Whiteboxes" perorm an array of network tests, then the availability is decided based the tests which failed to connect.
+Losing Internet access is, of course, the worst user
+experience. Unfortunately, unless rebooting the home router restores
+connectivity, there is little a user can do other than contacting
+their service provider. Nevertheless, there is value in the systematic
+collection of availability metrics on the client side: these can help
+the user's ISP localize and resolve issues faster, while enabling
+users to better choose between ISPs. One can measure the availability
+directly by simply attempting connections from the client-side to
+locations of interest. For example, {{tools.ookla_speedtest}} uses a
+large number of Android devices to measure network and cellular
+availability around the globe. Ookla collects hundreds of millions of
+data points per day, and uses these for accurate availability
+reporting. An alternative approach is to derive availability from the
+failure rates of other tests. For example, {{FCC_MBA}} uses thousands
+of off-the shelf routers, called "Whiteboxes", with measurement
+software developed by {{tools.samknows}}. These Whiteboxes perform an
+array of network tests and report availability based whether test
+connections were successful or n.o
 
 Measuring available capacity can be helpful to the end-users, but it is much more valuable for service providers and application developers. High-definition video streaming requires much more capacity than any other type of traffic. At the time of the workshop, video traffic constituted 90% of the overall Internet traffic and contributed to 95% of the revenues from monetization (via subscriptions, fees, or ads). As a result, video streaming services, such as Netflix, need to cope with rapid changes in the available capacity. The ability to probe capacity in real-time allows leveraging the different adaptive bitrate (ABR) compression algorithms to ensure the best possible user experience. The Internet Service providers benefit from measuring the aggregated capacity demand to be ready for the spikes in traffic. For example, during the end-of-year holiday season, the global demand for capacity grows 5-7x. For the end-users, knowledge of their capacity needs can help them choose a data plan that best suits them. In many cases, however, end-users have more than enough capacity, and adding more bandwidth will not improve their experience. Finally, ability to differentiate between the "throughput" and the "goodput" can be helpful in identifying when the network is saturated.
 
