@@ -790,13 +790,37 @@ privacy infringements.
 
 ### Measurement case studies
 
-{{Paasch2021}} introduced a methodology for measuring working latency from the end-user vantage point. The suggested method incrementally adds network flows between the user device and a server endpoint until a bottleneck capacity is reached. Then, a round trip latency is measured and reported to the end-user. Authors chose ot report results with the RPM metric. The methodology had been implemented in Apple Monterey OS.
+{{Paasch2021}} introduced a methodology for measuring working latency
+from the end-user vantage point. The suggested method incrementally
+adds network flows between the user device and a server endpoint until
+a bottleneck capacity is reached. From these measurements, a round
+trip latency is measured and reported to the end-user. The authors
+chose to report results with the RPM metric. The methodology had been
+implemented in Apple Monterey OS.
 
-{{Mathis2021}} have applied the RPM metric to the results of more than 4 billion download tests that M-Lab performed in 2010-2021. During this time frame, the M-Lab measurement platform underwent several upgrades, allowing the research team to compare the effect of different TCP congestion control algorithms (CCAs) on the end-to-end latency. The study showed that the use Cubic CCA leads to increased working latency, which is attributed to its use of larger queues.
+{{Mathis2021}} have applied the RPM metric to the results of more than
+4 billion download tests that M-Lab performed in 2010-2021. During
+this time frame, the M-Lab measurement platform underwent several
+upgrades which allowed the research team to compare the effect of
+different TCP congestion control algorithms (CCAs) on the measured
+end-to-end latency. The study showed that the use Cubic CCA leads to
+increased working latency, which is attributed to its use of larger
+queues.
 
-{{Schlinker2019}} presented a large-scale study that aimed to establish a correlation between goodput and quality of experience on a large social network. The authors performed the measurements at multiple data centers from which video segments of a set size were streamed to a large number of end users. The authors used the goodput and the throughput to determine whether particular paths are congested.
+{{Schlinker2019}} presented a large-scale study that aimed to
+establish a correlation between goodput and quality of experience on a
+large social network. The authors performed the measurements at
+multiple data centers from which video segments of set sizes were
+streamed to a large number of end users. The authors used the goodput
+and throughput metrics to determine whether particular paths were
+congested.
 
-{{Reed2021}} presented the analysis of working latency measurements collected as part of the FCC's "Measuring Broadband America" (MBA) program. FCC does not include the working latency in its yearly report but offers it in the raw data files. The authors {{Reed2021}} used a subset of the raw data to identify important differences in the working latencies across different ISPs.
+{{Reed2021}} presented the analysis of working latency measurements
+collected as part of the FCC's "Measuring Broadband America" (MBA)
+program. The FCC does not include working latency in its yearly report,
+but does offer it in the raw data files. The authors used a
+subset of the raw data to identify important differences in the
+working latencies across different ISPs.
 
 {{MacMillian2021}} presented analysis of working latency across multiple service tiers. They found that unsurprisingly, "premium" tier users experienced lower working latency compared to the "value" tier. The data had demosntrated that working latency varies significantly within each tier; one possible explanation is the difference in the home equipment.
 
