@@ -789,10 +789,15 @@ activities and preferences of an individual end-user, leading to
 privacy infringements.
 
 ### Availability metrics
-TBD:
 
-- Was the line down and for how long?
-- Was the line unstable and for how long?
+Availability is simply defined as whether or not a packet can be sent
+and then received by its intended recipient.  Availability is naively
+thought to be the simplest to measure, but is more complex when
+considering that continual, instantaneous measurements would be needed
+to detect the smallest of outages.  Also difficult is determining the
+root cause of infallibility: was the user's line down, something in
+the middle of the network or was it the service with which the user
+was attempting to communicate.
 
 ### Capacity metrics
 
@@ -802,7 +807,7 @@ won't lead to further quality improvements.
 
 The actual network connection capacity is determined by the equipment and the
 lines along the network path, and it varies throughout the day and across
-mutliple days. Studies involving DSL lines in North America indicate that over
+multiple days. Studies involving DSL lines in North America indicate that over
 30% of the DSL lines have capacity metrics that vary by more than 10%
 throughout the day and accross multiple days.
 
@@ -829,8 +834,6 @@ capacity than high-definition video streaming.
 
 ### Latency metrics
 
-<!-- Maybe move to appendix ? -->
-
 End-to-end latency is the time that a particular packet takes to traverse the
 network path from the user to their destination and back.  The end-to-end
 latency comprises several components:
@@ -849,18 +852,21 @@ latency comprises several components:
 4. Some of the workshop sumbissions have explicitly called out the application
    delay, which reflects the inefficiencies in the application layer.
 
-/* Idle latency vs. LUL - shorten */
-Tradionally, end-to-end latency is measured when the network is idle. Results of such
-measurements reflect mostly the propagation delay, but not other kinds of
-delay. This report uses the term "Idle latency" to refer to results achieved
-under idle network conditions.
+Traditionally, end-to-end latency is measured when the network is
+idle. Results of such measurements reflect mostly the propagation
+delay, but not other kinds of delay. This report uses the term "idle
+latency" to refer to results achieved under idle network conditions.
 
-Alternatively, if the latency is measured when the network is under its typical working conditions, the results reflect all kinds of delays. This report uses the term "Working latency" to refer to such results. Other sources use the term "Latency under load" (LUL) as a synonym.
+Alternatively, if the latency is measured when the network is under
+its typical working conditions, the results reflect multiple types of
+delays. This report uses the term "working latency" to refer to such
+results. Other sources use the term "latency under load" (LUL) as a
+synonym.
 
-Data presented at the workshop reveals a substantial difference between the
-idle latency and the working latency. Depending on the traffic direciton and
-the technology type, the working latency is between 6 to 25 times
-higher than the idle latency:
+Data presented at the workshop reveals a substantial difference
+between the idle latency and the working latency. Depending on the
+traffic direciton and the technology type, the working latency is
+between 6 to 25 times higher than the idle latency:
 
 | Direction | Technology type | Working latency | Idle latency | Working - Idle difference | Working / Idle ratio |
 | Downstream | FTTH | 148 | 10 | 138 | 15 |
@@ -870,10 +876,12 @@ higher than the idle latency:
 | Upstream | Cable | 176 | 27 | 149 | 6 |
 | Upstream | DSL | 686 | 27 | 659 | 25 |
 
+While historically the tooling available for measuring latency focused
+on measuring the idle latency, there is a trend in the industry to
+start measuring the working latency as well,
+e.g. {{tools.apple_networkQuality}}.
 
-While historically the tooling available for measuring latency focused on
-measuring the idle latency, there is a trend in the industry to start measuring
-the working latency as well, e.g. {{tools.apple_networkQuality}}.
+<!-- missing the RPM and goodput text from PR#8 - maybe here? -->
 
 ### Measurement case studies
 
@@ -1108,7 +1116,7 @@ progress. Of particular concern is how to bring forward measurements
 that can make sense to end users trying to make subscription
 decisions.
 
-[this section is TBD]
+(this section is TBD)
 
 ### Synthesis Key Points
 
