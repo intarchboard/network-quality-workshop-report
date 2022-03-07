@@ -932,7 +932,10 @@ aspects, so that:
 
 ### Security and Privacy Considerations
 
-Preserving the privacy of the end users is a hard requirement. There is an intrinsic trade-off between collecting more data about the activities of the users, and infringing their privacy.
+Preserving the privacy of the end users is a difficult requirement to
+meet when addressing this problem space. There is an intrinsic
+trade-off between collecting more data about user activities, and
+infringing their privacy in doing so.
 
 
 ### Concrete Suggestions
@@ -951,15 +954,16 @@ Preserving the privacy of the end users is a hard requirement. There is an intri
   - The QLOG format seems to be the most mature candidate for souch exchange.
 
 
-Security, privacy and data protections considerations make the cross-layer 
-The participants agreed that observability across multiple layers is necessary for measurement of the network quality.
-
-
-One sentiment shared by sevearal participants is that 
+Security, privacy and data protections considerations make the
+cross-layer The participants agreed that observability across multiple
+layers is necessary for measurement of the network quality.
 
 
 
-Presentation by {{Kerpez2021}} showed that as the Internet access becomes the norm, the limited bandwidth of 2.4Ghz wifi is more often than not the bottleneck. In comparison, the wider bandwidth of the 5Ghz WiFi have only been the bottleneck in 20% of the observations.
+The presentation by {{Kerpez2021}} showed that as Internet access
+becomes the norm, the limited bandwidth of 2.4Ghz wifi is most
+frequently the bottleneck. In comparison, the wider bandwidth of the
+5Ghz WiFi have only been the bottleneck in 20% of the observations.
 
 ### Towards Future Cross-layer Observability {#discussions-cross-observability}
 
@@ -1099,96 +1103,95 @@ including but not limited to:
 The following is a list of participants who attended the workshop over a remote connection:
 
     Ahmed Aldabbagh
-    Al Morton
-    Alexander Clemm
-    Alvaro Retana
-    Anna Brunstrom
-    Balazs Varga
-    Bjørn Ivar Teigen
-    Bob Briscoe
-    Brandon Schlinker
-    Bren Tully Walsh
-    Christoph Paasch
-    Cindy Morgan
-    Cullen Jennings
-    Dan Siemon
-    Dave Taht
-    David Reed
-    David Schinazi
-    Djamel Bousaber
-    Eve Schooler
-    Evgeny Khorov
-    François Michel
-    Gavin Young
-    Geoff Huston
-    Gino Dion
-    Gorry Fairhurst
-    Greg Mirsky
-    Greg White
-    Jana Iyengar
-    Jared Mauch
     Jari Arkko
-    Jason Livingood
-    Jiankang Yao
-    Jim Gettys
-    Jinous Shafiei
-    Joachim Fabini
-    John Cioffi
-    Jonathan Foulkes
-    Joon Kim
-    Joris Herbots
-    Kalevi Kilkki
-    Karthik Sundaresan
-    Kathleen Nichols
-    Keith Winstein
-    Ken Kerpez
-    Kenjiro Cho
-    Koen De Schepper
-    Kristen McIntyre
-    Kyle MacMillan
-    Lai Yi Ohlsen
-    Lars Eggert
-    Levi Perigo
-    Lisong Xu
-    Lucas Pardue
-    Luis M. Contreras
-    Mat Ford
-    Matt Mathis
-    Michael Welzl
-    Mikhail Liubogoshchev
-    Mingrui Zhang
-    Neil Davies
-    Nick Feamster
-    Nicolas (Tessares)
-    Olivier Bonaventure
-    Omer Shapira
-    Pedro Casas
-    Peter Thompson
     Praveen Balasubramanian
-    Rajat Ghai
-    Randall Meyer
+    Olivier Bonaventure
+    Djamel Bousaber
+    Bob Briscoe
     Rich Brown
-    Rick Taylor
-    Roberto
-    Robin Marx
-    Russ White
-    Sam Crawford
-    Satadal Sengupta
-    Shapelez
-    Sharat Madanapalli
-    Steve Christianson
-    Stuart Cheshire
-    Szilveszter Nadas
-    Toerless Eckert
-    Toke Høiland-Jørgensen
-    Tommy Pauly
-    Vesna Manojlovic
-    Vidhi Goel
-    Vijay Sivaraman
+    Anna Brunstrom
+    Pedro Casas
     Vint Cerf
+    Stuart Cheshire
+    Kenjiro Cho
+    Steve Christianson
+    John Cioffi
+    Alexander Clemm
+    Luis M. Contreras
+    Sam Crawford
+    Neil Davies
+    Gino Dion
+    Toerless Eckert
+    Lars Eggert
+    Joachim Fabini
+    Gorry Fairhurst
+    Nick Feamster
+    Mat Ford
+    Jonathan Foulkes
+    Jim Gettys
+    Rajat Ghai
+    Vidhi Goel
     Wes Hardaker
+    Joris Herbots
+    Geoff Huston
+    Toke Høiland-Jørgensen
+    Jana Iyengar
+    Cullen Jennings
+    Ken Kerpez
+    Evgeny Khorov
+    Kalevi Kilkki
+    Joon Kim
     Zhenbin Li
-
+    Mikhail Liubogoshchev
+    Jason Livingood
+    Kyle MacMillan
+    Sharat Madanapalli
+    Vesna Manojlovic
+    Robin Marx
+    Matt Mathis
+    Jared Mauch
+    Kristen McIntyre
+    Randall Meyer
+    François Michel
+    Greg Mirsky
+    Cindy Morgan
+    Al Morton
+    Szilveszter Nadas
+    Kathleen Nichols
+    Lai Yi Ohlsen
+    Christoph Paasch
+    Lucas Pardue
+    Tommy Pauly
+    Levi Perigo
+    David Reed
+    Alvaro Retana
+    Roberto
+    Koen De Schepper
+    David Schinazi
+    Brandon Schlinker
+    Eve Schooler
+    Satadal Sengupta
+    Jinous Shafiei
+    Shapelez
+    Omer Shapira
+    Dan Siemon
+    Vijay Sivaraman
+    Karthik Sundaresan
+    Dave Taht
+    Rick Taylor
+    Bjørn Ivar Teigen
+    Nicolas Tessares
+    Peter Thompson
+    Balazs Varga
+    Bren Tully Walsh
+    Michael Welzl
+    Greg White
+    Russ White
+    Keith Winstein
+    Lisong Xu
+    Jiankang Yao
+    Gavin Young
+    Mingrui Zhang
 
 # IAB Members at the Time of Approval
 
@@ -1196,7 +1199,6 @@ Internet Architecture Board members at the time this document was
 approved for publication were:
 
     Jari Arkko
-
     Deborah Brungard
     Ben Campbell
     Lars Eggert
@@ -1221,43 +1223,42 @@ in many interesting discussions.
 
 Thank you to the people that contributed edits to this draft:
 
-    Brian Trammell
     Erik Auerswald
     Simon Leinen
-
+    Brian Trammell
 
 ## Workshop Chairs
 
 The workshop chairs consisted of:
 
+    Wes Hardaker
     Evgeny Khorov
     Omer Shapira
-    Wes Hardaker
 
 ## Program Committee
 
 The program committee consisted of:
 
-    Christoph Paasch
-    Cullen Jennings
-    Geoff Huston
-    Greg White
     Jari Arkko
-    Jason Livingood
-    Jim Gettys
-    Katarzyna Kosek-Szott
-    Kathleen Nichols
-    Keith Winstein
-    Matt Mathis
-    Mirja Kuehlewind
-    Nick Feamster
     Olivier Bonaventure
-    Randall Meyer
-    Sam Crowford
-    Stuart Cheshire
-    Toke Hoiland-Jorgensen
-    Tommy Pauly
     Vint Cerf
+    Stuart Cheshire
+    Sam Crowford
+    Nick Feamster
+    Jim Gettys
+    Toke Hoiland-Jorgensen
+    Geoff Huston
+    Cullen Jennings
+    Katarzyna Kosek-Szott
+    Mirja Kuehlewind
+    Jason Livingood
+    Matt Mathis
+    Randall Meyer
+    Kathleen Nichols
+    Christoph Paasch
+    Tommy Pauly
+    Greg White
+    Keith Winstein
 
 # Github Version of this document
 
