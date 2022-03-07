@@ -1150,6 +1150,8 @@ decisions.
 
 ### Synthesis Key Points
 
+(this section is TBD)
+
 # Conclusions {#conclusions}
 
 During the final hour of the workshop we gathered statements that the
