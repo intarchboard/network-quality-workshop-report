@@ -864,41 +864,42 @@ the infrastructure.
 
 ## Cross-layer Considerations {#discussions-cross-layer}
 
-In the Cross-layer section participants presented material and discussed
-how accurately measuring exactly where problems occur is difficult
-when many components of a network connection can affect the
-measurement.  Discussion centered especially on the differences
-between physically wired and wireless connections and the difficulties
-of accurately determining problem spots when multiple different
-network types are responsible for the quality.
+In the Cross-layer section participants presented material and
+discussed how to accurately measure exactly where problems occur.  The
+discussion showed how difficult it is to achieve accuracy when many
+components of a network connection affects the measurements.
+Discussion centered especially on the differences between physically
+wired and wireless connections and the difficulties of accurately
+determining problem spots when multiple different network types are
+responsible for the quality.
 
-
-he participants have agreed that no single component of a network connection
-has all the data to be able to measure the effects of the network performance
-on the quality of the end user experience.
+The participants agreed that no single component of a network
+connection has all the data required to measure the effects of the
+network performance on the quality of the end user experience.
 
 - The applications that are running on the end-user devices have the best
   insight into their respective performance, but have limited visibility into
   the behavior of the network, and are not able to act on the limited information
   about the network performance.
-- The Internet service providers have good insight into the QoS considerations,
-  but are not able to infer the effect of the QoS metrics on the quality of the
-  end user experience.
-- The content providers have good insight into the aggregated behavior of the
+- Internet service providers have good insight into QoS
+  considerations, but are not able to infer the effect of the QoS
+  metrics on the quality of end user experiences.
+- Content providers have good insight into the aggregated behavior of the
   end users, but lack the insight on what aspects of the network performance
-  are the leading indicators of the users behavior.
+  are leading indicators of user behavior.
 
-The workshop had identified the need for a standard and extensible way to
-exchange the network performance. Such exchnage standard should address the
-folowing aspects:
+The workshop had identified the need for a standard and extensible way
+to exchange network performance characteristics. Such an exchange
+standard should address (at least) the following:
 
-- Scalable way to capture the performance of multiple (potentially thousandsof) endpoints.
-- Accompanying set of tools to analyze the data.
+- A scalable way to capture the performance of multiple (potentially
+  thousands of) endpoints.
+- The need for an accompanying set of tools to analyze the data.
 - A transparent model for giving the different actors on the network connection
   an incentive to share the performance data they collect.
-- Prservation of the privacy of the end users. In particular, federated
+- Preservation of end-user privacy. In particular, federated
   learning approaches, where no centralized entity has the access to the whole
-  picture, are preferred.
+  picture, should be preferred.
 - The data exchange format should include precautions against data
   manipulations, so that the different actors won't be tempted to game the
   mechanism.
@@ -906,12 +907,14 @@ folowing aspects:
 ### Separation of Concerns
 
 Commonly, there's a tight coupling between 
-a. collecting performance metrics,
-b. interpreteting those metrics and 
-c. acting upon the intrepretation of the metrics.
 
-Unfortunately, such model is not the best for achieving exchange of the
+1. collecting performance metrics,
+2. interpreting those metrics and 
+3. and acting upon the intrepretation of the metrics.
+
+Unfortunately, such model is not the best for successfully exchanging
 cross-layer data:
+
 - The actors that have the ability to collect particular performance metrics
   (e.g. the TCP RTT) do not necessarily have the context necessary for a
   meaningful interpretation.
@@ -921,14 +924,14 @@ cross-layer data:
 - The actors that can control the behavior of network / application typically
   do not have access to the data. 
 
-The participatns have agreed that it is important to separate the above three
+The participants agreed that it is important to separate the above three
 aspects, so that:
+
 - The different actors that have the data but not the ability to interpret /
-  act upon will be able to publish the measured data
-- The actors that have the expertise in interpreting and synthesizing the
-  performanace data will be able to publish the results of the interpetation /
-  synthesis
-- The actors that act upon the interpretation are 
+  act upon should publish their measured data.
+- The actors that have the expertise in interpreting and synthesizing
+  the performance data will be able to publish the results of
+  any interpretation.
 
 ### Security and Privacy Considerations
 
