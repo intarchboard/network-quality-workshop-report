@@ -1086,23 +1086,53 @@ necessary for an accurate measurement of the network quality.
 
 ### Towards Future Cross-layer Observability {#discussions-cross-observability}
 
-The ownership of the Internet is spread across multiple administrative domains, making access to performance data difficult. Furthermore, the immense scale of the Internet makes aggregation and analysis of such data difficult. {{Marx2021}}  presented a simple logging format that could potentially be used to collect and aggregate data from different layers.
+The ownership of the Internet is spread across multiple administrative
+domains, making measuring performance data difficult. Furthermore, the
+immense scale of the Internet makes aggregation and analysis of such
+data difficult. {{Marx2021}} presented a simple logging format that
+could potentially be used to collect and aggregate data from different
+layers.
 
-The other aspect of cross-layer collaboration is that majority of current alogrithms do not explicitly provide performance data that can be part of a cross-layer analysis. The IETF community can be more diligent in identifying the key performance indicators, and exposing those as part of the protocol specification.
+Another aspect of cross-layer collaboration hampering measurement is
+that the majority of current algorithms do not explicitly provide
+performance data that can be used in cross-layer analysis. The IETF
+community can be more diligent in identifying a protocol's key
+performance indicators, and exposing those as part of the protocol
+specification.
 
-Despite all the challenges, it should still be possible to perform limited-scope studies to have a better understanding of how user quality is affected by the interaction of the different components that constitute the Internet. Recent development of federated learning algorithms suggests that it might be possible to perform cross-layer performance measurements while preserving the privacy of the users.
-
-On the server side, the `tcp_info` structure can be decorated with performance information from other layers to give richer data set.
+Despite all the challenges, it should still be possible to perform
+limited-scope studies in order to have a better understanding of how
+user quality is affected by the interaction of the different
+components that constitute the Internet. Recent development of
+federated learning algorithms suggests that it might be possible to
+perform cross-layer performance measurements while preserving user
+privacy.
 
 ### Efficient Collaboration Between Hardware and Transport Protocols {#discussions-cross-layer-hw-tp}
 
-With the advent of the L4S congestion notification and control, there's even higher need for the transport protocols and the underlying hardware to work in unison.
+With the advent of the L4S congestion notification and control, there
+is an even higher need for the transport protocols and the underlying
+hardware to work in unison.
 
-At the time of the workshop, the typical home router used a single FIFO queue, large enough to allow amortizing the lower-layer header overhead across multiple transport PDUs. These designs worked well with the Cubic congestion control algorithm, yet the newer generation of CCAs can operate on much smaller queues. To fully support <1ms latency, the home router needs to work efficiently on sequential transmissions of just a few segments, vs. being optimized for large packet bursts.
+At the time of the workshop, the typical home router used a single
+FIFO queue, large enough to allow amortizing the lower-layer header
+overhead across multiple transport PDUs. These designs worked well
+with the Cubic congestion control algorithm, yet the newer generation
+of CCAs can operate on much smaller queues. To fully support latencies
+less than 1ms, the home router needs to work efficiently on sequential
+transmissions of just a few segments vs. being optimized for large
+packet bursts.
 
-Another design trait that's common in the home routers is use of packet aggregation, to further amortize the overhead added by the lower-layer headers. Multiple IP datagrams are combined into a single large tranfer frame. This aggregation can add up to 10ms to the packet sojourn delay.
+Another design trait that's common in home routers is the use of
+packet aggregation to further amortize the overhead added by the
+lower-layer headers.  Specifically, multiple IP datagrams are combined
+into a single large tranfer frame. However, this aggregation can add
+up to 10ms to the packet sojourn delay.
 
-Following the famous "you can't improve what you don't measure" adage, it is important to expose these aggregation delays in a way that would allow identifying the bottlenecks, and making the hardware more suitable for the next generation transport protocols.
+Following the famous "you can't improve what you don't measure" adage,
+it is important to expose these aggregation delays in a way that would
+allow identifying the source of the bottlenecks, and making hardware
+more suitable for the next generation transport protocols.
 
 ### Cross-Layer Key Points {#cross-layer-keypoints}
 
