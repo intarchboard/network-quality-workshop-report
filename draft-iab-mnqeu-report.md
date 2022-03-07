@@ -871,11 +871,15 @@ components of a network connection affects the measurements.
 Discussion centered especially on the differences between physically
 wired and wireless connections and the difficulties of accurately
 determining problem spots when multiple different network types are
-responsible for the quality.
+responsible for the quality.  As an example, {{Kerpez2021}} showed
+that as Internet access becomes the norm, the limited bandwidth of
+2.4Ghz wifi is most frequently the bottleneck. In comparison, the
+wider bandwidth of the 5Ghz WiFi have only been the bottleneck in 20%
+of the observations.
 
 The participants agreed that no single component of a network
 connection has all the data required to measure the effects of the
-network performance on the quality of the end user experience.
+network performance on the quality of the end user experience.  
 
 - The applications that are running on the end-user devices have the best
   insight into their respective performance, but have limited visibility into
@@ -940,33 +944,26 @@ meet when addressing this problem space. There is an intrinsic
 trade-off between collecting more data about user activities, and
 infringing their privacy in doing so.
 
+Participants agreed that observability across multiple layers is
+necessary for an accurate measurement of the network quality.
 
 ### Concrete Suggestions
 
-- The TCP protocol makes several metrics available for the passive measurement,
-  and the following metrics were found effective:
-  - TCP connection latency using SACK/ACK measurements, as well as the timing
-    between the TCP retransmission events, are good proxies for the end-to-end
-    RTT.
-  - On Linux platform, the tcp_info structure is the de-facto standard for the
-    application to introspect the performance of kernel-space networking. There
-    is no equivalent de-facto standard for the user-space networking.
-- The QUIC/MASQUE protocols make passive performance measurment more difficult.
-  For these protocols, an approach that uses federated measurement /
-  hierarchical aggregation appears more valuable. 
-  - The QLOG format seems to be the most mature candidate for souch exchange.
-
-
-Security, privacy and data protections considerations make the
-cross-layer The participants agreed that observability across multiple
-layers is necessary for measurement of the network quality.
-
-
-
-The presentation by {{Kerpez2021}} showed that as Internet access
-becomes the norm, the limited bandwidth of 2.4Ghz wifi is most
-frequently the bottleneck. In comparison, the wider bandwidth of the
-5Ghz WiFi have only been the bottleneck in 20% of the observations.
+- The TCP protocol makes several metrics available for passive measurement,
+  and the following metrics have been found to be effective:
+    - TCP connection latency measured using SACK/ACK timing, as well as
+      the timing between TCP retransmission events, are good proxies for
+      end-to-end RTT measurements.
+    - On the Linux platform, the tcp_info structure is the de-facto
+      standard for an application to introspect the performance of
+      kernel-space networking. However, there is no equivalent de-facto
+      standard for the user-space networking.
+- The QUIC and MASQUE protocols make passive performance measurements
+  more challenging.  
+    - An approach that uses federated measurement / hierarchical
+      aggregation appears more valuable for these protocols.
+    - The QLOG format seems to be the most mature candidate for such
+      an exchange.
 
 ### Towards Future Cross-layer Observability {#discussions-cross-observability}
 
