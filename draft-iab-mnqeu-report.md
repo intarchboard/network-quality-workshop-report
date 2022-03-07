@@ -788,7 +788,97 @@ data. Finally, in-application metrics can also accurately describe the
 activities and preferences of an individual end-user, leading to
 privacy infringements.
 
+### Availability metrics
+TBD:
+
+- Was the line down and for how long?
+- Was the line unstable and for how long?
+
+### Capacity metrics
+
+If the network capacity does not meet the user demands, the network quality
+will be impacted. Once the capacity meets the demands, increasing capacity
+won't lead to further quality improvements.
+
+The actual network connection capacity is determined by the equipment and the
+lines along the network path, and it varies throughout the day and across
+mutliple days. Studies involving DSL lines in North America indicate that over
+30% of the DSL lines have capacity metrics that vary by more than 10%
+throughout the day and accross multiple days.
+
+Some factors that affect the actual capacity are:
+
+1. Presence of a competing traffic, either in the LAN or in the WAN
+   environments. In the LAN setting, the competing traffic reflects the
+   multiple devices that share the Internet connection. In the WAN setting the
+   competing traffic often originates from the unrelated network flows that
+   happen to share the same network path.
+2. Capabilities of the equipment along the path of the network connection,
+   including the data transfer rate and the amount of memory used for
+   buffering.
+3. Active traffic management measures, such as traffic shapers and policers
+   that are often used by the network providers.
+
+There are other factors that can negatively affect the actual line capacities.
+
+The user demands of the traffic follow the usage patterns and preferences of
+the particular users. For example, large data transfers can use any available
+capacity, while the media streaming applicaitons require limited capacity to
+function correclty. Video-conferencing applications typically need less
+capacity than high-definition video streaming.
+
+### Latency metrics
+
+<!-- Maybe move to appendix ? -->
+
+End-to-end latency is the time that a particular packet takes to traverse the
+network path from the user to their destination and back.  The end-to-end
+latency comprises several components:
+
+1. The propagation delay, which reflects the path distance and the individual
+   link technologies (e.g. fibre vs satellite). The propagation doesn't depend
+   on the utilization of the network, to the extent that the network path
+   remains constant.
+2. The buffering delay, which reflects the time segments spend in the memory of
+   the network equipment that connect the individual network links, as well as
+   in the memory of the transmitting endpoint. The buffering delay depends on
+   the network utilization, as well as on the algorithms that govern the queued segments.
+3. The transport protocol delays, which reflects the time spent in
+   retransmission and reassembly, as well as the time spent when the transport
+   is "head-of-line blocked."
+4. Some of the workshop sumbissions have explicitly called out the application
+   delay, which reflects the inefficiencies in the application layer.
+
+/* Idle latency vs. LUL - shorten */
+Tradionally, end-to-end latency is measured when the network is idle. Results of such
+measurements reflect mostly the propagation delay, but not other kinds of
+delay. This report uses the term "Idle latency" to refer to results achieved
+under idle network conditions.
+
+Alternatively, if the latency is measured when the network is under its typical working conditions, the results reflect all kinds of delays. This report uses the term "Working latency" to refer to such results. Other sources use the term "Latency under load" (LUL) as a synonym.
+
+Data presented at the workshop reveals a substantial difference between the
+idle latency and the working latency. Depending on the traffic direciton and
+the technology type, the working latency is between 6 to 25 times
+higher than the idle latency:
+
+| Direction | Technology type | Working latency | Idle latency | Working - Idle difference | Working / Idle ratio |
+| Downstream | FTTH | 148 | 10 | 138 | 15 |
+| Dowstream | Cable | 103 | 13 | 90 | 8 |
+| Downstream | DSL | 194 | 10 | 184 | 19 |
+| Upstream | FTTH | 207 | 12 | 195 | 17 |
+| Upstream | Cable | 176 | 27 | 149 | 6 |
+| Upstream | DSL | 686 | 27 | 659 | 25 |
+
+
+While historically the tooling available for measuring latency focused on
+measuring the idle latency, there is a trend in the industry to start measuring
+the working latency as well, e.g. {{tools.apple_networkQuality}}.
+
 ### Measurement case studies
+
+The participants have proposed several concrete methodologies for
+measuring the ￼network quality for the end users.
 
 {{Paasch2021}} introduced a methodology for measuring working latency
 from the end-user vantage point. The suggested method incrementally
@@ -847,6 +937,24 @@ the infrastructure.
 
 ### Metrics Key Points {#discussions-metrics-key-points}
 
+
+The metrics for network quality can be roughly grouped into:
+
+1. Availability metrics, which indicate whether the user can access
+   the network at all.
+2. Capacity metrics, which indicate whether the actual line capacity is
+   sufficient to meet the user's demands.
+3. Latency metrics, indicating if the user gets the data in a timely fashion.
+4. Higher-order metrics, which include both the network metrics, such as
+   inter-packet arrival time, and the applicaiton metrics, such as the mean
+   time between rebuffering for video streaming.
+
+The availabiltiy metrics can be seen as derivative of either the capacity (zero
+capacity leading to zero availability) or the latency (infinite latency
+leading to zero availability).
+
+Key points from the presentations and discussions included:
+
 1. Availability and capacity are "hygienic factors" - unless an
    application is capable of using extra capacity, end-users will see
    little benefit from using overprovisioned lines.
@@ -861,6 +969,9 @@ the infrastructure.
    and server-side {{Schlinker2019}} settings.
 6. Working latency depends on algorithm choice for addressing endpoint
    congestion control and router queuing.
+
+Finally, it was commonly agreed to that the best metrics are those
+that are actionable.
 
 ## Cross-layer Considerations {#discussions-cross-layer}
 
@@ -997,6 +1108,7 @@ progress. Of particular concern is how to bring forward measurements
 that can make sense to end users trying to make subscription
 decisions.
 
+[this section is TBD]
 
 ### Synthesis Key Points
 
