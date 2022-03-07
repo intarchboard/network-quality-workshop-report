@@ -668,7 +668,7 @@ failure rates of other tests. For example, {{FCC_MBA}} uses thousands
 of off-the shelf routers, called "Whiteboxes", with measurement
 software developed by {{tools.samknows}}. These Whiteboxes perform an
 array of network tests and report availability based whether test
-connections were successful or n.o
+connections were successful or not.
 
 Measuring available capacity can be helpful to the end-users, but it
 is even more valuable for service providers and application
@@ -839,15 +839,28 @@ situation. The ideal test would be able to identify the working
 latency, and to pinpoint to the source of delay (home router, ISP,
 server side, or some network node in between).
 
-Another source of high working latency is in the network routers that are exposed to cross-traffic. As {{Schlinker2019}} indicated, these become saturated during the peak hours of the day. Systematic testing of the working latency can help improve the infrastructure.
+Another source of high working latency comes from network routers that
+are exposed to cross-traffic. As {{Schlinker2019}} indicated, these
+can become saturated during the peak hours of the day. Systematic
+testing of the working latency in routers under load can help improve
+the infrastructure.
 
 ### Metrics Key Points {#discussions-metrics-key-points}
 
-1. Availability and capacity are "hygienic factors" - unless the application is capable of using extra capacity, the end-users see little benefit in overprovisioning.
-2. The working latency has stronger correlation with user experience than the idle latency. The working latency can exceed the idle latency by order of magnitude.
-2. The RPM metric is a stable metric that can be effective to communicate latency to the end-users.
-3. The relationship between throughput and goodput can be effective in finding the saturation points, both in client-side {{Paasch2021}} and server-side {{Schlinker2019}} settings.
-4. Working latency depends on the choice of the algorithms for endpoint congestion control and for router queuing.
+1. Availability and capacity are "hygienic factors" - unless an
+   application is capable of using extra capacity, end-users will see
+   little benefit from using overprovisioned lines.
+3. The working latency has stronger correlation with user experience
+   than latency under an idle network load. The working latency can
+   exceed the idle latency by order of magnitude.
+4. The RPM metric is a stable metric, with positive values being
+   better, that can be effective to communicate latency to the
+   end-users.
+5. The relationship between throughput and goodput can be effective in
+   finding the saturation points, both in client-side {{Paasch2021}}
+   and server-side {{Schlinker2019}} settings.
+6. Working latency depends on algorithm choice for addressing endpoint
+   congestion control and router queuing.
 
 ## Cross-layer Considerations {#discussions-cross-layer}
 
