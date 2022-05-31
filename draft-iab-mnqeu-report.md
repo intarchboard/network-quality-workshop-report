@@ -886,7 +886,7 @@ e.g. {{tools.apple_networkQuality}}.
 ### Measurement case studies
 
 The participants have proposed several concrete methodologies for
-measuring the ￼network quality for the end users.
+measuring the onetwork quality for the end users.
 
 {{Paasch2021}} introduced a methodology for measuring working latency
 from the end-user vantage point. The suggested method incrementally
@@ -1146,7 +1146,56 @@ progress. Of particular concern is how to bring forward measurements
 that can make sense to end users trying to make subscription
 decisions.
 
-(this section is TBD)
+One important consideration is how to make decisions and take actions
+based on the metrics measured.  Measurements must be integrated with
+applications in order to get true application views of congestion, as
+measurements to different infrastructure or via other applications may
+return incorrect results.  Furthermore, congestion itself is a
+temporally changing problem, and mitigation strategies may need to be
+different depending on whether a particular problem is expected to be
+short-term or long-term.
+
+How do we give the users what they want, and is it possible for users
+to even voice their desires.  Only high-level simplistic answers like
+reliability, capacity, and service bundling are the typical answers
+given in surveys.  More technical requirements like low-latency and
+congestion avoidance are not end-user terminology, and thus not asked
+for, by end-users.  Measurement technologies should also distinguish
+between upsteam and downstream measurements, as well as measure not
+just end-to-end paths but include subpath measurements as well.
+
+Example metrics might include the number of users supported by a
+service, and the number of applications or streams that a network can
+support.  Example solutions to combat issues include incentive-based
+traffic management strategies and QoS measurements.  Example
+in-application measurements to consider are measuring very different
+types of applications, such as video streaming, file sharing, and
+real-time communications.  It may be that asking for what tradeoffs
+users are willing to accept when making a decision would be a helpful
+approach: would you rather have a network with low latency, or higher
+bandwidth.  Gamers may make a different decision than home office or
+content producers, for example.  Finally, there is a tension between
+solutions in this space vs the cost associated with solving these
+solutions, and which customers are willing to front these improvement
+costs.
+
+Challenges in providing higher-priority traffic centers around the
+ability for networks to be willing to listen to client requests for
+higher incentives, when commercial interests may not flow to them.
+Shared medium in general is also subject to oversubscribing such that
+either the number of users per network is accurate but the network is
+underutilized, or that the number of users per network assumes average
+bandwidth or other usage metrics and fails to account for utilization
+spikes.  Furthermore, any metric is affected by in-home devices from
+cheap routers to microwaves as well as from other user behavior during
+tests.  Thus, a single metric alone or a single reading without
+context may not be useful in assisting a user or operator where the
+problem source actually is.
+
+A significant source of problems for end-users is who they should
+contact.
+
+(this rest of this section is TBD)
 
 ### Synthesis Key Points
 
