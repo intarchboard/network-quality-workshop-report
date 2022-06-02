@@ -1136,7 +1136,19 @@ more suitable for the next generation transport protocols.
 
 ### Cross-Layer Key Points {#cross-layer-keypoints}
 
-TBD
+- Significant differences exist for metrics and optimizations needed
+  in wireless vs wired networks.
+- Multi-segment networks affect measurements making identification of
+  an issue's root-cause challenging.
+- No single component of a network connection has all the data
+  required to measure the effects of the network performance on the
+  quality of the end user experience
+- Actionable results require both proper collection and interpretation.
+- Coordination among carriers is important for success
+- Simultaneously providing accurate measurements while preserving
+  end-user privacy is challenging.
+- Passive measurements from protocol implementations may provide
+  beneficial data. 
 
 ## Synthesis
 
