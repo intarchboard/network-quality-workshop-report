@@ -1146,60 +1146,106 @@ progress. Of particular concern is how to bring forward measurements
 that can make sense to end users trying to make subscription
 decisions.
 
+### Measurement and Metrics Considerations
+
 One important consideration is how to make decisions and take actions
 based on the metrics measured.  Measurements must be integrated with
 applications in order to get true application views of congestion, as
 measurements to different infrastructure or via other applications may
-return incorrect results.  Furthermore, congestion itself is a
-temporally changing problem, and mitigation strategies may need to be
-different depending on whether a particular problem is expected to be
-short-term or long-term.
+return incorrect results.  Congestion itself can be a temporary
+problem, and mitigation strategies may need to be different depending
+on whether it is expected to be a short-term or long-term phenomenon.
+A significant challenge exists in measuring short-term problems,
+driving the need for continuous measurements to ensure capture.  The
+workshop participants debated whether an issue that goes away is a
+problem or is a sign of a proper network that is self-recovering.
 
-How do we give the users what they want, and is it possible for users
-to even voice their desires.  Only high-level simplistic answers like
-reliability, capacity, and service bundling are the typical answers
-given in surveys.  More technical requirements like low-latency and
-congestion avoidance are not end-user terminology, and thus not asked
-for, by end-users.  Measurement technologies should also distinguish
-between upsteam and downstream measurements, as well as measure not
-just end-to-end paths but include subpath measurements as well.
+Important consideration must be taken when construction metrics in
+order to understand the results.  Measurements can also affected by
+individual packet characteristics -- different size packets have a
+typically linear relationship with their delay. Resulting measurements
+can be divided into a base geographical delay, a packet-size
+serialization delay and a variable (noise) delay being a third delay.
+Each of these sub-component delays can be different and individually
+measured across each segment in a multi-hop path.  Variable delay can
+also be significantly impacted by external factors, such as
+bufferbloat, routing changes, network load sharing, and other local or
+remote.  Network measurements, especially load-specific tests, must
+also be run long enough to ensure capture of any problems associated
+with buffering, queuing, etc.  Measurement technologies should also
+distinguish between upsteam and downstream measurements, as well as
+measure the difference between end-to-end path and subpath
+measurements.
 
-Example metrics might include the number of users supported by a
-service, and the number of applications or streams that a network can
-support.  Example solutions to combat issues include incentive-based
-traffic management strategies and QoS measurements.  Example
-in-application measurements to consider are measuring very different
-types of applications, such as video streaming, file sharing, and
-real-time communications.  It may be that asking for what tradeoffs
-users are willing to accept when making a decision would be a helpful
-approach: would you rather have a network with low latency, or higher
-bandwidth.  Gamers may make a different decision than home office or
-content producers, for example.  Finally, there is a tension between
-solutions in this space vs the cost associated with solving these
-solutions, and which customers are willing to front these improvement
-costs.
+### End-User metrics presentation
 
-Challenges in providing higher-priority traffic centers around the
-ability for networks to be willing to listen to client requests for
-higher incentives, when commercial interests may not flow to them.
-Shared medium in general is also subject to oversubscribing such that
-either the number of users per network is accurate but the network is
-underutilized, or that the number of users per network assumes average
-bandwidth or other usage metrics and fails to account for utilization
-spikes.  Furthermore, any metric is affected by in-home devices from
-cheap routers to microwaves as well as from other user behavior during
-tests.  Thus, a single metric alone or a single reading without
-context may not be useful in assisting a user or operator where the
-problem source actually is.
+Determining end-user needs requires informative measurements and
+metrics.  How do we provide the users with the service they need or
+want? Is it possible for users to even voice their desires
+effectively?  Only high-level, simplistic answers like "reliability",
+"capacity", and "service bundling" are typical answers given in
+end-user surveys.  Technical requirements operators can consume, like
+"low-latency" and "congestion avoidance", are not terms known to and
+used by end-users.
 
-A significant source of problems for end-users is who they should
-contact.
+Example metrics useful to end users might include the number of users
+supported by a service, and the number of applications or streams that
+a network can support.  An example solution to combat netwokring
+issues include incentive-based traffic management strategies
+(e.g. requesting lower latency may also mean accepting lower
+bandwidth).  User perceived latency must be considered, not just
+netwokr latency -- users experience in-application to in-server
+latency, and measurements network to network measurements may only be
+studying the lowest level latency.  Thus, picking the right protocol
+to use in a measurement is critical in order to match user experience
+(for example, users do not transmit data over ICMP).
 
-(this rest of this section is TBD)
+In-application measurements should consider how to measure different
+types of applications, such as video streaming, file sharing,
+multi-user gaming, and real-time voice communications.  It may be that
+asking users for what tradeoffs they are willing to accept would be a
+helpful approach: would they rather have a network with low latency,
+or a network with higher bandwidth.  Gamers may make different
+decisions than home office or content producers, for example.
+
+Furthermore, how can users make these trade-offs in a fair manner that
+does not impact other users? There is a tension between solutions in
+this space vs the cost associated with solving these solutions, and
+which customers are willing to front these improvement costs.
+
+Challenges in providing higher-priority traffic to users centers
+around the ability for networks to be willing to listen to client
+requests for higher incentives, when commercial interests may not flow
+to them without a cost incentive.  Shared mediums in general are
+subject to oversubscribing such that the number of users a network can
+support is either accurate on an underutilized network, or may assume
+an average bandwidth or other usage metric that fails to account for
+utilization spikes.  Individual metrics are also affected by in-home
+devices from cheap routers to microwaves and from (multi-)user
+behaviors during tests.  Thus, a single metric alone or a single
+reading without context may not be useful in assisting a user or
+operator where the problem source actually is.
+
+User comprehension of a network remains a challenging problem.
+Multiple workshop participants argued for a single number (calculated
+with weighted aggregation formual), or a small number of measurements
+per expected usage (a "gaming" score vs a "content producer" score).
+Many users may instead prefer to consume simplified or color-coded
+ratings (good/better/best, red/yellow/green, or bronze/gold/platinum).
 
 ### Synthesis Key Points
 
-(this section is TBD)
+- Some proposed metrics:
+    - Round-trips Per Minute (RPMs)
+    - Users per network
+    - Latency
+    - 99% latency and bandwidth
+- Median and mean measurements are distractions from the real problems.
+- Shared network usage greatly affect quality
+- Long measurements are needed to capture all facets of potential
+  network bottlenecks.
+- Better funded research in all these areas is needed for progress
+- End-users will best understand a simplified score or ranking system
 
 # Conclusions {#conclusions}
 
