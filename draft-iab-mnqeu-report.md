@@ -474,24 +474,28 @@ archives of the papers, presentations and recorded videos.
 
 # Workshop Topics and Discussion {#discussions}
 
-The three day workshop was broken into four separate sections,
-including introductory material, that each played a role in framing
-the discussions. This was followed by a discussion about conclusions
-that could be agreed upon by workshop participants ({{conclusions}}).
+The agenda for the three day workshop was broken into four separate
+sections that each played a role in framing the discussions. The
+workshop started with a series of Introduction and problem space
+presentations {introduction-section}, followed by metrics considerations
+{{discussion-metrics}}, cross layer considerations
+{{discussions-cross-layer}} and a synthesis discussion {{synthesis}}.
+After the four subsections concluded, a follow-on discussion was held
+to draw conclusions that could be agreed upon by workshop participants
+({{conclusions}}).
 
-## Introduction and overviews
+## Introduction and overviews {#introduction-section}
 
 The workshop started with a broad focus on the state of user Quality
-of Service (QoS) and quality of experience (QoE) the Internet today.
+of Service (QoS) and quality of experience (QoE) on the Internet today.
 The goal of the introductory talks was to set the stage for the
 workshop by describing both the problem space and the current
 solutions in place and their limitations.
 
-The introduction presentations by participants provided views of
-existing QoS and QoE measurements and their effectiveness. Also
-discussed was the interaction between multiple users within the
-network, as well as the interaction between multiple layers of the OSI
-stack.  Some existing measurement work was also presented.  Vint Cerf
+The introduction presentations provided views of existing QoS and QoE
+measurements and their effectiveness. Also discussed was the
+interaction between multiple users within the network, as well as the
+interaction between multiple layers of the OSI stack.  Vint Cerf
 provided a key note describing the history and importance of the
 topic.
 
@@ -503,21 +507,21 @@ re-considering not only the importance of one metric over the other,
 but also re-considering the entire metaphor.
 
 It is time for the experts to look at not only at adjusting TCP, but
-also at exploring other protocols, such as QUIC and others as
-well. It's important that we feel free to consider alternatives to
-TCP. TCP is not a teddy bear, and one should not be afraid to replace
-it with a transport later with better properties benefiting users.
+also at exploring other protocols, such as QUIC has done lately. It's
+important that we feel free to consider alternatives to TCP. TCP is
+not a teddy bear, and one should not be afraid to replace it with a
+transport later with better properties that better benefits its users.
 
-A suggestion: we should consider desirable properties exercises. As we
-are looking at the parametric spaces, one can identify “desirable
-properties”, as opposed to “fundamental properties”. Among such
-properties, there may be a low-latency property. An example coming
+A suggestion: we should consider exercises to identify desirable
+properties. As we are looking at the parametric spaces, one can
+identify “desirable properties”, as opposed to “fundamental
+properties”, for example a low-latency property. An example coming
 from ARPA: you want to know where the missile is now, not where it
-was. Understanding what is driving the particular parameter in the
-design space.
+was. Understanding drives particular parameter creation and selection
+in the design space.
 
-When the parameter values are changed in extreme, such as
-connectiveness, some other designs will emerge. One case study is the
+When parameter values are changed in extreme, such as connectiveness,
+alternative designs will emerge. One case study of note is the
 interplanetary protocol, where "ping" is no long indicative of
 anything useful. While we look at responsiveness, we should not ignore
 connectivity.
@@ -529,11 +533,12 @@ for IPv6, but this problem space is not too late for the future laying
 problems.
 
 IPv6 is still not implemented fully everywhere.  It’s been a long road
-since starting work in 1996, and we are still not there. In 1996, the
-thinking was that it was quite easy to implement IPv6, but that failed
-to hold true. In 1996 the dot-com boom started and lots of money was
-spent quickly, and the moment was not caught in time while the market
-expanded exponentially. This should serve as a cautionary tale.
+to deployment since starting work in 1996, and we are still not
+there. In 1996, the thinking was that it was quite easy to implement
+IPv6, but that failed to hold true. In 1996 the dot-com boom began,
+with lots of money was spent quickly, and the moment was not caught in
+time while the market expanded exponentially. This should serve as a
+cautionary tale.
 
 One last point: consider performance across multiple hops in the
 Internet. We’ve not seen many end-to-end metrics, as successfully
@@ -542,7 +547,7 @@ business boundaries is quite hard to achieve. A good question to ask
 when developing new protocols is "will the new protocol work across
 multiple network hops?"
 
-Multi-hop networks are being gradually replaced by humongous flat
+Multi-hop networks are being gradually replaced by humongous, flat
 networks with sufficient connectivity between operators so that
 systems become 1 hop or 2 hop at most away from each other
 (e.g. Google, Facebook, Amazon). The fundamental architecture of the
@@ -1150,7 +1155,7 @@ more suitable for the next generation transport protocols.
 - Passive measurements from protocol implementations may provide
   beneficial data. 
 
-## Synthesis
+## Synthesis {#synthesis}
 
 Finally, in the Synthesis section presentations and discussions
 concentrated on the next steps likely needed to make forward
