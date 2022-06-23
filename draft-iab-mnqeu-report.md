@@ -323,14 +323,12 @@ informative:
       - ins: S. Cheshire
     seriesinfo: https://www.iab.org/wp-content/IAB-uploads/2021/09/Internet-Score-2.pdf
 
-  tools.ookla_speedtest:
+  Speedtest:
      title: "Speedtest by Ookla"
      target: https://www.speedtest.net
-  tools.apple_networkQuality:
+  NetworkQuality:
      title: "Apple Network Quality"
-  tools.ping:
-    title: "ping -- send ICMP ECHO_REQUEST packets to network hosts"
-  tools.samknows:
+  SamKnows:
      title: "SamKnows"
      target: https://www.samknows.com/  
 
@@ -558,62 +556,67 @@ Internet is changing.
 The Internet is a shared network, built on the IP protocols using
 packet-switching to interconnect multiple autonomous networks. The
 Internet's departure from circuit-switching technologies allowed it to
-scale beyond any other known network. On the other hand, the lack of
-in-network regulation made it difficult to ensure the best experience
-for every user.
+scale beyond any other known network design. On the other hand, the
+lack of in-network regulation made it difficult to ensure the best
+experience for every user.
 
-As the Internet use cases continue to expand, it becomes increasingly
-more difficult to predict which network characteristics correlate with
+As Internet use cases continue to expand, it becomes increasingly more
+difficult to predict which network characteristics correlate with
 better user experiences. Different application classes, e.g., video
-streaming and teleconferencing, can affect user experience in complex,
+streaming and teleconferencing, can affect user experience in complex
 and difficult to measure ways. Internet utilization shifts rapidly
 during the course of each day, week and year, which further
-complicates identifying key metrics capable of predicting a good user experience.
+complicates identifying key metrics capable of predicting a good user
+experience.
 
 Quality of Service (QoS) initiatives attempted to overcome these
 difficulties by strictly prioritizing different types of
 traffic. However, QoS metrics do not always correlate with user
-experience. The utility of the QoS metric is further limited by the difficulties in building solutions with the desired QoS characteristics.
+experience. The utility of the QoS metric is further limited by the
+difficulties in building solutions with the desired QoS
+characteristics.
 
-Quality of Experience (( QoE)) initiatives attempted to integrate the
+Quality of Experience (QoE) initiatives attempted to integrate the
 psychological aspects of how quality is perceived, and created
 statistical models designed to optimize the user experience. Despite
 these high modeling efforts, the QoE approach proved beneficial in
 certain application classes. Unfortunately, generalizing the models
 proved to be difficult, and the question of how different applications
-affect each other when sharing the same network remains open.
+affect each other when sharing the same network remains an open problem.
 
 The industry's focus on giving the end-user more throughput/bandwidth
 led to remarkable advances. In many places around the world, a home
 user enjoys gigabit speeds to their Internet Service Provider.  This
 is so remarkable that it would have been brushed off as science
 fiction a decade ago. However, the focus on increased capacity came at
-the expense of neglecting the other important core metric: latency. As
+the expense of neglecting another important core metric: latency. As
 a result, end-users whose experience is negatively affected by high
-lateness were advised to upgrade their equipment to get more
-throughput instead. {{MacMillian2021}} showed that sometimes such an upgrade can lead to latency improvements, due to the economical reasons of overselling the "value-priced" data plans.
+latency were advised to upgrade their equipment to get more
+throughput instead. {{MacMillian2021}} showed that sometimes such an
+upgrade can lead to latency improvements, due to the economical
+reasons of overselling the "value-priced" data plans.
 
-As the industry continued to give the end user more throughput, while
-neglecting the latency metric, application designs started to employ
-various latency and short service disruption hiding techniques.  For
-example, user experience of web browser performance is closely tired
-to the content in the local cache. While such techniques can clearly
-improve the user experience when using stale data is acceptable, this
-development is further decoupling user experience from the core
-metrics.
+As the industry continued to give end users more throughput, while
+mostly neglecting latency concerns, application designs started to
+employ various latency and short service disruption hiding techniques.
+For example, a user's experience of web browser performance is closely
+tired to the content in the browser's local cache. While such
+techniques can clearly improve the user experience when using stale
+data is possible, this development further decouples user experience
+from core metrics.
 
 In the most recent 10 years, efforts by Dave Taht and the bufferbloat
 society had led to significant progress updating queuing algorithms to
 reduce latencies under load compared to simipler FIFO
 queues. Unfortunately, the home router industry has yet to implement
-these algorithms, mostly due to marketing and cost reasons. Most home
+these algorithms, mostly due to marketing and cost concerns. Most home
 router manufacturers depend on System on a Chip (SoC) acceleration to
-to make products with a desired throughput. The SoC manufacturers opt
-for simpler algorithms and aggressive aggregation, reasoning that a
+create products with a desired throughput. SoC manufacturers opt for
+simpler algorithms and aggressive aggregation, reasoning that a
 higher-throughput chip will have guaranteed demand. Because consumers
-are offered choices primarily between different high throughput
-devices, the perception that a higher throughput leads to higher a
-quality of service continues to strengthen.
+are offered choices primarily among different high throughput devices,
+the perception that a higher throughput leads to higher a quality of
+service continues to strengthen.
 
 The home router is not the only place that can benefit from clearer
 indications of acceptable performance for users. Since users perceive
@@ -621,8 +624,8 @@ the Internet via the lens of applications, its important to appeal to
 the application vendors that they should adopt solutions that stress
 lower latencies. Unfortunately, while bandwidth is straightforward to
 measure, responsiveness is trickier. Many applications have found a
-set of metrics which are helpful to their realm, but these are not
-generalizable and universally applicable. Furthermore, due to the
+set of metrics which are helpful to their realm, but do not generalize
+well and cannot become universally applicable. Furthermore, due to the
 highly competitive application space, vendors may have economic
 reasons to avoid sharing their most useful metrics.
 
@@ -635,45 +638,47 @@ Finally, the Internet infrastructure that connects the applictions to the users 
 1. Measuring bandwidth is necessary, but is not alone sufficient.
 2. In many cases, Internet users don’t need more bandwidth, but rather
    need "better bandwidth" -- i.e., they need other connectivity improvements.
-3. The users perceive the quality of their Internet connection based
+3. Users perceive the quality of their Internet connection based
    on the applications they use, which are affected by a combination
    of factors. There's little value in exposing a typical user to the
    entire spectrum of possible reasons for the poor performance
    perceived in their application-centric view.
 4. Many factors affecting user experience are outside the users'
-   sphere of control. It's unclear whether exposing the users to these
-   other factors will help user's understand their performance
-   state. In general, users prefer simple, categorical choices
-   (e.g. "good", "better", and "best" options).
+   sphere of control. It's unclear whether exposing users to these
+   other factors will help users understand the state of their network
+   performance. In general, users prefer simple, categorical
+   choices (e.g. "good", "better", and "best" options).
 5. The Internet content market is highly competitive, and many
    applications develop their own "secret sauce."
 
 ## Metrics considerations {#discussion-metrics}
 
-The workshop continued to discuss various metrics that can be used
-instead of or in addition to available bandwidth. Several workshop
-attendees presented deep-dive studies on measurement methodology.
+In the second agenda section, the workshop continued its discussion
+about metrics that can be used instead of or in addition to available
+bandwidth. Several workshop attendees presented deep-dive studies on
+measurement methodology.
 
 ### Common performance metrics
 
-Losing Internet access is, of course, the worst user
+Losing Internet access entirely is, of course, the worst user
 experience. Unfortunately, unless rebooting the home router restores
 connectivity, there is little a user can do other than contacting
 their service provider. Nevertheless, there is value in the systematic
 collection of availability metrics on the client side: these can help
 the user's ISP localize and resolve issues faster, while enabling
-users to better choose between ISPs. One can measure the availability
+users to better choose between ISPs. One can measure availability
 directly by simply attempting connections from the client-side to
-locations of interest. For example, {{tools.ookla_speedtest}} uses a
-large number of Android devices to measure network and cellular
-availability around the globe. Ookla collects hundreds of millions of
-data points per day, and uses these for accurate availability
-reporting. An alternative approach is to derive availability from the
-failure rates of other tests. For example, {{FCC_MBA}} uses thousands
-of off-the shelf routers, called "Whiteboxes", with measurement
-software developed by {{tools.samknows}}. These Whiteboxes perform an
-array of network tests and report availability based whether test
-connections were successful or not.
+distant locations of interest. For example, Ookla's
+({{Speedtest}}) uses a large number of Android devices to
+measure network and cellular availability around the globe. Ookla
+collects hundreds of millions of data points per day, and uses these
+for accurate availability reporting. An alternative approach is to
+derive availability from the failure rates of other tests. For
+example, {{FCC_MBA}} uses thousands of off-the shelf routers, called
+"Whiteboxes", with measurement software developed by
+{{SamKnows}}. These Whiteboxes perform an array of network tests
+and report availability based whether test connections were successful
+or not.
 
 Measuring available capacity can be helpful to the end-users, but it
 is even more valuable for service providers and application
@@ -884,7 +889,7 @@ between 6 to 25 times higher than the idle latency:
 While historically the tooling available for measuring latency focused
 on measuring the idle latency, there is a trend in the industry to
 start measuring the working latency as well,
-e.g. {{tools.apple_networkQuality}}.
+e.g. Apple's {{NetworkQuality}}.
 
 <!-- missing the RPM and goodput text from PR#8 - maybe here? -->
 
