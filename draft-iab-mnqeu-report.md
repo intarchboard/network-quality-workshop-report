@@ -958,6 +958,8 @@ become saturated during the peak hours of the day. Systematic testing
 of the working latency in routers under load can help improve both our
 understanding of latency and the impact of deployed infrastructure.
 
+---
+
 ### Metrics Key Points {#discussions-metrics-key-points}
 
 
@@ -981,11 +983,11 @@ Key points from the presentations and discussions included:
 1. Availability and capacity are "hygienic factors" - unless an
    application is capable of using extra capacity, end-users will see
    little benefit from using overprovisioned lines.
-3. The working latency has stronger correlation with user experience
-   than latency under an idle network load. The working latency can
+3. Working latency has stronger correlation with user experience
+   than latency under an idle network load. Working latency can
    exceed the idle latency by order of magnitude.
 4. The RPM metric is a stable metric, with positive values being
-   better, that can be effective to communicate latency to the
+   better, that may be more effective when communicating latency to
    end-users.
 5. The relationship between throughput and goodput can be effective in
    finding the saturation points, both in client-side {{Paasch2021}}
