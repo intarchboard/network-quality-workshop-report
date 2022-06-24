@@ -958,8 +958,6 @@ become saturated during the peak hours of the day. Systematic testing
 of the working latency in routers under load can help improve both our
 understanding of latency and the impact of deployed infrastructure.
 
----
-
 ### Metrics Key Points {#discussions-metrics-key-points}
 
 
@@ -997,6 +995,8 @@ Key points from the presentations and discussions included:
 
 Finally, it was commonly agreed to that the best metrics are those
 that are actionable.
+
+---
 
 ## Cross-layer Considerations {#discussions-cross-layer}
 
