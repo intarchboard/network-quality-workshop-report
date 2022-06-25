@@ -996,37 +996,32 @@ Key points from the presentations and discussions included:
 Finally, it was commonly agreed to that the best metrics are those
 that are actionable.
 
----
-
 ## Cross-layer Considerations {#discussions-cross-layer}
 
-In the Cross-layer section participants presented material and
-discussed how to accurately measure exactly where problems occur.  The
-discussion showed how difficult it is to achieve accuracy when many
-components of a network connection affects the measurements.
-Discussion centered especially on the differences between physically
-wired and wireless connections and the difficulties of accurately
-determining problem spots when multiple different network types are
-responsible for the quality.  As an example, {{Kerpez2021}} showed
-that as Internet access becomes the norm, the limited bandwidth of
-2.4Ghz wifi is most frequently the bottleneck. In comparison, the
-wider bandwidth of the 5Ghz WiFi have only been the bottleneck in 20%
-of the observations.
+In the Cross-layer segment of the workshop, participants presented
+material on and discussed how to accurately measure exactly where
+problems occur.  Discussion centered especially on the differences
+between physically wired and wireless connections and the difficulties
+of accurately determining problem spots when multiple different types
+of network segments are responsible for the quality.  As an example,
+{{Kerpez2021}} showed that limited bandwidth of 2.4Ghz wifi is the
+most frequently the bottleneck. In comparison, the wider bandwidth of
+the 5Ghz WiFi have only been the bottleneck in 20% of observations.
 
 The participants agreed that no single component of a network
 connection has all the data required to measure the effects of the
-network performance on the quality of the end user experience.  
+network performance on the quality of the end user experience.
 
-- The applications that are running on the end-user devices have the best
-  insight into their respective performance, but have limited visibility into
-  the behavior of the network, and are not able to act on the limited information
-  about the network performance.
+- Applications that are running on the end-user devices have the best
+  insight into their respective performance, but have limited
+  visibility into the behavior of the network itself, and are unable
+  to act based on their limited perspective.
 - Internet service providers have good insight into QoS
   considerations, but are not able to infer the effect of the QoS
   metrics on the quality of end user experiences.
-- Content providers have good insight into the aggregated behavior of the
-  end users, but lack the insight on what aspects of the network performance
-  are leading indicators of user behavior.
+- Content providers have good insight into the aggregated behavior of
+  the end users, but lack the insight on what aspects of network
+  performance are leading indicators of user behavior.
 
 The workshop had identified the need for a standard and extensible way
 to exchange network performance characteristics. Such an exchange
@@ -1034,44 +1029,39 @@ standard should address (at least) the following:
 
 - A scalable way to capture the performance of multiple (potentially
   thousands of) endpoints.
-- The need for an accompanying set of tools to analyze the data.
-- A transparent model for giving the different actors on the network connection
-  an incentive to share the performance data they collect.
-- Preservation of end-user privacy. In particular, federated
-  learning approaches, where no centralized entity has the access to the whole
-  picture, should be preferred.
-- The data exchange format should include precautions against data
-  manipulations, so that the different actors won't be tempted to game the
-  mechanism.
+- The data exchange format should prevent data manipulation, so that
+  the different participants won't be able to game the mechanisms.
+- Preservation of end-user privacy. In particular, federated learning
+  approaches should be preferred so no centralized entity has the
+  access to the whole picture.
+- A transparent model for giving the different actors on a network
+  connection an incentive to share the performance data they collect.
+- An accompanying set of tools to analyze the data is needed as well.
 
 ### Separation of Concerns
 
-Commonly, there's a tight coupling between 
+Commonly, there's a tight coupling between collecting performance
+metrics, interpreting those metrics, and and acting upon the
+interpretation.  Unfortunately, such model is not the best for
+successfully exchanging cross-layer data as:
 
-1. collecting performance metrics,
-2. interpreting those metrics and 
-3. and acting upon the intrepretation of the metrics.
+- Actors that are able to collect particular performance metrics
+  (e.g. the TCP RTT) do not necessarily have the context necessary for
+  a meaningful interpretation.
+- The actors that have the context and the computational/storage
+  capacity to interpret metrics do not necessarily have the ability to
+  control the behavior of network / application.
+- The actors that can control the behavior of networks and/or
+  applications typically do not have access to complete measurement
+  data.
 
-Unfortunately, such model is not the best for successfully exchanging
-cross-layer data:
+The participants agreed that it is important to separate the above
+three aspects, so that:
 
-- The actors that have the ability to collect particular performance metrics
-  (e.g. the TCP RTT) do not necessarily have the context necessary for a
-  meaningful interpretation.
-- The actors that have the context and the computational/storage capacity for
-  the interpretation do not necessarily have the abilty to control the behavior
-  of network / application.
-- The actors that can control the behavior of network / application typically
-  do not have access to the data. 
-
-The participants agreed that it is important to separate the above three
-aspects, so that:
-
-- The different actors that have the data but not the ability to interpret /
-  act upon should publish their measured data.
+- The different actors that have the data but not the ability to
+  interpret and/or act upon it should publish their measured data.
 - The actors that have the expertise in interpreting and synthesizing
-  the performance data will be able to publish the results of
-  any interpretation.
+  performance data should publish the results of their interpretations.
 
 ### Security and Privacy Considerations
 
