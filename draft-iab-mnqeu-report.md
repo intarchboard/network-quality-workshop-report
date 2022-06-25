@@ -915,7 +915,7 @@ implemented in apple monterey os.
 4 billion download tests that m-lab performed in 2010-2021. during
 this time frame, the m-lab measurement platform underwent several
 upgrades which allowed the research team to compare the effect of
-different tcp congestion control algorithms (ccas) on the measured
+different tcp Congestion Control Algorithms (CCAs) on the measured
 end-to-end latency. the study showed that the use cubic cca leads to
 increased working latency, which is attributed to its use of larger
 queues.
@@ -1065,63 +1065,64 @@ three aspects, so that:
 
 ### Security and Privacy Considerations
 
-Preserving the privacy of the end users is a difficult requirement to
-meet when addressing this problem space. There is an intrinsic
-trade-off between collecting more data about user activities, and
-infringing their privacy in doing so.
-
+Preserving the privacy of Internet end users is a difficult
+requirement to meet when addressing this problem space. There is an
+intrinsic trade-off between collecting more data about user
+activities, and infringing their privacy while doing so.
 Participants agreed that observability across multiple layers is
-necessary for an accurate measurement of the network quality.
+necessary for an accurate measurement of the network quality, but
+doing so in a way that minimizes privacy leakage is an open question.
 
-### Concrete Suggestions
+### Metric Measurement Considerations
 
-- The TCP protocol makes several metrics available for passive measurement,
-  and the following metrics have been found to be effective:
+- The following TCP protocol metrics have been found to be effective
+  and are available for passive measurement:
     - TCP connection latency measured using SACK/ACK timing, as well as
       the timing between TCP retransmission events, are good proxies for
       end-to-end RTT measurements.
     - On the Linux platform, the tcp_info structure is the de-facto
-      standard for an application to introspect the performance of
-      kernel-space networking. However, there is no equivalent de-facto
-      standard for the user-space networking.
+      standard for an application to inspect the performance of
+      kernel-space networking. However, there is no equivalent
+      de-facto standard for the user-space networking.
 - The QUIC and MASQUE protocols make passive performance measurements
-  more challenging.  
+  more challenging.
     - An approach that uses federated measurement / hierarchical
-      aggregation appears more valuable for these protocols.
+      aggregation may be more valuable for these protocols.
     - The QLOG format seems to be the most mature candidate for such
       an exchange.
 
-### Towards Future Cross-layer Observability {#discussions-cross-observability}
+### Towards Improving Future Cross-layer Observability {#discussions-cross-observability}
 
 The ownership of the Internet is spread across multiple administrative
-domains, making measuring performance data difficult. Furthermore, the
-immense scale of the Internet makes aggregation and analysis of such
-data difficult. {{Marx2021}} presented a simple logging format that
-could potentially be used to collect and aggregate data from different
-layers.
+domains, making measurement of end-to-end performance data
+difficult. Furthermore, the immense scale of the Internet makes
+aggregation and analysis of this difficult. {{Marx2021}} presented a
+simple logging format that could potentially be used to collect and
+aggregate data from different layers.
 
 Another aspect of cross-layer collaboration hampering measurement is
 that the majority of current algorithms do not explicitly provide
 performance data that can be used in cross-layer analysis. The IETF
-community can be more diligent in identifying a protocol's key
-performance indicators, and exposing those as part of the protocol
+community could be more diligent in identifying each protocol's key
+performance indicators, and exposing them as part of the protocol
 specification.
 
-Despite all the challenges, it should still be possible to perform
+Despite all these challenges, it should still be possible to perform
 limited-scope studies in order to have a better understanding of how
 user quality is affected by the interaction of the different
-components that constitute the Internet. Recent development of
-federated learning algorithms suggests that it might be possible to
-perform cross-layer performance measurements while preserving user
-privacy.
+components that constitute the Internet. Furthermore, recent
+development of federated learning algorithms suggests that it might be
+possible to perform cross-layer performance measurements while
+preserving user privacy.
 
 ### Efficient Collaboration Between Hardware and Transport Protocols {#discussions-cross-layer-hw-tp}
 
-With the advent of the L4S congestion notification and control, there
-is an even higher need for the transport protocols and the underlying
-hardware to work in unison.
+With the advent of the low latency, low loss and scalable throughput
+(L4S) congestion notification and control, there is an even higher
+need for the transport protocols and the underlying hardware to work
+in unison.
 
-At the time of the workshop, the typical home router used a single
+At the time of the workshop, the typical home router uses a single
 FIFO queue, large enough to allow amortizing the lower-layer header
 overhead across multiple transport PDUs. These designs worked well
 with the Cubic congestion control algorithm, yet the newer generation
@@ -1130,11 +1131,11 @@ less than 1ms, the home router needs to work efficiently on sequential
 transmissions of just a few segments vs. being optimized for large
 packet bursts.
 
-Another design trait that's common in home routers is the use of
-packet aggregation to further amortize the overhead added by the
-lower-layer headers.  Specifically, multiple IP datagrams are combined
-into a single large tranfer frame. However, this aggregation can add
-up to 10ms to the packet sojourn delay.
+Another design trait common in home routers is the use of packet
+aggregation to further amortize the overhead added by the lower-layer
+headers.  Specifically, multiple IP datagrams are combined into a
+single, large tranfer frame. However, this aggregation can add up to
+10ms to the packet sojourn delay.
 
 Following the famous "you can't improve what you don't measure" adage,
 it is important to expose these aggregation delays in a way that would
@@ -1143,19 +1144,21 @@ more suitable for the next generation transport protocols.
 
 ### Cross-Layer Key Points {#cross-layer-keypoints}
 
-- Significant differences exist for metrics and optimizations needed
-  in wireless vs wired networks.
-- Multi-segment networks affect measurements making identification of
-  an issue's root-cause challenging.
+- Significant differences exist in the characteristics of metrics to
+  measured and required optimizations needed in wireless vs wired
+  networks.
+- Identification of an issue's root-cause is hampered by the
+  challenges in measuring multi-segment network paths.
 - No single component of a network connection has all the data
-  required to measure the effects of the network performance on the
-  quality of the end user experience
+  required to measure the effects of the complete network performance
+  on the quality of the end user experience.
 - Actionable results require both proper collection and interpretation.
-- Coordination among carriers is important for success
+- Coordination among network providers is important to successful
+  improve measurement of end user experiences.
 - Simultaneously providing accurate measurements while preserving
   end-user privacy is challenging.
 - Passive measurements from protocol implementations may provide
-  beneficial data. 
+  beneficial data.
 
 ## Synthesis {#synthesis}
 
