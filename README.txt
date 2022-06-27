@@ -5,8 +5,8 @@
 Network Working Group                                        W. Hardaker
 Internet-Draft                                                   USC/ISI
 Intended status: Informational                                O. Shapira
-Expires: 4 December 2022                                           Apple
-                                                             2 June 2022
+Expires: 28 December 2022                                          Apple
+                                                            26 June 2022
 
 
       IAB workshop report: Measuring Network Quality for End-Users
@@ -35,7 +35,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 4 December 2022.
+   This Internet-Draft will expire on 28 December 2022.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Hardaker & Shapira       Expires 4 December 2022                [Page 1]
+Hardaker & Shapira      Expires 28 December 2022                [Page 1]
 
 Internet-Draft                    title                        June 2022
 
@@ -65,51 +65,51 @@ Table of Contents
    2.  Workshop Agenda . . . . . . . . . . . . . . . . . . . . . . .   4
    3.  Position Papers . . . . . . . . . . . . . . . . . . . . . . .   5
    4.  Workshop Topics and Discussion  . . . . . . . . . . . . . . .   7
-     4.1.  Introduction and overviews  . . . . . . . . . . . . . . .   7
+     4.1.  Introduction and overviews  . . . . . . . . . . . . . . .   8
        4.1.1.  Key points from the keynote by Vint Cerf  . . . . . .   8
        4.1.2.  Introductory talks  . . . . . . . . . . . . . . . . .   9
        4.1.3.  Introductory talks - key points . . . . . . . . . . .  11
      4.2.  Metrics considerations  . . . . . . . . . . . . . . . . .  11
        4.2.1.  Common performance metrics  . . . . . . . . . . . . .  11
        4.2.2.  Availability metrics  . . . . . . . . . . . . . . . .  14
-       4.2.3.  Capacity metrics  . . . . . . . . . . . . . . . . . .  15
+       4.2.3.  Capacity metrics  . . . . . . . . . . . . . . . . . .  14
        4.2.4.  Latency metrics . . . . . . . . . . . . . . . . . . .  15
        4.2.5.  Measurement case studies  . . . . . . . . . . . . . .  17
        4.2.6.  Metrics Key Points  . . . . . . . . . . . . . . . . .  18
-     4.3.  Cross-layer Considerations  . . . . . . . . . . . . . . .  20
-       4.3.1.  Separation of Concerns  . . . . . . . . . . . . . . .  21
+     4.3.  Cross-layer Considerations  . . . . . . . . . . . . . . .  19
+       4.3.1.  Separation of Concerns  . . . . . . . . . . . . . . .  20
        4.3.2.  Security and Privacy Considerations . . . . . . . . .  21
-       4.3.3.  Concrete Suggestions  . . . . . . . . . . . . . . . .  22
-       4.3.4.  Towards Future Cross-layer Observability  . . . . . .  22
+       4.3.3.  Metric Measurement Considerations . . . . . . . . . .  21
+       4.3.4.  Towards Improving Future Cross-layer Observability  .  22
        4.3.5.  Efficient Collaboration Between Hardware and Transport
-               Protocols . . . . . . . . . . . . . . . . . . . . . .  23
+               Protocols . . . . . . . . . . . . . . . . . . . . . .  22
        4.3.6.  Cross-Layer Key Points  . . . . . . . . . . . . . . .  23
-     4.4.  Synthesis . . . . . . . . . . . . . . . . . . . . . . . .  24
-       4.4.1.  Measurement and Metrics Considerations  . . . . . . .  24
-       4.4.2.  End-User metrics presentation . . . . . . . . . . . .  25
-       4.4.3.  Synthesis Key Points  . . . . . . . . . . . . . . . .  26
-   5.  Conclusions . . . . . . . . . . . . . . . . . . . . . . . . .  27
-     5.1.  General statements  . . . . . . . . . . . . . . . . . . .  27
+     4.4.  Synthesis . . . . . . . . . . . . . . . . . . . . . . . .  23
+       4.4.1.  Measurement and Metrics Considerations  . . . . . . .  23
+       4.4.2.  End-User metrics presentation . . . . . . . . . . . .  24
+       4.4.3.  Synthesis Key Points  . . . . . . . . . . . . . . . .  25
+   5.  Conclusions . . . . . . . . . . . . . . . . . . . . . . . . .  26
+     5.1.  General statements  . . . . . . . . . . . . . . . . . . .  26
      5.2.  Specific statements about detailed protocols/
            techniques  . . . . . . . . . . . . . . . . . . . . . . .  27
-     5.3.  Problem statements and concerns . . . . . . . . . . . . .  28
+     5.3.  Problem statements and concerns . . . . . . . . . . . . .  27
      5.4.  No-consensus reached statements . . . . . . . . . . . . .  28
-   6.  Follow-on work  . . . . . . . . . . . . . . . . . . . . . . .  29
-   7.  Security considerations . . . . . . . . . . . . . . . . . . .  29
-   8.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  29
-     8.1.  Normative References  . . . . . . . . . . . . . . . . . .  29
+   6.  Follow-on work  . . . . . . . . . . . . . . . . . . . . . . .  28
+   7.  Security considerations . . . . . . . . . . . . . . . . . . .  28
+   8.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  28
+     8.1.  Normative References  . . . . . . . . . . . . . . . . . .  28
      8.2.  Informative References  . . . . . . . . . . . . . . . . .  29
-   Appendix A.  Participants List  . . . . . . . . . . . . . . . . .  35
-   Appendix B.  IAB Members at the Time of Approval  . . . . . . . .  37
+   Appendix A.  Participants List  . . . . . . . . . . . . . . . . .  34
+   Appendix B.  IAB Members at the Time of Approval  . . . . . . . .  36
    Appendix C.  Acknowledgements . . . . . . . . . . . . . . . . . .  37
      C.1.  Draft contributors  . . . . . . . . . . . . . . . . . . .  37
-     C.2.  Workshop Chairs . . . . . . . . . . . . . . . . . . . . .  38
-     C.3.  Program Committee . . . . . . . . . . . . . . . . . . . .  38
+     C.2.  Workshop Chairs . . . . . . . . . . . . . . . . . . . . .  37
+     C.3.  Program Committee . . . . . . . . . . . . . . . . . . . .  37
    Appendix D.  Github Version of this document  . . . . . . . . . .  38
 
 
 
-Hardaker & Shapira       Expires 4 December 2022                [Page 2]
+Hardaker & Shapira      Expires 28 December 2022                [Page 2]
 
 Internet-Draft                    title                        June 2022
 
@@ -165,7 +165,7 @@ Internet-Draft                    title                        June 2022
 
 
 
-Hardaker & Shapira       Expires 4 December 2022                [Page 3]
+Hardaker & Shapira      Expires 28 December 2022                [Page 3]
 
 Internet-Draft                    title                        June 2022
 
@@ -221,7 +221,7 @@ Internet-Draft                    title                        June 2022
 
 
 
-Hardaker & Shapira       Expires 4 December 2022                [Page 4]
+Hardaker & Shapira      Expires 28 December 2022                [Page 4]
 
 Internet-Draft                    title                        June 2022
 
@@ -277,7 +277,7 @@ Internet-Draft                    title                        June 2022
 
 
 
-Hardaker & Shapira       Expires 4 December 2022                [Page 5]
+Hardaker & Shapira      Expires 28 December 2022                [Page 5]
 
 Internet-Draft                    title                        June 2022
 
@@ -333,7 +333,7 @@ Internet-Draft                    title                        June 2022
 
 
 
-Hardaker & Shapira       Expires 4 December 2022                [Page 6]
+Hardaker & Shapira      Expires 28 December 2022                [Page 6]
 
 Internet-Draft                    title                        June 2022
 
@@ -374,32 +374,39 @@ Internet-Draft                    title                        June 2022
 
 4.  Workshop Topics and Discussion
 
-   The three day workshop was broken into four separate sections,
-   including introductory material, that each played a role in framing
-   the discussions.  This was followed by a discussion about conclusions
-   that could be agreed upon by workshop participants (Section 5).
-
-4.1.  Introduction and overviews
-
-   The workshop started with a broad focus on the state of user Quality
-   of Service (QoS) and quality of experience (QoE) the Internet today.
-   The goal of the introductory talks was to set the stage for the
-   workshop by describing both the problem space and the current
-   solutions in place and their limitations.
+   The agenda for the three day workshop was broken into four separate
+   sections that each played a role in framing the discussions.  The
+   workshop started with a series of Introduction and problem space
+   presentations {introduction-section}, followed by metrics
+   considerations Section 4.2, cross layer considerations Section 4.3
+   and a synthesis discussion Section 4.4.  After the four subsections
+   concluded, a follow-on discussion was held to draw conclusions that
+   could be agreed upon by workshop participants (Section 5).
 
 
 
-Hardaker & Shapira       Expires 4 December 2022                [Page 7]
+
+
+
+
+Hardaker & Shapira      Expires 28 December 2022                [Page 7]
 
 Internet-Draft                    title                        June 2022
 
 
-   The introduction presentations by participants provided views of
-   existing QoS and QoE measurements and their effectiveness.  Also
-   discussed was the interaction between multiple users within the
-   network, as well as the interaction between multiple layers of the
-   OSI stack.  Some existing measurement work was also presented.  Vint
-   Cerf provided a key note describing the history and importance of the
+4.1.  Introduction and overviews
+
+   The workshop started with a broad focus on the state of user Quality
+   of Service (QoS) and quality of experience (QoE) on the Internet
+   today.  The goal of the introductory talks was to set the stage for
+   the workshop by describing both the problem space and the current
+   solutions in place and their limitations.
+
+   The introduction presentations provided views of existing QoS and QoE
+   measurements and their effectiveness.  Also discussed was the
+   interaction between multiple users within the network, as well as the
+   interaction between multiple layers of the OSI stack.  Vint Cerf
+   provided a key note describing the history and importance of the
    topic.
 
 4.1.1.  Key points from the keynote by Vint Cerf
@@ -410,22 +417,23 @@ Internet-Draft                    title                        June 2022
    but also re-considering the entire metaphor.
 
    It is time for the experts to look at not only at adjusting TCP, but
-   also at exploring other protocols, such as QUIC and others as well.
+   also at exploring other protocols, such as QUIC has done lately.
    It's important that we feel free to consider alternatives to TCP.
    TCP is not a teddy bear, and one should not be afraid to replace it
-   with a transport later with better properties benefiting users.
+   with a transport later with better properties that better benefits
+   its users.
 
-   A suggestion: we should consider desirable properties exercises.  As
-   we are looking at the parametric spaces, one can identify "desirable
-   properties", as opposed to "fundamental properties".  Among such
-   properties, there may be a low-latency property.  An example coming
+   A suggestion: we should consider exercises to identify desirable
+   properties.  As we are looking at the parametric spaces, one can
+   identify "desirable properties", as opposed to "fundamental
+   properties", for example a low-latency property.  An example coming
    from ARPA: you want to know where the missile is now, not where it
-   was.  Understanding what is driving the particular parameter in the
-   design space.
+   was.  Understanding drives particular parameter creation and
+   selection in the design space.
 
-   When the parameter values are changed in extreme, such as
-   connectiveness, some other designs will emerge.  One case study is
-   the interplanetary protocol, where "ping" is no long indicative of
+   When parameter values are changed in extreme, such as connectiveness,
+   alternative designs will emerge.  One case study of note is the
+   interplanetary protocol, where "ping" is no long indicative of
    anything useful.  While we look at responsiveness, we should not
    ignore connectivity.
 
@@ -435,20 +443,20 @@ Internet-Draft                    title                        June 2022
    too late for IPv6, but this problem space is not too late for the
    future laying problems.
 
-   IPv6 is still not implemented fully everywhere.  It's been a long
-   road since starting work in 1996, and we are still not there.  In
-   1996, the thinking was that it was quite easy to implement IPv6, but
-   that failed to hold true.  In 1996 the dot-com boom started and lots
-   of money was spent quickly, and the moment was not caught in time
-   while the market expanded exponentially.  This should serve as a
-   cautionary tale.
 
 
-
-Hardaker & Shapira       Expires 4 December 2022                [Page 8]
+Hardaker & Shapira      Expires 28 December 2022                [Page 8]
 
 Internet-Draft                    title                        June 2022
 
+
+   IPv6 is still not implemented fully everywhere.  It's been a long
+   road to deployment since starting work in 1996, and we are still not
+   there.  In 1996, the thinking was that it was quite easy to implement
+   IPv6, but that failed to hold true.  In 1996 the dot-com boom began,
+   with lots of money was spent quickly, and the moment was not caught
+   in time while the market expanded exponentially.  This should serve
+   as a cautionary tale.
 
    One last point: consider performance across multiple hops in the
    Internet.  We've not seen many end-to-end metrics, as successfully
@@ -457,7 +465,7 @@ Internet-Draft                    title                        June 2022
    when developing new protocols is "will the new protocol work across
    multiple network hops?"
 
-   Multi-hop networks are being gradually replaced by humongous flat
+   Multi-hop networks are being gradually replaced by humongous, flat
    networks with sufficient connectivity between operators so that
    systems become 1 hop or 2 hop at most away from each other (e.g.
    Google, Facebook, Amazon).  The fundamental architecture of the
@@ -468,15 +476,15 @@ Internet-Draft                    title                        June 2022
    The Internet is a shared network, built on the IP protocols using
    packet-switching to interconnect multiple autonomous networks.  The
    Internet's departure from circuit-switching technologies allowed it
-   to scale beyond any other known network.  On the other hand, the lack
-   of in-network regulation made it difficult to ensure the best
-   experience for every user.
+   to scale beyond any other known network design.  On the other hand,
+   the lack of in-network regulation made it difficult to ensure the
+   best experience for every user.
 
-   As the Internet use cases continue to expand, it becomes increasingly
+   As Internet use cases continue to expand, it becomes increasingly
    more difficult to predict which network characteristics correlate
    with better user experiences.  Different application classes, e.g.,
    video streaming and teleconferencing, can affect user experience in
-   complex, and difficult to measure ways.  Internet utilization shifts
+   complex and difficult to measure ways.  Internet utilization shifts
    rapidly during the course of each day, week and year, which further
    complicates identifying key metrics capable of predicting a good user
    experience.
@@ -487,56 +495,54 @@ Internet-Draft                    title                        June 2022
    The utility of the QoS metric is further limited by the difficulties
    in building solutions with the desired QoS characteristics.
 
-   Quality of Experience (( QoE)) initiatives attempted to integrate the
+   Quality of Experience (QoE) initiatives attempted to integrate the
    psychological aspects of how quality is perceived, and created
    statistical models designed to optimize the user experience.  Despite
+
+
+
+Hardaker & Shapira      Expires 28 December 2022                [Page 9]
+
+Internet-Draft                    title                        June 2022
+
+
    these high modeling efforts, the QoE approach proved beneficial in
    certain application classes.  Unfortunately, generalizing the models
    proved to be difficult, and the question of how different
    applications affect each other when sharing the same network remains
-   open.
-
-
-
-
-
-
-Hardaker & Shapira       Expires 4 December 2022                [Page 9]
-
-Internet-Draft                    title                        June 2022
-
+   an open problem.
 
    The industry's focus on giving the end-user more throughput/bandwidth
    led to remarkable advances.  In many places around the world, a home
    user enjoys gigabit speeds to their Internet Service Provider.  This
    is so remarkable that it would have been brushed off as science
    fiction a decade ago.  However, the focus on increased capacity came
-   at the expense of neglecting the other important core metric:
-   latency.  As a result, end-users whose experience is negatively
-   affected by high lateness were advised to upgrade their equipment to
-   get more throughput instead.  [MacMillian2021] showed that sometimes
-   such an upgrade can lead to latency improvements, due to the
-   economical reasons of overselling the "value-priced" data plans.
+   at the expense of neglecting another important core metric: latency.
+   As a result, end-users whose experience is negatively affected by
+   high latency were advised to upgrade their equipment to get more
+   throughput instead.  [MacMillian2021] showed that sometimes such an
+   upgrade can lead to latency improvements, due to the economical
+   reasons of overselling the "value-priced" data plans.
 
-   As the industry continued to give the end user more throughput, while
-   neglecting the latency metric, application designs started to employ
-   various latency and short service disruption hiding techniques.  For
-   example, user experience of web browser performance is closely tired
-   to the content in the local cache.  While such techniques can clearly
-   improve the user experience when using stale data is acceptable, this
-   development is further decoupling user experience from the core
-   metrics.
+   As the industry continued to give end users more throughput, while
+   mostly neglecting latency concerns, application designs started to
+   employ various latency and short service disruption hiding
+   techniques.  For example, a user's experience of web browser
+   performance is closely tired to the content in the browser's local
+   cache.  While such techniques can clearly improve the user experience
+   when using stale data is possible, this development further decouples
+   user experience from core metrics.
 
    In the most recent 10 years, efforts by Dave Taht and the bufferbloat
    society had led to significant progress updating queuing algorithms
    to reduce latencies under load compared to simipler FIFO queues.
    Unfortunately, the home router industry has yet to implement these
-   algorithms, mostly due to marketing and cost reasons.  Most home
+   algorithms, mostly due to marketing and cost concerns.  Most home
    router manufacturers depend on System on a Chip (SoC) acceleration to
-   to make products with a desired throughput.  The SoC manufacturers
-   opt for simpler algorithms and aggressive aggregation, reasoning that
-   a higher-throughput chip will have guaranteed demand.  Because
-   consumers are offered choices primarily between different high
+   create products with a desired throughput.  SoC manufacturers opt for
+   simpler algorithms and aggressive aggregation, reasoning that a
+   higher-throughput chip will have guaranteed demand.  Because
+   consumers are offered choices primarily among different high
    throughput devices, the perception that a higher throughput leads to
    higher a quality of service continues to strengthen.
 
@@ -547,20 +553,18 @@ Internet-Draft                    title                        June 2022
    that stress lower latencies.  Unfortunately, while bandwidth is
    straightforward to measure, responsiveness is trickier.  Many
    applications have found a set of metrics which are helpful to their
-   realm, but these are not generalizable and universally applicable.
-   Furthermore, due to the highly competitive application space, vendors
-   may have economic reasons to avoid sharing their most useful metrics.
+   realm, but do not generalize well and cannot become universally
 
 
 
-
-
-
-
-Hardaker & Shapira       Expires 4 December 2022               [Page 10]
+Hardaker & Shapira      Expires 28 December 2022               [Page 10]
 
 Internet-Draft                    title                        June 2022
 
+
+   applicable.  Furthermore, due to the highly competitive application
+   space, vendors may have economic reasons to avoid sharing their most
+   useful metrics.
 
 4.1.3.  Introductory talks - key points
 
@@ -570,142 +574,134 @@ Internet-Draft                    title                        June 2022
        rather need "better bandwidth" - i.e., they need other
        connectivity improvements.
 
-   3.  The users perceive the quality of their Internet connection based
-       on the applications they use, which are affected by a combination
-       of factors.  There's little value in exposing a typical user to
-       the entire spectrum of possible reasons for the poor performance
+   3.  Users perceive the quality of their Internet connection based on
+       the applications they use, which are affected by a combination of
+       factors.  There's little value in exposing a typical user to the
+       entire spectrum of possible reasons for the poor performance
        perceived in their application-centric view.
 
    4.  Many factors affecting user experience are outside the users'
-       sphere of control.  It's unclear whether exposing the users to
-       these other factors will help user's understand their performance
-       state.  In general, users prefer simple, categorical choices
-       (e.g. "good", "better", and "best" options).
+       sphere of control.  It's unclear whether exposing users to these
+       other factors will help users understand the state of their
+       network performance.  In general, users prefer simple,
+       categorical choices (e.g. "good", "better", and "best" options).
 
    5.  The Internet content market is highly competitive, and many
        applications develop their own "secret sauce."
 
 4.2.  Metrics considerations
 
-   The workshop continued to discuss various metrics that can be used
-   instead of or in addition to available bandwidth.  Several workshop
-   attendees presented deep-dive studies on measurement methodology.
+   In the second agenda section, the workshop continued its discussion
+   about metrics that can be used instead of or in addition to available
+   bandwidth.  Several workshop attendees presented deep-dive studies on
+   measurement methodology.
 
 4.2.1.  Common performance metrics
 
-   Losing Internet access is, of course, the worst user experience.
-   Unfortunately, unless rebooting the home router restores
+   Losing Internet access entirely is, of course, the worst user
+   experience.  Unfortunately, unless rebooting the home router restores
    connectivity, there is little a user can do other than contacting
    their service provider.  Nevertheless, there is value in the
    systematic collection of availability metrics on the client side:
    these can help the user's ISP localize and resolve issues faster,
    while enabling users to better choose between ISPs.  One can measure
-   the availability directly by simply attempting connections from the
-   client-side to locations of interest.  For example,
-   [tools.ookla_speedtest] uses a large number of Android devices to
-   measure network and cellular availability around the globe.  Ookla
-   collects hundreds of millions of data points per day, and uses these
-   for accurate availability reporting.  An alternative approach is to
+   availability directly by simply attempting connections from the
+   client-side to distant locations of interest.  For example, Ookla's
+   ([Speedtest]) uses a large number of Android devices to measure
+   network and cellular availability around the globe.  Ookla collects
+   hundreds of millions of data points per day, and uses these for
+
+
+
+Hardaker & Shapira      Expires 28 December 2022               [Page 11]
+
+Internet-Draft                    title                        June 2022
+
+
+   accurate availability reporting.  An alternative approach is to
    derive availability from the failure rates of other tests.  For
-   example, [FCC_MBA] uses thousands of off-the shelf routers, called
-   "Whiteboxes", with measurement software developed by
-   [tools.samknows].  These Whiteboxes perform an array of network tests
+   example, [FCC_MBA] [FCC_MBA_methodology] uses thousands of off-the
+   shelf routers, called "Whiteboxes", with measurement software
+   developed by [SamKnows].  These Whiteboxes perform an array of
+   network tests and report availability based whether test connections
+   were successful or not.
+
+   Measuring available capacity can be helpful to end-users, but it is
+   even more valuable for service providers and application developers.
+   High-definition video streaming requires significantly more capacity
+   than any other type of traffic.  At the time of the workshop, video
+   traffic constituted 90% of overall Internet traffic and contributed
+   to 95% of the revenues from monetization (via subscriptions, fees, or
+   ads).  As a result, video streaming services, such as Netflix, need
+   to continuously cope with rapid changes in available capacity.  The
+   ability to measure available capacity in real-time leverages the
+   different adaptive bitrate (ABR) compression algorithms to ensure the
+   best possible user experience.  Measuring aggregated capacity demand
+   allows Internet Service Provider's to be ready for traffic spikes.
+   For example, during the end-of-year holiday season, the global demand
+   for capacity has been shown to be 5-7 times higher than during other
+   seasons.  For end-users, knowledge of their capacity needs can help
+   them select the best data plan given their intended usage.  In many
+   cases, however, end-users have more than enough capacity and adding
+   more bandwidth will not improve their experience - after a point it
+   is no longer the limiting factor in user experience.  Finally, the
+   ability to differentiate between the "throughput" and the "goodput"
+   can be helpful in identifying when the network is saturated.
+
+   In measuring network quality, latency is defined as the time it takes
+   a packet to traverse a network path from one end to the other.  At
+   the time of this report, users in many places worldwide can enjoy
+   Internet access that has adequately high capacity and availability
+   for their current needs.  For these users, latency improvements
+   rather than bandwidth improvements can lead to the most significant
+   improvements in quality of experience.  The established latency
+   metric is a round-trip time (RTT), commonly measured in milliseconds.
+   However, users often find RTT values unintuitive since, unlike other
+   performance metrics, high RTT values indicate poor latency and users
+   typically understand higher scores to be better.  To address this,
+   [Paasch2021] and [Mathis2021] presented an inverse metric, called
+   "Round-trips per minute" (RPM).
+
+   There is an important distinction between "idle latency" and "latency
+   under working conditions."  The former is measured when the network
+   is underused and reflects a best-case scenario.  The latter is
+   measured when the network is under a typical workload.  Until
 
 
 
-Hardaker & Shapira       Expires 4 December 2022               [Page 11]
+Hardaker & Shapira      Expires 28 December 2022               [Page 12]
 
 Internet-Draft                    title                        June 2022
 
 
-   and report availability based whether test connections were
-   successful or not.
-
-   Measuring available capacity can be helpful to the end-users, but it
-   is even more valuable for service providers and application
-   developers.  High-definition video streaming requires significantly
-   more capacity than any other type of traffic.  At the time of the
-   workshop, video traffic constituted 90% of overall Internet traffic
-   and contributed to 95% of the revenues from monetization (via
-   subscriptions, fees, or ads).  As a result, video streaming services,
-   such as Netflix, need to continuously cope with rapid changes in the
-   available capacity.  The ability to measure available capacity in
-   real-time allows leveraging the different adaptive bitrate (ABR)
-   compression algorithms to ensure the best possible user experience.
-   Measuring the aggregated capacity demand allows Internet Service
-   Provider's to be ready for traffic spikes.  For example, during the
-   end-of-year holiday season, the global demand for capacity has been
-   shown to be 5-7 times higher than other seasons.  For end-users,
-   knowledge of their capacity needs can help them choose a data plan
-   best suited for them.  In many cases, however, end-users have more
-   than enough capacity, and adding more bandwidth will not improve
-   their experience as after a point it is no longer the limiting factor
-   in user experience.  Finally, the ability to differentiate between
-   the "throughput" and the "goodput" can be helpful in identifying when
-   the network is saturated.
-
-   In measuring network quality, latency is the time that it takes a
-   network packet to traverse the path from one end to the other through
-   the network.  At the time of this report, users in many places
-   worldwide can enjoy Internet access that has adequately high capacity
-   and availability for their current needs.  For these users, latency
-   improvements, rather than bandwidth improvements, can lead to the
-   most significant improvements in the quality of experience.  The
-   established latency metric is a round-trip time (RTT), commonly
-   measured in milliseconds.  However, users often find the RTT
-   unintuitive since, unlike other performance metrics, high RTT values
-   indicate poor latency.  [Paasch2021] and [Mathis2021] presented an
-   inverse metric, called "Round-trips per minute" (RPM).
-
-
-
-
-
-
-
-
-
-
-
-
-
-Hardaker & Shapira       Expires 4 December 2022               [Page 12]
-
-Internet-Draft                    title                        June 2022
-
-
-   There is an essential distinction between the "idle latency" and
-   "latency under working conditions."  The former is measured when the
-   network is not used and reflects the best-case scenario.  The latter
-   is measured when the network is under a typical workload.  Until
-   recently, the typical case was to present the idle latency.  However,
-   these numbers can be misleading.  For example, data presented at the
-   workshop shows that the idle latency can be up to 25 times lower than
-   the latency under typical working conditions.  Because of that, when
-   presenting latency to the end-user, it is essential to make a clear
-   distinction between the two.
+   recently, typical tools reported a network's idle latency, which can
+   be misleading.  For example, data presented at the workshop shows
+   that idle latencies can be up to 25 times lower than the latency
+   under typical working loads.  Because of this, it is essential to
+   make a clear distinction between the two when presenting latency to
+   end-users.
 
    Data shows that rapid changes in capacity affect latency.
    [Foulkes2021] attempts to quantify how often a rapid change in
-   capacity can cause connectivity to become "unstable", i.e., having
-   high latency but very little throughput.  Such changes in capacity
-   can be caused by infrastructure failures, but are much more often
-   caused by in-network phenomena, such changing traffic engineering
-   policies, or rapid changes in cross-traffic.
+   capacity can cause network connectivity to become "unstable" (i.e.,
+   having high latency with very little throughput).  Such changes in
+   capacity can be caused by infrastructure failures, but are much more
+   often caused by in-network phenomena, like changing traffic
+   engineering policies or rapid changes in cross-traffic.
 
    Data presented at the workshop shows that 36% of measured lines have
    capacity metrics that vary by more than 10% throughout the day and
    across multiple days.  These differences are caused by many
    variables, including local connectivity methods (WiFi vs. Ethernet),
    competing LAN traffic, device load/configuration, time of day and
-   local loop/backhaul capacity.  These factors make measuring capacity
-   only using an end-user device or network difficult.  A network router
-   that sees aggregated traffic from multiple devices provides a better
-   vantage point for capacity measurements.  Such a test can account for
-   the totality of local traffic and perform an independent capacity
-   test.  And even then, various factors might limit the accuracy of
-   said test.  Accurate capacity measurement requires a multiple
-   samples.
+   local loop/backhaul capacity.  These factor variations make measuring
+   capacity using only an end-user device or other end-network
+   measurement difficult.  A network router seeing aggregated traffic
+   from multiple devices provides a better vantage point for capacity
+   measurements.  Such a test can account for the totality of local
+   traffic and perform an independent capacity test.  However, various
+   factors might still limit the accuracy of such a test.  Accurate
+   capacity measurement requires multiple samples.
 
    As users perceive the Internet through the lens of applications, it
    may be difficult to correlate changes in capacity and latency with
@@ -722,49 +718,48 @@ Internet-Draft                    title                        June 2022
    requires a "fixed latency budget", as a sudden latency spike can
    decide the "win/lose" ratio for a player.  Companies that compete in
    the lucrative cloud gaming market make significant infrastructure
+   investments, such as buiding entire datacenters closer to their
+   users.  These data centers highlight the economic benefits that lower
+   numbers of latency spikes outweighs the associated deployment costs.
+   On the other hand, applications that are more tolerant to latency
 
 
 
-Hardaker & Shapira       Expires 4 December 2022               [Page 13]
+Hardaker & Shapira      Expires 28 December 2022               [Page 13]
 
 Internet-Draft                    title                        June 2022
 
 
-   investments, such as buiding entire datacenters closer to their
-   users.  These data centers highlight the economic benefits that
-   having fewer latency spikes outweigh the associated deployment cost.
-   On the other hand, applications that are more tolerant to latency
-   spikes can sometimes operate reasonably well through short spikes.
-   Yet even those applications can benefit from consistently low
-   latency.  For example, Video-on-Demand (VOD) apps can work reasonably
-   well when the video is consumed linearly, but once the user tries to
-   "switch a channel", or to "skip ahead", the user experience suffers
-   unless the latency is sufficiently low.
+   spikes can continue to operate reasonably well through short spikes.
+   Yet even those applications can benefit from consistently low latency
+   depending on usage shifts.  For example, Video-on-Demand (VOD) apps
+   can work reasonably well when the video is consumed linearly, but
+   once the user tries to "switch a channel", or to "skip ahead", the
+   user experience suffers unless the latency is sufficiently low.
 
-   Finally, as the applications continue to evolve, in-application
-   metrics are gaining in importance.  Using VOD as an example, one can
-   assess the quality of experience by checking whether the video player
-   can use the highest possible resolution, whether the video is smooth
-   or freezing, and other similar metrics.  Then, the application
-   developer can effectively use these metrics to prioritize future
-   work.  All popular video platforms (Youtube, Instagram, Netflix, and
-   others) have developed frameworks to collect and analyze such metrics
-   at scale.  One example is the Scuba framework used by Meta
-   [FB_Scuba].
+   Finally, as applications continue to evolve, in-application metrics
+   are gaining in importance.  For example, VOD applications can assess
+   the quality of experience by application-specific metrics such as
+   whether the video player is able to use the highest possible
+   resolution, identify when the video is smooth or freezing, or other
+   similar metrics.  Application developers can then effectively use
+   these metrics to prioritize future work.  All popular video platforms
+   (Youtube, Instagram, Netflix, and others) have developed frameworks
+   to collect and analyze VOD metrics at scale.  One example is the
+   Scuba framework used by Meta [Scuba].
 
    Unfortunately, the in-application metrics can be challenging to use
    for comparative research purposes.  Firstly, different applications
    often use different metrics to measure the same phenomena.  For
-   example, application A can measure the smoothness of video via "mean
-   time to re-buffer."  In contrast, application B can rely on the
-   "probability of re-buffering per second" for the same purpose.  A
-   different challenge with using in-application metrics is that at the
-   time of the workshop, VOD is a significant source of revenue for
-   companies such as YouTube, Facebook, and Netflix, which places
-   proprietary incentives against exchanging the in-application data.
-   Finally, in-application metrics can also accurately describe the
-   activities and preferences of an individual end-user, leading to
-   privacy infringements.
+   example, application A may measure the smoothness of video via "mean
+   time to re-buffer", while application B may rely on the "probability
+   of re-buffering per second" for the same purpose.  A different
+   challenge with in-application metrics is VOD is a significant source
+   of revenue for companies such as YouTube, Facebook, and Netflix,
+   placing a proprietary incentive against exchanging the in-application
+   data.  A final concern centers on the privacy issues resulting from
+   in-application metrics that accurately describe the activities and
+   preferences of an individual end-user.
 
 4.2.2.  Availability metrics
 
@@ -777,20 +772,19 @@ Internet-Draft                    title                        June 2022
    down, something in the middle of the network or was it the service
    with which the user was attempting to communicate.
 
-
-
-
-
-Hardaker & Shapira       Expires 4 December 2022               [Page 14]
-
-Internet-Draft                    title                        June 2022
-
-
 4.2.3.  Capacity metrics
 
    If the network capacity does not meet the user demands, the network
    quality will be impacted.  Once the capacity meets the demands,
    increasing capacity won't lead to further quality improvements.
+
+
+
+
+Hardaker & Shapira      Expires 28 December 2022               [Page 14]
+
+Internet-Draft                    title                        June 2022
+
 
    The actual network connection capacity is determined by the equipment
    and the lines along the network path, and it varies throughout the
@@ -831,21 +825,22 @@ Internet-Draft                    title                        June 2022
    traverse the network path from the user to their destination and
    back.  The end-to-end latency comprises several components:
 
-
-
-
-
-
-
-Hardaker & Shapira       Expires 4 December 2022               [Page 15]
-
-Internet-Draft                    title                        June 2022
-
-
    1.  The propagation delay, which reflects the path distance and the
        individual link technologies (e.g. fibre vs satellite).  The
        propagation doesn't depend on the utilization of the network, to
        the extent that the network path remains constant.
+
+
+
+
+
+
+
+
+Hardaker & Shapira      Expires 28 December 2022               [Page 15]
+
+Internet-Draft                    title                        June 2022
+
 
    2.  The buffering delay, which reflects the time segments spend in
        the memory of the network equipment that connect the individual
@@ -893,7 +888,12 @@ Internet-Draft                    title                        June 2022
 
 
 
-Hardaker & Shapira       Expires 4 December 2022               [Page 16]
+
+
+
+
+
+Hardaker & Shapira      Expires 28 December 2022               [Page 16]
 
 Internet-Draft                    title                        June 2022
 
@@ -921,7 +921,7 @@ Internet-Draft                    title                        June 2022
    While historically the tooling available for measuring latency
    focused on measuring the idle latency, there is a trend in the
    industry to start measuring the working latency as well, e.g.
-   [tools.apple_networkQuality].
+   Apple's [NetworkQuality].
 
 4.2.5.  Measurement case studies
 
@@ -949,7 +949,7 @@ Internet-Draft                    title                        June 2022
 
 
 
-Hardaker & Shapira       Expires 4 December 2022               [Page 17]
+Hardaker & Shapira      Expires 28 December 2022               [Page 17]
 
 Internet-Draft                    title                        June 2022
 
@@ -976,21 +976,22 @@ Internet-Draft                    title                        June 2022
    significantly within each tier; one possible explanation is the
    difference in equipment deployed in the homes.
 
-   These studies have stressed the importance of measurement of the
-   working latency.  At the time of this report, many home router
-   manufacturers relied on hardware-accelerated routing which used FIFO
-   queues.  Focusing the working latency measurements on those devices,
-   and making the consumer aware of the effect of chosing one
-   manufacturer vs. other can help improving the home router situation.
-   The ideal test would be able to identify the working latency, and to
-   pinpoint to the source of delay (home router, ISP, server side, or
-   some network node in between).
+   These studies have stressed the importance of measurement of working
+   latency.  At the time of this report, many home router manufacturers
+   rely on hardware-accelerated routing which used FIFO queues.
+   Focusing on measuring the working latency measurements on these
+   devices, and making the consumer aware of the effect of chosing one
+   manufacturer vs. another, can help improving the home router
+   situation.  The ideal test would be able to identify the working
+   latency, and to pinpoint to the source of delay (home router, ISP,
+   server side, or some network node in between).
 
    Another source of high working latency comes from network routers
-   that are exposed to cross-traffic.  As [Schlinker2019] indicated,
-   these can become saturated during the peak hours of the day.
-   Systematic testing of the working latency in routers under load can
-   help improve the infrastructure.
+   exposed to cross-traffic.  As [Schlinker2019] indicated, these can
+   become saturated during the peak hours of the day.  Systematic
+   testing of the working latency in routers under load can help improve
+   both our understanding of latency and the impact of deployed
+   infrastructure.
 
 4.2.6.  Metrics Key Points
 
@@ -1004,8 +1005,7 @@ Internet-Draft                    title                        June 2022
 
 
 
-
-Hardaker & Shapira       Expires 4 December 2022               [Page 18]
+Hardaker & Shapira      Expires 28 December 2022               [Page 18]
 
 Internet-Draft                    title                        June 2022
 
@@ -1027,13 +1027,13 @@ Internet-Draft                    title                        June 2022
        application is capable of using extra capacity, end-users will
        see little benefit from using overprovisioned lines.
 
-   2.  The working latency has stronger correlation with user experience
-       than latency under an idle network load.  The working latency can
+   2.  Working latency has stronger correlation with user experience
+       than latency under an idle network load.  Working latency can
        exceed the idle latency by order of magnitude.
 
    3.  The RPM metric is a stable metric, with positive values being
-       better, that can be effective to communicate latency to the end-
-       users.
+       better, that may be more effective when communicating latency to
+       end-users.
 
    4.  The relationship between throughput and goodput can be effective
        in finding the saturation points, both in client-side
@@ -1045,58 +1045,43 @@ Internet-Draft                    title                        June 2022
    Finally, it was commonly agreed to that the best metrics are those
    that are actionable.
 
+4.3.  Cross-layer Considerations
+
+   In the Cross-layer segment of the workshop, participants presented
+   material on and discussed how to accurately measure exactly where
+   problems occur.  Discussion centered especially on the differences
+   between physically wired and wireless connections and the
+   difficulties of accurately determining problem spots when multiple
+   different types of network segments are responsible for the quality.
+   As an example, [Kerpez2021] showed that limited bandwidth of 2.4Ghz
+   wifi is the most frequently the bottleneck.  In comparison, the wider
+   bandwidth of the 5Ghz WiFi have only been the bottleneck in 20% of
+   observations.
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-Hardaker & Shapira       Expires 4 December 2022               [Page 19]
+Hardaker & Shapira      Expires 28 December 2022               [Page 19]
 
 Internet-Draft                    title                        June 2022
 
-
-4.3.  Cross-layer Considerations
-
-   In the Cross-layer section participants presented material and
-   discussed how to accurately measure exactly where problems occur.
-   The discussion showed how difficult it is to achieve accuracy when
-   many components of a network connection affects the measurements.
-   Discussion centered especially on the differences between physically
-   wired and wireless connections and the difficulties of accurately
-   determining problem spots when multiple different network types are
-   responsible for the quality.  As an example, [Kerpez2021] showed that
-   as Internet access becomes the norm, the limited bandwidth of 2.4Ghz
-   wifi is most frequently the bottleneck.  In comparison, the wider
-   bandwidth of the 5Ghz WiFi have only been the bottleneck in 20% of
-   the observations.
 
    The participants agreed that no single component of a network
    connection has all the data required to measure the effects of the
    network performance on the quality of the end user experience.
 
-   *  The applications that are running on the end-user devices have the
+   *  Applications that are running on the end-user devices have the
       best insight into their respective performance, but have limited
-      visibility into the behavior of the network, and are not able to
-      act on the limited information about the network performance.
+      visibility into the behavior of the network itself, and are unable
+      to act based on their limited perspective.
 
    *  Internet service providers have good insight into QoS
       considerations, but are not able to infer the effect of the QoS
       metrics on the quality of end user experiences.
 
    *  Content providers have good insight into the aggregated behavior
-      of the end users, but lack the insight on what aspects of the
-      network performance are leading indicators of user behavior.
+      of the end users, but lack the insight on what aspects of network
+      performance are leading indicators of user behavior.
 
    The workshop had identified the need for a standard and extensible
    way to exchange network performance characteristics.  Such an
@@ -1105,91 +1090,77 @@ Internet-Draft                    title                        June 2022
    *  A scalable way to capture the performance of multiple (potentially
       thousands of) endpoints.
 
-   *  The need for an accompanying set of tools to analyze the data.
+   *  The data exchange format should prevent data manipulation, so that
+      the different participants won't be able to game the mechanisms.
 
-   *  A transparent model for giving the different actors on the network
+   *  Preservation of end-user privacy.  In particular, federated
+      learning approaches should be preferred so no centralized entity
+      has the access to the whole picture.
+
+   *  A transparent model for giving the different actors on a network
       connection an incentive to share the performance data they
       collect.
 
-   *  Preservation of end-user privacy.  In particular, federated
-      learning approaches, where no centralized entity has the access to
-      the whole picture, should be preferred.
+   *  An accompanying set of tools to analyze the data is needed as
+      well.
+
+4.3.1.  Separation of Concerns
+
+   Commonly, there's a tight coupling between collecting performance
+   metrics, interpreting those metrics, and and acting upon the
+   interpretation.  Unfortunately, such model is not the best for
+   successfully exchanging cross-layer data as:
+
+   *  Actors that are able to collect particular performance metrics
+      (e.g. the TCP RTT) do not necessarily have the context necessary
+      for a meaningful interpretation.
 
 
 
-Hardaker & Shapira       Expires 4 December 2022               [Page 20]
+Hardaker & Shapira      Expires 28 December 2022               [Page 20]
 
 Internet-Draft                    title                        June 2022
 
 
-   *  The data exchange format should include precautions against data
-      manipulations, so that the different actors won't be tempted to
-      game the mechanism.
-
-4.3.1.  Separation of Concerns
-
-   Commonly, there's a tight coupling between
-
-   1.  collecting performance metrics,
-
-   2.  interpreting those metrics and
-
-   3.  and acting upon the intrepretation of the metrics.
-
-   Unfortunately, such model is not the best for successfully exchanging
-   cross-layer data:
-
-   *  The actors that have the ability to collect particular performance
-      metrics (e.g. the TCP RTT) do not necessarily have the context
-      necessary for a meaningful interpretation.
-
    *  The actors that have the context and the computational/storage
-      capacity for the interpretation do not necessarily have the abilty
+      capacity to interpret metrics do not necessarily have the ability
       to control the behavior of network / application.
 
-   *  The actors that can control the behavior of network / application
-      typically do not have access to the data.
+   *  The actors that can control the behavior of networks and/or
+      applications typically do not have access to complete measurement
+      data.
 
    The participants agreed that it is important to separate the above
    three aspects, so that:
 
    *  The different actors that have the data but not the ability to
-      interpret / act upon should publish their measured data.
+      interpret and/or act upon it should publish their measured data.
 
    *  The actors that have the expertise in interpreting and
-      synthesizing the performance data will be able to publish the
-      results of any interpretation.
+      synthesizing performance data should publish the results of their
+      interpretations.
 
 4.3.2.  Security and Privacy Considerations
 
-   Preserving the privacy of the end users is a difficult requirement to
-   meet when addressing this problem space.  There is an intrinsic
-   trade-off between collecting more data about user activities, and
-   infringing their privacy in doing so.
-
+   Preserving the privacy of Internet end users is a difficult
+   requirement to meet when addressing this problem space.  There is an
+   intrinsic trade-off between collecting more data about user
+   activities, and infringing their privacy while doing so.
    Participants agreed that observability across multiple layers is
-   necessary for an accurate measurement of the network quality.
+   necessary for an accurate measurement of the network quality, but
+   doing so in a way that minimizes privacy leakage is an open question.
 
+4.3.3.  Metric Measurement Considerations
 
-
-
-Hardaker & Shapira       Expires 4 December 2022               [Page 21]
-
-Internet-Draft                    title                        June 2022
-
-
-4.3.3.  Concrete Suggestions
-
-   *  The TCP protocol makes several metrics available for passive
-      measurement, and the following metrics have been found to be
-      effective:
+   *  The following TCP protocol metrics have been found to be effective
+      and are available for passive measurement:
 
       -  TCP connection latency measured using SACK/ACK timing, as well
          as the timing between TCP retransmission events, are good
          proxies for end-to-end RTT measurements.
 
       -  On the Linux platform, the tcp_info structure is the de-facto
-         standard for an application to introspect the performance of
+         standard for an application to inspect the performance of
          kernel-space networking.  However, there is no equivalent de-
          facto standard for the user-space networking.
 
@@ -1197,50 +1168,51 @@ Internet-Draft                    title                        June 2022
       measurements more challenging.
 
       -  An approach that uses federated measurement / hierarchical
-         aggregation appears more valuable for these protocols.
+         aggregation may be more valuable for these protocols.
+
+
+
+
+Hardaker & Shapira      Expires 28 December 2022               [Page 21]
+
+Internet-Draft                    title                        June 2022
+
 
       -  The QLOG format seems to be the most mature candidate for such
          an exchange.
 
-4.3.4.  Towards Future Cross-layer Observability
+4.3.4.  Towards Improving Future Cross-layer Observability
 
    The ownership of the Internet is spread across multiple
-   administrative domains, making measuring performance data difficult.
-   Furthermore, the immense scale of the Internet makes aggregation and
-   analysis of such data difficult.  [Marx2021] presented a simple
-   logging format that could potentially be used to collect and
+   administrative domains, making measurement of end-to-end performance
+   data difficult.  Furthermore, the immense scale of the Internet makes
+   aggregation and analysis of this difficult.  [Marx2021] presented a
+   simple logging format that could potentially be used to collect and
    aggregate data from different layers.
 
    Another aspect of cross-layer collaboration hampering measurement is
    that the majority of current algorithms do not explicitly provide
    performance data that can be used in cross-layer analysis.  The IETF
-   community can be more diligent in identifying a protocol's key
-   performance indicators, and exposing those as part of the protocol
+   community could be more diligent in identifying each protocol's key
+   performance indicators, and exposing them as part of the protocol
    specification.
 
-   Despite all the challenges, it should still be possible to perform
+   Despite all these challenges, it should still be possible to perform
    limited-scope studies in order to have a better understanding of how
    user quality is affected by the interaction of the different
-   components that constitute the Internet.  Recent development of
-   federated learning algorithms suggests that it might be possible to
-   perform cross-layer performance measurements while preserving user
-   privacy.
-
-
-
-
-Hardaker & Shapira       Expires 4 December 2022               [Page 22]
-
-Internet-Draft                    title                        June 2022
-
+   components that constitute the Internet.  Furthermore, recent
+   development of federated learning algorithms suggests that it might
+   be possible to perform cross-layer performance measurements while
+   preserving user privacy.
 
 4.3.5.  Efficient Collaboration Between Hardware and Transport Protocols
 
-   With the advent of the L4S congestion notification and control, there
-   is an even higher need for the transport protocols and the underlying
-   hardware to work in unison.
+   With the advent of the low latency, low loss and scalable throughput
+   (L4S) congestion notification and control, there is an even higher
+   need for the transport protocols and the underlying hardware to work
+   in unison.
 
-   At the time of the workshop, the typical home router used a single
+   At the time of the workshop, the typical home router uses a single
    FIFO queue, large enough to allow amortizing the lower-layer header
    overhead across multiple transport PDUs.  These designs worked well
    with the Cubic congestion control algorithm, yet the newer generation
@@ -1249,11 +1221,18 @@ Internet-Draft                    title                        June 2022
    sequential transmissions of just a few segments vs. being optimized
    for large packet bursts.
 
-   Another design trait that's common in home routers is the use of
-   packet aggregation to further amortize the overhead added by the
-   lower-layer headers.  Specifically, multiple IP datagrams are
-   combined into a single large tranfer frame.  However, this
-   aggregation can add up to 10ms to the packet sojourn delay.
+   Another design trait common in home routers is the use of packet
+   aggregation to further amortize the overhead added by the lower-layer
+   headers.  Specifically, multiple IP datagrams are combined into a
+   single, large tranfer frame.  However, this aggregation can add up to
+   10ms to the packet sojourn delay.
+
+
+
+Hardaker & Shapira      Expires 28 December 2022               [Page 22]
+
+Internet-Draft                    title                        June 2022
+
 
    Following the famous "you can't improve what you don't measure"
    adage, it is important to expose these aggregation delays in a way
@@ -1263,88 +1242,77 @@ Internet-Draft                    title                        June 2022
 
 4.3.6.  Cross-Layer Key Points
 
-   *  Significant differences exist for metrics and optimizations needed
-      in wireless vs wired networks.
+   *  Significant differences exist in the characteristics of metrics to
+      measured and required optimizations needed in wireless vs wired
+      networks.
 
-   *  Multi-segment networks affect measurements making identification
-      of an issue's root-cause challenging.
+   *  Identification of an issue's root-cause is hampered by the
+      challenges in measuring multi-segment network paths.
 
    *  No single component of a network connection has all the data
-      required to measure the effects of the network performance on the
-      quality of the end user experience
+      required to measure the effects of the complete network
+      performance on the quality of the end user experience.
 
    *  Actionable results require both proper collection and
       interpretation.
 
-   *  Coordination among carriers is important for success
+   *  Coordination among network providers is important to successful
+      improve measurement of end user experiences.
 
    *  Simultaneously providing accurate measurements while preserving
       end-user privacy is challenging.
-
-
-
-
-
-Hardaker & Shapira       Expires 4 December 2022               [Page 23]
-
-Internet-Draft                    title                        June 2022
-
 
    *  Passive measurements from protocol implementations may provide
       beneficial data.
 
 4.4.  Synthesis
 
-   Finally, in the Synthesis section presentations and discussions
-   concentrated on the next steps likely needed to make forward
-   progress.  Of particular concern is how to bring forward measurements
-   that can make sense to end users trying to make subscription
-   decisions.
+   Finally, in the Synthesis section of the workshop, the presentations
+   and discussions concentrated on the next steps likely needed to make
+   forward progress.  Of particular concern is how to bring forward
+   measurements that can make sense to end users trying to select
+   between various networking subscription options.
 
 4.4.1.  Measurement and Metrics Considerations
 
-   One important consideration is how to make decisions and take actions
-   based on the metrics measured.  Measurements must be integrated with
-   applications in order to get true application views of congestion, as
-   measurements to different infrastructure or via other applications
-   may return incorrect results.  Congestion itself can be a temporary
-   problem, and mitigation strategies may need to be different depending
-   on whether it is expected to be a short-term or long-term phenomenon.
-   A significant challenge exists in measuring short-term problems,
-   driving the need for continuous measurements to ensure capture.  The
-   workshop participants debated whether an issue that goes away is a
-   problem or is a sign of a proper network that is self-recovering.
-
-   Important consideration must be taken when construction metrics in
-   order to understand the results.  Measurements can also affected by
-   individual packet characteristics - different size packets have a
-   typically linear relationship with their delay.  Resulting
-   measurements can be divided into a base geographical delay, a packet-
-   size serialization delay and a variable (noise) delay being a third
-   delay.  Each of these sub-component delays can be different and
-   individually measured across each segment in a multi-hop path.
-   Variable delay can also be significantly impacted by external
-   factors, such as bufferbloat, routing changes, network load sharing,
-   and other local or remote.  Network measurements, especially load-
-   specific tests, must also be run long enough to ensure capture of any
-   problems associated with buffering, queuing, etc.  Measurement
-   technologies should also distinguish between upsteam and downstream
-   measurements, as well as measure the difference between end-to-end
-   path and subpath measurements.
+   One important consideration is how decisions can be made and actions
+   taken based on collected metrics.  Measurements must be integrated
+   with applications in order to get true application views of
+   congestion, as measurements over different infrastructure or via
+   other applications may return incorrect results.  Congestion itself
+   can be a temporary problem, and mitigation strategies may need to be
+   different depending on whether it is expected to be a short-term or
 
 
 
-
-
-
-
-
-
-
-Hardaker & Shapira       Expires 4 December 2022               [Page 24]
+Hardaker & Shapira      Expires 28 December 2022               [Page 23]
 
 Internet-Draft                    title                        June 2022
 
+
+   long-term phenomenon.  A significant challenge exists in measuring
+   short-term problems, driving the need for continuous measurements to
+   ensure capture of critical moments and long-term trends.  For short-
+   term problems, workshop participants debated whether an issue that
+   goes away is indeed a problem or is a sign that a network is properly
+   adapting and self-recovering.
+
+   Important consideration must be taken when constructing metrics in
+   order to understand the results.  Measurements can also affected by
+   individual packet characteristics - different sized packets have a
+   typically linear relationship with their delay.  With this in mind,
+   measurements can be divided into a delay based on geographical
+   distances, a packet-size serialization delay and a variable (noise)
+   delay.  Each of these three sub-component delays can be different and
+   individually measured across each segment in a multi-hop path.
+   Variable delay can also be significantly impacted by external
+   factors, such as bufferbloat, routing changes, network load sharing,
+   and other local or remote changes in performance.  Network
+   measurements, especially load-specific tests, must also be run long
+   enough to ensure capture of any problems associated with buffering,
+   queuing, etc.  Measurement technologies should also distinguish
+   between upsteam and downstream measurements, as well as measure the
+   difference between end-to-end paths and sub-path measurements.
 
 4.4.2.  End-User metrics presentation
 
@@ -1353,21 +1321,30 @@ Internet-Draft                    title                        June 2022
    want?  Is it possible for users to even voice their desires
    effectively?  Only high-level, simplistic answers like "reliability",
    "capacity", and "service bundling" are typical answers given in end-
-   user surveys.  Technical requirements operators can consume, like
-   "low-latency" and "congestion avoidance", are not terms known to and
-   used by end-users.
+   user surveys.  Technical requirements that operators can consume,
+   like "low-latency" and "congestion avoidance",are not terms known to
+   and used by end-users.
 
    Example metrics useful to end users might include the number of users
    supported by a service, and the number of applications or streams
    that a network can support.  An example solution to combat netwokring
-   issues include incentive-based traffic management strategies (e.g.
-   requesting lower latency may also mean accepting lower bandwidth).
-   User perceived latency must be considered, not just netwokr latency -
-   users experience in-application to in-server latency, and
-   measurements network to network measurements may only be studying the
+   issues include incentive-based traffic management strategies (e.g. an
+   application requesting lower latency may also mean accepting lower
+   bandwidth).  User perceived latency must be considered, not just
+   network latency - users experience in-application to in-server
+   latency, and network to network measurements may only be studying the
    lowest level latency.  Thus, picking the right protocol to use in a
    measurement is critical in order to match user experience (for
-   example, users do not transmit data over ICMP).
+   example, users do not transmit data over ICMP even though it is a
+   common measurement tool).
+
+
+
+
+Hardaker & Shapira      Expires 28 December 2022               [Page 24]
+
+Internet-Draft                    title                        June 2022
+
 
    In-application measurements should consider how to measure different
    types of applications, such as video streaming, file sharing, multi-
@@ -1375,7 +1352,7 @@ Internet-Draft                    title                        June 2022
    asking users for what tradeoffs they are willing to accept would be a
    helpful approach: would they rather have a network with low latency,
    or a network with higher bandwidth.  Gamers may make different
-   decisions than home office or content producers, for example.
+   decisions than home office users or content producers, for example.
 
    Furthermore, how can users make these trade-offs in a fair manner
    that does not impact other users?  There is a tension between
@@ -1383,45 +1360,27 @@ Internet-Draft                    title                        June 2022
    solutions, and which customers are willing to front these improvement
    costs.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Hardaker & Shapira       Expires 4 December 2022               [Page 25]
-
-Internet-Draft                    title                        June 2022
-
-
    Challenges in providing higher-priority traffic to users centers
    around the ability for networks to be willing to listen to client
-   requests for higher incentives, when commercial interests may not
-   flow to them without a cost incentive.  Shared mediums in general are
-   subject to oversubscribing such that the number of users a network
-   can support is either accurate on an underutilized network, or may
-   assume an average bandwidth or other usage metric that fails to
-   account for utilization spikes.  Individual metrics are also affected
-   by in-home devices from cheap routers to microwaves and from
-   (multi-)user behaviors during tests.  Thus, a single metric alone or
-   a single reading without context may not be useful in assisting a
-   user or operator where the problem source actually is.
+   requests for higher incentives, even though commercial interests may
+   not flow to them without a cost incentive.  Shared mediums in general
+   are subject to oversubscribing such that the number of users a
+   network can support is either accurate on an underutilized network,
+   or may assume an average bandwidth or other usage metric that fails
+   to be accurate during utilization spikes.  Individual metrics are
+   also affected by in-home devices from cheap routers to microwaves and
+   from (multi-)user behaviors during tests.  Thus, a single metric
+   alone or a single reading without context may not be useful in
+   assisting a user or operator to determine where the problem source
+   actually is.
 
    User comprehension of a network remains a challenging problem.
-   Multiple workshop participants argued for a single number (calculated
-   with weighted aggregation formual), or a small number of measurements
-   per expected usage (a "gaming" score vs a "content producer" score).
-   Many users may instead prefer to consume simplified or color-coded
-   ratings (good/better/best, red/yellow/green, or bronze/gold/
-   platinum).
+   Multiple workshop participants argued for a single number
+   (potentially calculated with weighted aggregation formula), or a
+   small number of measurements per expected usage (a "gaming" score vs
+   a "content producer" score).  Many agreed that some users may instead
+   prefer to consume simplified or color-coded ratings (good/better/
+   best, red/yellow/green, or bronze/gold/platinum).
 
 4.4.3.  Synthesis Key Points
 
@@ -1435,28 +1394,26 @@ Internet-Draft                    title                        June 2022
 
       -  99% latency and bandwidth
 
+
+
+
+Hardaker & Shapira      Expires 28 December 2022               [Page 25]
+
+Internet-Draft                    title                        June 2022
+
+
    *  Median and mean measurements are distractions from the real
       problems.
 
-   *  Shared network usage greatly affect quality
+   *  Shared network usage greatly affect quality.
 
    *  Long measurements are needed to capture all facets of potential
       network bottlenecks.
 
-   *  Better funded research in all these areas is needed for progress
+   *  Better funded research in all these areas is needed for progress.
 
    *  End-users will best understand a simplified score or ranking
-      system
-
-
-
-
-
-
-Hardaker & Shapira       Expires 4 December 2022               [Page 26]
-
-Internet-Draft                    title                        June 2022
-
+      system.
 
 5.  Conclusions
 
@@ -1493,6 +1450,14 @@ Internet-Draft                    title                        June 2022
    7.  A lower latency Internet, however achieved would benefit all end
        users.
 
+
+
+
+Hardaker & Shapira      Expires 28 December 2022               [Page 26]
+
+Internet-Draft                    title                        June 2022
+
+
 5.2.  Specific statements about detailed protocols/techniques
 
    1.  Round trips Per Minute (RPM) is a useful, consumable metric.
@@ -1506,13 +1471,6 @@ Internet-Draft                    title                        June 2022
    4.  Applications are needed that can perform and report good quality
        measurements in order to identify insufficient points in network
        access.
-
-
-
-Hardaker & Shapira       Expires 4 December 2022               [Page 27]
-
-Internet-Draft                    title                        June 2022
-
 
    5.  Research done by regulators indicate that users/consumers prefer
        a simple metric per application, which frequently resolves to
@@ -1546,6 +1504,16 @@ Internet-Draft                    title                        June 2022
        (e.g., latency or speed) is more important than others to
        persuade device vendors to concentrate on any one optimization.
 
+
+
+
+
+
+Hardaker & Shapira      Expires 28 December 2022               [Page 27]
+
+Internet-Draft                    title                        June 2022
+
+
 5.4.  No-consensus reached statements
 
    Additional statements were recorded that did not have consensus of
@@ -1562,13 +1530,6 @@ Internet-Draft                    title                        June 2022
           location.
 
        *  Need more than just English - different localization concerns.
-
-
-
-Hardaker & Shapira       Expires 4 December 2022               [Page 28]
-
-Internet-Draft                    title                        June 2022
-
 
    3.  Stakeholder incentives aren't aligned for easy wins in this
        space.
@@ -1601,6 +1562,14 @@ Internet-Draft                    title                        June 2022
               DOI 10.17487/RFC2119, March 1997,
               <https://www.rfc-editor.org/info/rfc2119>.
 
+
+
+
+Hardaker & Shapira      Expires 28 December 2022               [Page 28]
+
+Internet-Draft                    title                        June 2022
+
+
    [RFC4035]  Arends, R., Austein, R., Larson, M., Massey, D., and S.
               Rose, "Protocol Modifications for the DNS Security
               Extensions", RFC 4035, DOI 10.17487/RFC4035, March 2005,
@@ -1618,13 +1587,6 @@ Internet-Draft                    title                        June 2022
               network quality for end users", https://www.iab.org/wp-
               content/IAB-uploads/2021/09/2021-09-07-Aldabbagh-Ofcom-
               presentationt-to-IAB-1v00-1.pdf , September 2021.
-
-
-
-Hardaker & Shapira       Expires 4 December 2022               [Page 29]
-
-Internet-Draft                    title                        June 2022
-
 
    [Arkko2021]
               Arkko, J. and M. Kühlewind, "Observability is needed to
@@ -1656,6 +1618,14 @@ Internet-Draft                    title                        June 2022
               https://www.iab.org/wp-content/IAB-uploads/2021/09/draft-
               cheshire-internet-is-shared-00b.pdf , February 2021.
 
+
+
+
+Hardaker & Shapira      Expires 28 December 2022               [Page 29]
+
+Internet-Draft                    title                        June 2022
+
+
    [Davies2021]
               Davies, N. and P. Thompson, "Measuring Network Impact on
               Application Outcomes using Quality Attenuation",
@@ -1670,18 +1640,6 @@ Internet-Draft                    title                        June 2022
               uploads/2021/09/Nokia-IAB-Measuring-Network-Quality-Low-
               Latency-measurement-workshop-20210802.pdf , February 2021.
 
-
-
-
-
-
-
-
-Hardaker & Shapira       Expires 4 December 2022               [Page 30]
-
-Internet-Draft                    title                        June 2022
-
-
    [Dion2021] Dion, G., "Focusing on latency, not throughput, to provide
               a better internet experience and network quality",
               https://www.iab.org/wp-content/IAB-uploads/2021/09/Nokia-
@@ -1694,15 +1652,11 @@ Internet-Draft                    title                        June 2022
               uploads/2021/09/Fabini-IAB-NetworkQuality.txt , February
               2021.
 
-   [FB_Scuba] "Facebook Scuba", n.d.,
-              <https://research.facebook.com/publications/scuba-diving-
-              into-data-at-facebook/>.
-
    [FCC_MBA]  "Measuring Broadband America",
               https://www.fcc.gov/general/measuring-broadband-america ,
               n.d..
 
-   [FCC_MBA.methodology]
+   [FCC_MBA_methodology]
               "Measuring Broadband America - Open Methodology",
               https://www.fcc.gov/general/measuring-broadband-america-
               open-methodology , n.d..
@@ -1719,6 +1673,15 @@ Internet-Draft                    title                        June 2022
               uploads/2021/09/xfinity-wifi-ietf-iab-v2-1.pdf , February
               2021.
 
+
+
+
+
+Hardaker & Shapira      Expires 28 December 2022               [Page 30]
+
+Internet-Draft                    title                        June 2022
+
+
    [Iyengar2021]
               Iyengar, J., "The Internet Exists In Its Use",
               https://www.iab.org/wp-content/IAB-uploads/2021/09/The-
@@ -1729,14 +1692,6 @@ Internet-Draft                    title                        June 2022
               Bousaber, "Wi-Fi and Broadband Data", https://www.iab.org/
               wp-content/IAB-uploads/2021/09/Wi-Fi-Report-ASSIA.pdf ,
               September 2021.
-
-
-
-
-Hardaker & Shapira       Expires 4 December 2022               [Page 31]
-
-Internet-Draft                    title                        June 2022
-
 
    [Kilkki2021]
               Kilkki, K. and B. Finley, "In Search of Lost QoS",
@@ -1772,6 +1727,17 @@ Internet-Draft                    title                        June 2022
               uploads/2021/09/Preliminary-Longitudinal-Study-of-
               Internet-Responsiveness-1.pdf , August 2021.
 
+
+
+
+
+
+
+Hardaker & Shapira      Expires 28 December 2022               [Page 31]
+
+Internet-Draft                    title                        June 2022
+
+
    [McIntyre2021]
               Paasch, C., McIntyre, K., Shapira, O., Meyer, R., and S.
               Cheshire, "An end-user approach to an Internet Score",
@@ -1785,15 +1751,6 @@ Internet-Draft                    title                        June 2022
               ready_Packet_delivery_time_as_a_tie_breaker_for_assessing_
               Wi_Fi_access_points.pdf , February 2021.
 
-
-
-
-
-Hardaker & Shapira       Expires 4 December 2022               [Page 32]
-
-Internet-Draft                    title                        June 2022
-
-
    [Mirsky2021]
               Mirsky, G., Min, X., Mishra, G., and L. Han, "The Error
               Performance Metric in a Packet-Switched Network",
@@ -1806,6 +1763,9 @@ Internet-Draft                    title                        June 2022
               (and how can we assure it)?", https://www.iab.org/wp-
               content/IAB-uploads/2021/09/draft-morton-ippm-pipe-dream-
               01.pdf , September 2021.
+
+   [NetworkQuality]
+              "Apple Network Quality", n.d..
 
    [Paasch2021]
               Paasch, C., Meyer, R., Cheshire, S., and O. Shapira,
@@ -1826,6 +1786,14 @@ Internet-Draft                    title                        June 2022
               Camera_Ready_-Measuring-ISP-Performance-in-Broadband-
               America.pdf , February 2021.
 
+
+
+
+Hardaker & Shapira      Expires 28 December 2022               [Page 32]
+
+Internet-Draft                    title                        June 2022
+
+
    [RFC1111]  Postel, J., "Request for comments on Request for Comments:
               Instructions to RFC authors", RFC 1111,
               DOI 10.17487/RFC1111, August 1989,
@@ -1843,13 +1811,6 @@ Internet-Draft                    title                        June 2022
    [RFC765]   Postel, Jonathan B., "FILE TRANSFER PROTOCOL",
               https://datatracker.ietf.org/doc/html/rfc765 , June 1980.
 
-
-
-Hardaker & Shapira       Expires 4 December 2022               [Page 33]
-
-Internet-Draft                    title                        June 2022
-
-
    [RFC821]   Postel, Jonathan B., "SIMPLE MAIL TRANSFER PROTOCOL",
               https://datatracker.ietf.org/doc/html/rfc821 , August
               1982.
@@ -1858,12 +1819,18 @@ Internet-Draft                    title                        June 2022
               Protocol", https://datatracker.ietf.org/doc/html/rfc977 ,
               February 1986.
 
+   [SamKnows] "SamKnows", n.d., <https://www.samknows.com/>.
+
    [Schlinker2019]
               Schlinker, B., Cunha, I., Chiu, Y., Sundaresan, S., and E.
               Katz-Basset, "Internet's performance from Facebook's
               edge", https://www.iab.org/wp-content/IAB-uploads/2021/09/
               Internet-Performance-from-Facebooks-Edge.pdf , February
               2019.
+
+   [Scuba]    "Facebook Scuba", n.d.,
+              <https://research.facebook.com/publications/scuba-diving-
+              into-data-at-facebook/>.
 
    [Sengupta2021]
               Sengupta, S., Kim, H., and J. Rexford, "Fine-Grained RTT
@@ -1875,36 +1842,25 @@ Internet-Draft                    title                        June 2022
    [Sivaraman2021]
               Sivaraman, V., Madanapalli, S., and H. Kumar, "Measuring
               Network Experience Meaningfully, Accurately, and
+
+
+
+Hardaker & Shapira      Expires 28 December 2022               [Page 33]
+
+Internet-Draft                    title                        June 2022
+
+
               Scalably", https://www.iab.org/wp-content/IAB-
               uploads/2021/09/CanopusPositionPaperCameraReady.pdf ,
               February 2021.
+
+   [Speedtest]
+              "Speedtest by Ookla", n.d., <https://www.speedtest.net>.
 
    [Stein2021]
               Stein, J., "The Futility of QoS", https://www.iab.org/wp-
               content/IAB-uploads/2021/09/QoS-futility.pdf , August
               2021.
-
-   [tools.apple_networkQuality]
-              "Apple Network Quality", n.d..
-
-   [tools.ookla_speedtest]
-              "Speedtest by Ookla", n.d., <https://www.speedtest.net>.
-
-   [tools.ping]
-              "ping -- send ICMP ECHO_REQUEST packets to network hosts",
-              n.d..
-
-   [tools.samknows]
-              "SamKnows", n.d., <https://www.samknows.com/>.
-
-
-
-
-
-Hardaker & Shapira       Expires 4 December 2022               [Page 34]
-
-Internet-Draft                    title                        June 2022
-
 
    [Welzl2021]
               Welzl, M., "A Case for Long-Term Statistics",
@@ -1942,6 +1898,14 @@ Appendix A.  Participants List
    Alexander Clemm
    Luis M. Contreras
    Sam Crawford
+
+
+
+Hardaker & Shapira      Expires 28 December 2022               [Page 34]
+
+Internet-Draft                    title                        June 2022
+
+
    Neil Davies
    Gino Dion
    Toerless Eckert
@@ -1954,14 +1918,6 @@ Appendix A.  Participants List
    Jim Gettys
    Rajat Ghai
    Vidhi Goel
-
-
-
-Hardaker & Shapira       Expires 4 December 2022               [Page 35]
-
-Internet-Draft                    title                        June 2022
-
-
    Wes Hardaker
    Joris Herbots
    Geoff Huston
@@ -1998,6 +1954,14 @@ Internet-Draft                    title                        June 2022
    Alvaro Retana
    Roberto
    Koen De Schepper
+
+
+
+Hardaker & Shapira      Expires 28 December 2022               [Page 35]
+
+Internet-Draft                    title                        June 2022
+
+
    David Schinazi
    Brandon Schlinker
    Eve Schooler
@@ -2010,14 +1974,6 @@ Internet-Draft                    title                        June 2022
    Karthik Sundaresan
    Dave Taht
    Rick Taylor
-
-
-
-Hardaker & Shapira       Expires 4 December 2022               [Page 36]
-
-Internet-Draft                    title                        June 2022
-
-
    Bjørn Ivar Teigen
    Nicolas Tessares
    Peter Thompson
@@ -2052,6 +2008,16 @@ Appendix B.  IAB Members at the Time of Approval
    Russ White
    Jiankang Yao
 
+
+
+
+
+
+Hardaker & Shapira      Expires 28 December 2022               [Page 36]
+
+Internet-Draft                    title                        June 2022
+
+
 Appendix C.  Acknowledgements
 
    The authors would like to thank the workshop participants, the
@@ -2065,14 +2031,6 @@ C.1.  Draft contributors
    Erik Auerswald
    Simon Leinen
    Brian Trammell
-
-
-
-
-Hardaker & Shapira       Expires 4 December 2022               [Page 37]
-
-Internet-Draft                    title                        June 2022
-
 
 C.2.  Workshop Chairs
 
@@ -2107,6 +2065,15 @@ C.3.  Program Committee
    Greg White
    Keith Winstein
 
+
+
+
+
+Hardaker & Shapira      Expires 28 December 2022               [Page 37]
+
+Internet-Draft                    title                        June 2022
+
+
 Appendix D.  Github Version of this document
 
    While this document is under development, it can be viewed and
@@ -2120,14 +2087,6 @@ Authors' Addresses
    USC/ISI
 
    Email: ietf@hardakers.net
-
-
-
-
-
-Hardaker & Shapira       Expires 4 December 2022               [Page 38]
-
-Internet-Draft                    title                        June 2022
 
 
    Omer Shapira
@@ -2166,19 +2125,4 @@ Internet-Draft                    title                        June 2022
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Hardaker & Shapira       Expires 4 December 2022               [Page 39]
+Hardaker & Shapira      Expires 28 December 2022               [Page 38]
