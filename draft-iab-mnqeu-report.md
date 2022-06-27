@@ -938,21 +938,21 @@ tier. The data demonstrated that working latency varies significantly
 within each tier; one possible explanation is the difference in
 equipment deployed in the homes.
 
-These studies have stressed the importance of measurement of the
-working latency. At the time of this report, many home router
-manufacturers relied on hardware-accelerated routing which used FIFO
-queues. Focusing the working latency measurements on those devices,
-and making the consumer aware of the effect of chosing one
-manufacturer vs. other can help improving the home router
-situation. The ideal test would be able to identify the working
-latency, and to pinpoint to the source of delay (home router, ISP,
-server side, or some network node in between).
+These studies have stressed the importance of measurement of working
+latency. At the time of this report, many home router manufacturers
+rely on hardware-accelerated routing which used FIFO queues. Focusing
+on measuring the working latency measurements on these devices, and
+making the consumer aware of the effect of chosing one manufacturer
+vs. another, can help improving the home router situation. The ideal
+test would be able to identify the working latency, and to pinpoint to
+the source of delay (home router, ISP, server side, or some network
+node in between).
 
-Another source of high working latency comes from network routers that
-are exposed to cross-traffic. As {{Schlinker2019}} indicated, these
-can become saturated during the peak hours of the day. Systematic
-testing of the working latency in routers under load can help improve
-the infrastructure.
+Another source of high working latency comes from network routers
+exposed to cross-traffic. As {{Schlinker2019}} indicated, these can
+become saturated during the peak hours of the day. Systematic testing
+of the working latency in routers under load can help improve both our
+understanding of latency and the impact of deployed infrastructure.
 
 ### Metrics Key Points {#discussions-metrics-key-points}
 
