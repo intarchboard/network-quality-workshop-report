@@ -21,49 +21,8 @@ author:
     email: omer_shapira@apple.com
 
 normative:
-  RFC2119:
-  RFC5155:
-  RFC4035:
 
 informative:
-  RFC1111:
-  RFC765:
-    title: "FILE TRANSFER PROTOCOL"
-    author:
-      - ins: Jonathan B. Postel
-    date: June 1980
-    seriesinfo: https://datatracker.ietf.org/doc/html/rfc765
-  RFC821:
-    title: "SIMPLE MAIL TRANSFER PROTOCOL"
-    author:
-      - ins: Jonathan B. Postel
-    date: August 1982
-    seriesinfo: https://datatracker.ietf.org/doc/html/rfc821
-  RFC977:
-    title: "Network News Transfer Protocol"
-    author:
-      - ins: Brian Kantor
-      - ins: Phil Lapsley
-    date: February 1986
-    seriesinfo: https://datatracker.ietf.org/doc/html/rfc977
-  RFC1436:
-    title: "Internet Gopher Protocol"
-    author:
-      - ins: M. McCahill
-      - ins: P. Lindner
-      - ins: D. Johnson
-      - ins: B. Alberti
-    date: March 1993
-    seriesinfo: https://datatracker.ietf.org/doc/html/rfc1436
-  RFC1945:
-    title: "Hypertext Transfer Protocol -- HTTP/1.0"
-    author:
-      - ins: T. Berners-Lee
-      - ins: R. Fielding
-      - ins: H. Frystyk
-    date: May 1996
-    seriesinfo: https://datatracker.ietf.org/doc/html/rfc1945
-
   FCC_MBA:
     title: "Measuring Broadband America"
     seriesinfo: https://www.fcc.gov/general/measuring-broadband-america
