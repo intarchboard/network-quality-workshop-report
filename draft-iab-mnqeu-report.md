@@ -805,13 +805,12 @@ capacity than high-definition video streaming.
 ### Latency metrics
 
 End-to-end latency is the time that a particular packet takes to traverse the
-network path from the user to their destination and back.  The end-to-end
+network path from the user to their destination and back. The end-to-end
 latency comprises several components:
 
-1. The propagation delay, which reflects the path distance and the individual
-   link technologies (e.g. fibre vs satellite). The propagation doesn't depend
-   on the utilization of the network, to the extent that the network path
-   remains constant.
+1. The propagation delay, which is the path distance divided by the signal speed.
+   It depends on individual link technologies (e.g. fibre vs satellite). The propagation
+   delay does not depend on the utilization of the network.
 2. The buffering delay, which reflects the time segments spend in the memory of
    the network equipment that connect the individual network links, as well as
    in the memory of the transmitting endpoint. The buffering delay depends on
@@ -819,7 +818,9 @@ latency comprises several components:
 3. The transport protocol delays, which reflects the time spent in
    retransmission and reassembly, as well as the time spent when the transport
    is "head-of-line blocked."
-4. Some of the workshop sumbissions have explicitly called out the application
+4. The transmission delay, which is the amount of bits to transfer divided by the link 
+   datarate throughput.
+5. Some of the workshop submissions have explicitly called out the application
    delay, which reflects the inefficiencies in the application layer.
 
 Traditionally, end-to-end latency is measured when the network is
