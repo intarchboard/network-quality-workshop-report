@@ -566,7 +566,7 @@ from core metrics.
 
 In the most recent 10 years, efforts by Dave Taht and the bufferbloat
 society had led to significant progress updating queuing algorithms to
-reduce latencies under load compared to simipler FIFO
+reduce latencies under load compared to simpler FIFO
 queues. Unfortunately, the home router industry has yet to implement
 these algorithms, mostly due to marketing and cost concerns. Most home
 router manufacturers depend on System on a Chip (SoC) acceleration to
@@ -723,7 +723,7 @@ variance. Cloud gaming serves as an example application that requires
 a "fixed latency budget", as a sudden latency spike can decide the
 "win/lose" ratio for a player. Companies that compete in the lucrative
 cloud gaming market make significant infrastructure investments, such
-as buiding entire datacenters closer to their users. These data
+as building entire datacenters closer to their users. These data
 centers highlight the economic benefits that lower numbers of latency
 spikes outweighs the associated deployment costs. On the other hand,
 applications that are more tolerant to latency spikes can continue to
@@ -779,7 +779,7 @@ The actual network connection capacity is determined by the equipment and the
 lines along the network path, and it varies throughout the day and across
 multiple days. Studies involving DSL lines in North America indicate that over
 30% of the DSL lines have capacity metrics that vary by more than 10%
-throughout the day and accross multiple days.
+throughout the day and across multiple days.
 
 Some factors that affect the actual capacity are:
 
@@ -798,8 +798,8 @@ There are other factors that can negatively affect the actual line capacities.
 
 The user demands of the traffic follow the usage patterns and preferences of
 the particular users. For example, large data transfers can use any available
-capacity, while the media streaming applicaitons require limited capacity to
-function correclty. Video-conferencing applications typically need less
+capacity, while the media streaming applications require limited capacity to
+function correctly. Video-conferencing applications typically need less
 capacity than high-definition video streaming.
 
 ### Latency metrics
@@ -819,7 +819,7 @@ latency comprises several components:
 3. The transport protocol delays, which reflects the time spent in
    retransmission and reassembly, as well as the time spent when the transport
    is "head-of-line blocked."
-4. Some of the workshop sumbissions have explicitly called out the application
+4. Some of the workshop submissions have explicitly called out the application
    delay, which reflects the inefficiencies in the application layer.
 
 Traditionally, end-to-end latency is measured when the network is
@@ -835,7 +835,7 @@ synonym.
 
 Data presented at the workshop reveals a substantial difference
 between the idle latency and the working latency. Depending on the
-traffic direciton and the technology type, the working latency is
+traffic direction and the technology type, the working latency is
 between 6 to 25 times higher than the idle latency:
 
 | Direction | Technology type | Working latency | Idle latency | Working - Idle difference | Working / Idle ratio |
@@ -856,7 +856,7 @@ e.g. Apple's {{NetworkQuality}}.
 ### Measurement case studies
 
 The participants have proposed several concrete methodologies for
-measuring the onetwork quality for the end users.
+measuring the network quality for the end users.
 
 {{Paasch2021}} introduced a methodology for measuring working latency
 from the end-user vantage point. The suggested method incrementally
@@ -924,10 +924,10 @@ The metrics for network quality can be roughly grouped into:
    sufficient to meet the user's demands.
 3. Latency metrics, indicating if the user gets the data in a timely fashion.
 4. Higher-order metrics, which include both the network metrics, such as
-   inter-packet arrival time, and the applicaiton metrics, such as the mean
+   inter-packet arrival time, and the application metrics, such as the mean
    time between rebuffering for video streaming.
 
-The availabiltiy metrics can be seen as derivative of either the capacity (zero
+The availability metrics can be seen as derivative of either the capacity (zero
 capacity leading to zero availability) or the latency (infinite latency
 leading to zero availability).
 
@@ -1089,7 +1089,7 @@ packet bursts.
 Another design trait common in home routers is the use of packet
 aggregation to further amortize the overhead added by the lower-layer
 headers.  Specifically, multiple IP datagrams are combined into a
-single, large tranfer frame. However, this aggregation can add up to
+single, large transfer frame. However, this aggregation can add up to
 10ms to the packet sojourn delay.
 
 Following the famous "you can't improve what you don't measure" adage,
@@ -1152,7 +1152,7 @@ such as bufferbloat, routing changes, network load sharing, and other
 local or remote changes in performance.  Network measurements,
 especially load-specific tests, must also be run long enough to ensure
 capture of any problems associated with buffering, queuing, etc.
-Measurement technologies should also distinguish between upsteam and
+Measurement technologies should also distinguish between upstream and
 downstream measurements, as well as measure the difference between
 end-to-end paths and sub-path measurements.
 
@@ -1169,7 +1169,7 @@ and used by end-users.
 
 Example metrics useful to end users might include the number of users
 supported by a service, and the number of applications or streams that
-a network can support.  An example solution to combat netwokring
+a network can support.  An example solution to combat networking
 issues include incentive-based traffic management strategies (e.g. an
 application requesting lower latency may also mean accepting lower
 bandwidth).  User perceived latency must be considered, not just
