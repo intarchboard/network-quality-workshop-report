@@ -23,6 +23,9 @@ reflect the current IAB members (note that this does not include
 liaisons or ex-officio members).
 -->
 
+<!-- Wes: sounds fine -->
+
+
 <!--[rfced] Note that we have updated the short title, which appears
 in the running header in the PDF output, as follows. Please let
 us know if any further updates are needed.
@@ -33,6 +36,9 @@ Original:
 Current:
    Measuring Network Quality for End-Users
 -->
+
+<!-- Wes: ha! that wasn't a good title!  Thanks.>
+
 
 <!-- xml2rfc v2v3 conversion 3.14.1 -->
   <front>
@@ -53,6 +59,12 @@ Current:
     <date year="2022" month="September"/>
 
 <!-- [rfced] Please insert any keywords (beyond those that appear in the title) for use on https://www.rfc-editor.org/search. -->
+    <keyword>QoE</keyword>
+    <keyword>QoS</keyword>
+    <keyword>Quality of Service</keyword>
+    <keyword>Quality of Experience</keyword>
+    <keyword>Measurement</keyword>
+    <keyword>End User</keyword>
 
     <abstract>
       <t>The Measuring Network Quality for End-Users workshop was held
@@ -97,9 +109,11 @@ not fully supported in some networks.
 <!--[rfced] We see a number of author-inserted comments in the .xml file for
 this document. We are unsure if these have been resolved. Please review and
 let us know if these can be deleted or if they need to be addressed.
--->    
+-->
 
-<!-- I'm not sure there is agreement about this next sentence - Wes -->
+<!-- Wes: I should have removed them as they have been taken care of;
+     thanks -->
+
 Likewise, various advances in
 the security and privacy of user data are not widely supported, such
 as encrypted DNS to the local resolver.</t>
@@ -263,6 +277,8 @@ Current:
    for potential future problems.
 -->
 
+<!-- Wes: works for me, thanks! -->
+
 It is too late for IPv6, but it is not too late to consider this issue for potential future problems.</t>
           <t>IPv6 is still not implemented fully everywhere.  It's been a long road
 to deployment since starting work in 1996, and we are still not
@@ -365,10 +381,20 @@ B) Since users perceive the Internet via the lens of applications,
    the vendors adopt solutions that stress lower latencies. 
 -->
 
-Since users perceive
-the Internet via the lens of applications, it is important to appeal to
-the application vendors that they should adopt solutions that stress
-lower latencies. Unfortunately, while bandwidth is straightforward to
+<!-- Wes:
+
+Hmm...  neither of those is quite right.  How about (which I've
+changed below):
+
+C) Since users perceive the Internet via the lens of applications, it
+is important that we call upon application vendors to adopt solutions
+that stress lower latencies.
+
+-->
+
+Since users perceive the Internet via the lens of applications, it
+is important that we call upon application vendors to adopt solutions
+that stress lower latencies.  Unfortunately, while bandwidth is straightforward to
 measure, responsiveness is trickier. Many applications have found a
 set of metrics that are helpful to their realm but do not generalize
 well and cannot become universally applicable. Furthermore, due to the
@@ -422,9 +448,8 @@ availability around the globe. Ookla collects hundreds of millions of
 data points per day and uses these for accurate availability
 reporting. An alternative approach is to derive availability from the
 failure rates of other tests. For example, <xref target="FCC_MBA" format="default"/> and
-            <xref target="FCC_MBA_methodology" format="default"/> use thousands of off-the-shelf routers,
-called "Whiteboxes", with measurement software developed by
-<xref target="SamKnows" format="default"/>. These Whiteboxes perform an array of network tests and
+            <xref target="FCC_MBA_methodology" format="default"/> use thousands of off-the-shelf routers, with measurement software developed by
+<xref target="SamKnows" format="default"/>. These routers perform an array of network tests and
 report availability based on whether test connections were successful or
 not.</t>
           <t>Measuring available capacity can be helpful to end users, but it is
@@ -504,6 +529,8 @@ Perhaps:
    the core in-network metrics less indicative of the users' experience
    and necessitates collecting data from applications.
 -->
+
+<!-- Wes: Yep. -->
 	  
           <t>As users perceive the Internet through the lens of applications, it
 may be difficult to correlate changes in capacity and latency with the
@@ -613,7 +640,7 @@ is "head-of-line blocked".</li>
             <li>Some of the workshop submissions that have explicitly called out the application
 delay, which reflects the inefficiencies in the application layer.</li>
           </ol>
-          <t>Traditionally, end-to-end latency is measured when the network is
+          <t>Typically, end-to-end latency is measured when the network is
 idle. Results of such measurements mostly reflect the propagation
 delay but not other kinds of delay. This report uses the term "idle
 latency" to refer to results achieved under idle network conditions.</t>
@@ -715,6 +742,8 @@ Original:
 Perhaps:
    The methodology had been implemented in Apple's macOS Monterey.
 -->
+
+<!-- Wes: Agreed -->
 
 The methodology had been
 implemented in Apple's Monterey OS.</t>
@@ -1103,7 +1132,10 @@ Perhaps:
    provide context.
 -->  
 
-For this document, the editor took the original list
+<!-- Wes: editors and authors for RFCs are so confusing -- but for an
+     IAB document you're probably right. -->
+
+For this document, the authors took the original list
 and divided it into rough categories, applied some suggested edits
 discussed on the mailing list, and further edited for clarity and to
 provide context.</t>
@@ -1204,6 +1236,8 @@ NEW:
 
       This document has no IANA actions.
 -->
+
+<!-- Wes: Thanks, that's fine -->
  
     <section anchor="iana-considerations" numbered="true" toc="default">
       <name>IANA Considerations</name>
@@ -1274,8 +1308,11 @@ Perhaps:
               Users, 2021", September 2021, <https://www.iab.org/activities/
               workshops/network-quality>.
 -->
-      
-      <reference anchor="WORKSHOP">
+
+<!-- Wes: that is the correct URL and the replacement citation is
+     fine that includes it. -->
+
+      <reference anchor="WORKSHOP" target="https://www.iab.org/activities/workshops/network-quality">
         <front>
           <title>IAB Workshop: Measuring Network Quality for End-Users, 2021</title>
           <author>
@@ -1763,8 +1800,11 @@ Original:
    [NetworkQuality]
        Apple, "Network Quality". 
 -->
+
+<!-- Wes: Good point; this is incomplete.  I've added a target link to
+     https://support.apple.com/en-gb/HT212313 -->
       
-      <reference anchor="NetworkQuality">
+      <reference anchor="NetworkQuality" target="https://support.apple.com/en-gb/HT212313">
         <front>
           <title>Network Quality</title>
           <author>
@@ -1929,6 +1969,9 @@ Appendix D.  Github Version of this document
 
    https://github.com/intarchboard/network-quality-workshop-report
 -->   
+
+<!-- Wes: agreed-->
+
     <section anchor="iab-members-at-the-time-of-approval" numbered="false" toc="default">
       <name>IAB Members at the Time of Approval</name>
       <t>Internet Architecture Board members at the time this document was
@@ -1975,6 +2018,8 @@ match the name of the workshop at
 https://www.iab.org/activities/workshops/network-quality/.
 -->
 
+<!-- Wes: I'm fine with those decisions. -->
+
 <!-- [rfced] Please review the "Inclusive Language" portion of the online 
 Style Guide <https://www.rfc-editor.org/styleguide/part2/#inclusive_language> 
 and let us know if any changes are needed.  For example, please consider
@@ -1985,6 +2030,16 @@ clarity.  While the NIST website
 <https://www.nist.gov/nist-research-library/nist-technical-series-publications-author-instructions#table1> 
 indicates that this term is potentially biased, it is also ambiguous.  
 "Tradition" is a subjective term, as it is not the same for everyone.
+-->
+
+<!-- Wes: 
+
+I've removed the whiteboxes text, as I don't think it's critical to
+cite the name.
+
+I've replaced the instance of traditionally with "typically" which I
+think works there.
+
 -->
 
   </back>
