@@ -10,55 +10,28 @@
 
 <rfc xmlns:xi="http://www.w3.org/2001/XInclude" ipr="trust200902" docName="draft-iab-mnqeu-report-04" number="9318" submissionType="IAB" category="info" consensus="true" obsoletes="" updates="" xml:lang="en" tocInclude="true" sortRefs="true" symRefs="true" version="3">
 
-<!-- [rfced] Please review the guidance for IAB documents
-<https://www.rfc-editor.org/materials/iab-format.txt>
-and let us know if any changes are needed.
-
-a) We will remove each author’s affiliation unless we hear objection.
-
+<!-- [rfced] 
 b) The boilerplate that follows the Abstract appears to be missing.
-
-c) FYI - We updated the "IAB Members at the Time of Approval" list to 
-reflect the current IAB members (note that this does not include 
-liaisons or ex-officio members).
 -->
 
 <!-- Wes: sounds fine -->
-
-
-<!--[rfced] Note that we have updated the short title, which appears
-in the running header in the PDF output, as follows. Please let
-us know if any further updates are needed.
-
-Original:
-   title
-
-Current:
-   Measuring Network Quality for End-Users
--->
-
-<!-- Wes: ha! that wasn't a good title!  Thanks.>
-
 
 <!-- xml2rfc v2v3 conversion 3.14.1 -->
   <front>
     <title abbrev="Measuring Network Quality for End-Users">IAB Workshop Report: Measuring Network Quality for End-Users</title>
     <seriesInfo name="RFC" value="9318"/>
     <author initials="W." surname="Hardaker" fullname="Wes Hardaker">
-      <organization>USC/ISI</organization>
       <address>
         <email>ietf@hardakers.net</email>
       </address>
     </author>
     <author initials="O." surname="Shapira" fullname="Omer Shapira">
-      <organization>Apple</organization>
       <address>
         <email>omer_shapira@apple.com</email>
       </address>
     </author>
     <date year="2022" month="September"/>
 
-<!-- [rfced] Please insert any keywords (beyond those that appear in the title) for use on https://www.rfc-editor.org/search. -->
     <keyword>QoE</keyword>
     <keyword>QoS</keyword>
     <keyword>Quality of Service</keyword>
@@ -70,19 +43,21 @@ Current:
       <t>The Measuring Network Quality for End-Users workshop was held
 virtually by the Internet Architecture Board (IAB) on September 14-16, 2021.
 This report summarizes the workshop, the topics discussed, and some
-preliminary conclusions drawn at the end of the workshop.</t>
+      preliminary conclusions drawn at the end of the workshop.</t>
+      <t>Note that this document is a report on the proceedings of the 
+      workshop.  The views and positions documented in this report are 
+      those of the workshop participants and do not necessarily reflect IAB 
+      views and positions. </t>
     </abstract>
   </front>
   <middle>
     <section anchor="introduction" numbered="true" toc="default">
       <name>Introduction</name>
-      <!-- start of DNE -->
       <t>The Internet Architecture Board (IAB) holds occasional workshops designed to
 consider long-term issues and strategies for the Internet, and to suggest
 future directions for the Internet architecture.  This long-term planning
 function of the IAB is complementary to the ongoing engineering efforts
       performed by working groups of the Internet Engineering Task Force (IETF).</t>
-      <!-- end of DNE -->
       <t>The Measuring Network Quality for End-Users workshop <xref target="WORKSHOP" format="default"/> was held
 virtually by the Internet Architecture Board (IAB) on September 14-16, 2021.
 This report summarizes the workshop, the topics discussed, and some preliminary
@@ -104,17 +79,7 @@ interruptions in service. Despite algorithmic advances in the field of
 control theory, one still finds that the queuing delays in the
 last-mile equipment exceeds the accumulated transit delays. Transport
 improvements, such as QUIC, Multipath TCP, and TCP Fast Open, are still
-not fully supported in some networks.
-
-<!--[rfced] We see a number of author-inserted comments in the .xml file for
-this document. We are unsure if these have been resolved. Please review and
-let us know if these can be deleted or if they need to be addressed.
--->
-
-<!-- Wes: I should have removed them as they have been taken care of;
-     thanks -->
-
-Likewise, various advances in
+not fully supported in some networks. Likewise, various advances in
 the security and privacy of user data are not widely supported, such
 as encrypted DNS to the local resolver.</t>
         <t>Some of the major factors behind this lack of progress is the popular
@@ -263,22 +228,6 @@ connectivity.</t>
           <t>Unfortunately, maintaining backward compatibility is painful. The work
 on designing IPv6 so as to transition from IPv4 could have been done
 better if the backward compatibility was considered.
-
-
-<!--[rfced] We rephrased this sentence for clarity; please let us know
-of any concerns.
-
-Original:
-   This is too late for IPv6, but this problem space is not 
-   too late for the future laying problems.
-
-Current:
-   It is too late for IPv6, but it is not too late to consider this issue
-   for potential future problems.
--->
-
-<!-- Wes: works for me, thanks! -->
-
 It is too late for IPv6, but it is not too late to consider this issue for potential future problems.</t>
           <t>IPv6 is still not implemented fully everywhere.  It's been a long road
 to deployment since starting work in 1996, and we are still not
@@ -360,38 +309,6 @@ are offered choices primarily among different high-throughput devices,
 the perception that a higher throughput leads to higher a QoS continues to strengthen.</t>
           <t>The home router is not the only place that can benefit from clearer
 	  indications of acceptable performance for users.
-
-<!--[rfced] Is "appeal" the intended word here? For clarity, may we
-update this sentence as suggested? Please let us know your preference.
-
-Original:
-   Since users perceive the Internet via the lens of applications, 
-   it is important to appeal to the application vendors that they 
-   should adopt solutions that stress lower latencies.
-
-Perhaps:
-A) Since users perceive the Internet via the lens of applications, 
-   it is important that application vendors adopt solutions that 
-   stress lower latencies. 
-
-or
-
-B) Since users perceive the Internet via the lens of applications, 
-   it is important that they appeal to application vendors so that 
-   the vendors adopt solutions that stress lower latencies. 
--->
-
-<!-- Wes:
-
-Hmm...  neither of those is quite right.  How about (which I've
-changed below):
-
-C) Since users perceive the Internet via the lens of applications, it
-is important that we call upon application vendors to adopt solutions
-that stress lower latencies.
-
--->
-
 Since users perceive the Internet via the lens of applications, it
 is important that we call upon application vendors to adopt solutions
 that stress lower latencies.  Unfortunately, while bandwidth is straightforward to
@@ -400,10 +317,6 @@ set of metrics that are helpful to their realm but do not generalize
 well and cannot become universally applicable. Furthermore, due to the
 highly competitive application space, vendors may have economic
 reasons to avoid sharing their most useful metrics.</t>
-<!-- incomplete: suggest we leave it out
-Finally, the Internet infrastructure that connects the applictions to the users is yet another place where better measurements may help driving towards the better Internet.
--->
-
 </section>
         <section anchor="discussion-introductions-summary" numbered="true" toc="default">
           <name>Introductory Talks - Key Points</name>
@@ -516,22 +429,6 @@ measurements. Such a test can account for the totality of local
 traffic and perform an independent capacity test. However, various
 factors might still limit the accuracy of such a test. Accurate
 	  capacity measurement requires multiple samples.</t>
-
-<!--[rfced] May we update "in-application" to "from applications"?
-
-Original:
-   These techniques make
-   the core in-network metrics less indicative of the users' experience
-   and necessitates collecting data in-application.
-
-Perhaps:
-   These techniques make
-   the core in-network metrics less indicative of the users' experience
-   and necessitates collecting data from applications.
--->
-
-<!-- Wes: Yep. -->
-	  
           <t>As users perceive the Internet through the lens of applications, it
 may be difficult to correlate changes in capacity and latency with the
 quality of the end-user experience. For example, web browsers rely on
@@ -539,7 +436,7 @@ cached page versions to shorten page load times and mitigate
 connectivity losses. In addition, social networking applications often
 rely on prefetching their "feed" items. These techniques make the
 core in-network metrics less indicative of the users' experience and
-necessitates collecting data in-application.</t>
+necessitates collecting data from the end-user applications themselves.</t>
           <t>It is helpful to distinguish between applications that operate on a
 "fixed latency budget" from those that have more tolerance to latency
 variance. Cloud gaming serves as an example application that requires
@@ -719,8 +616,6 @@ between 6 to 25 times higher than the idle latency:</t>
 on measuring the idle latency, there is a trend in the industry to
 start measuring the working latency as well,
 e.g., Apple's <xref target="NetworkQuality" format="default"/>.</t>
-          <!-- missing the RPM and goodput text from PR#8 - maybe here? -->
-
 </section>
         <section anchor="measurement-case-studies" numbered="true" toc="default">
           <name>Measurement Case Studies</name>
@@ -731,22 +626,8 @@ from the end-user vantage point. The suggested method incrementally
 adds network flows between the user device and a server endpoint until
 a bottleneck capacity is reached. From these measurements, a round-trip
 latency is measured and reported to the end user. The authors
-chose to report results with the RPM metric.
-
-<!--[rfced] Is "Apple Monterey OS" correct, or should it be perhaps be
-"Apple's macOS Monterey"?
-
-Original:
-   The methodology had been implemented in Apple Monterey OS.
-
-Perhaps:
-   The methodology had been implemented in Apple's macOS Monterey.
--->
-
-<!-- Wes: Agreed -->
-
-The methodology had been
-implemented in Apple's Monterey OS.</t>
+chose to report results with the RPM metric. The methodology had been
+implemented in Apple's macOS Monterey.</t>
           <t><xref target="Mathis2021" format="default"/> applied the RPM metric to the results of more than
 4 billion download tests that M-Lab performed from 2010-2021. During
 this time frame, the M-Lab measurement platform underwent several
@@ -1116,25 +997,6 @@ network bottlenecks.</li>
       <name>Conclusions</name>
  
       <t>During the final hour of the three-day workshop, statements that the group deemed to be summary statements were gathered. Later, any statements that were in contention were discarded (listed further below for completeness).
-
-<!--[rfced] Should "the editor" be updated to "the authors" below? 
-
-Original:
-   For this document, the editor took the original list
-   and divided it into rough categories, applied some suggested edits
-   discussed on the mailing list and further edited for clarity and to
-   provide context.
-
-Perhaps:
-   For this document, the authors took the original list
-   and divided it into rough categories, applied some suggested edits
-   discussed on the mailing list, and further edited for clarity and to
-   provide context.
--->  
-
-<!-- Wes: editors and authors for RFCs are so confusing -- but for an
-     IAB document you're probably right. -->
-
 For this document, the authors took the original list
 and divided it into rough categories, applied some suggested edits
 discussed on the mailing list, and further edited for clarity and to
@@ -1226,19 +1088,6 @@ more immediately within existing IETF working groups (e.g., IPPM,
 DetNet, and RAW), while other longer-term research may be needed in
 IRTF groups.</t>
     </section>
-
-<!--[rfced] FYI - We have included an empty IANA Considerations
-section (per IANA's preference - it is not required). Please let
-us know of any concerns.
-
-NEW:
-   7.  IANA Considerations
-
-      This document has no IANA actions.
--->
-
-<!-- Wes: Thanks, that's fine -->
- 
     <section anchor="iana-considerations" numbered="true" toc="default">
       <name>IANA Considerations</name>
       <t>This document has no IANA actions.</t>
@@ -1287,30 +1136,6 @@ attack.</li>
           <author initials="" surname="Abraham, L. et al."/>
         </front>
       </reference>
-
-<!--[rfced] Note that the reference entry for [WORKSHOP] does not
-include a link and therefore does not directly link to a web
-page. Should a link be included since the web page is referred to
-in the text? If so, please confirm if the URL below
-(https://www.iab.org/activities/workshops/network-quality) is
-correct or if you prefer otherwise.
-
-Citation in text:
-  The workshop's web-page [WORKSHOP] contains
-  archives of the papers, presentations and recorded videos.
-
-Current reference:
-   [WORKSHOP] IAB, "IAB Workshop: Measuring Network Quality for End-
-              Users, 2021", September 2021.
-
-Perhaps:
-   [WORKSHOP] IAB, "IAB Workshop: Measuring Network Quality for End-
-              Users, 2021", September 2021, <https://www.iab.org/activities/
-              workshops/network-quality>.
--->
-
-<!-- Wes: that is the correct URL and the replacement citation is
-     fine that includes it. -->
 
       <reference anchor="WORKSHOP" target="https://www.iab.org/activities/workshops/network-quality">
         <front>
@@ -1666,19 +1491,8 @@ Perhaps:
         </front>
       </reference>
 
-      <!--draft-morton-ippm-pipe-dream-01; Expired-->
       <xi:include href="https://datatracker.ietf.org/doc/bibxml3/reference.I-D.morton-ippm-pipe-dream.xml"/>
   
-    <!--  <reference anchor="Morton2021" target="https://www.iab.org/wp-content/IAB-uploads/2021/09/draft-morton-ippm-pipe-dream-01.pdf">
-        <front>
-          <title>Dream-Pipe or Pipe-Dream: What Do Users Want (and how can we assure it)?</title>
-          <author initials="A." surname="Morton">
-            <organization/>
-          </author>
-          <date year="2021" month="September"/>
-        </front>
-      </reference>-->
-
       <reference anchor="Kilkki2021" target="https://www.iab.org/wp-content/IAB-uploads/2021/09/Kilkki-In-Search-of-Lost-QoS.pdf">
         <front>
           <title>In Search of Lost QoS</title>
@@ -1721,28 +1535,8 @@ Perhaps:
         </front>
       </reference>
 
-  <!--draft-cpaasch-ippm-responsiveness-01; Expired-->
   <xi:include href="https://datatracker.ietf.org/doc/bibxml3/reference.I-D.cpaasch-ippm-responsiveness.xml"/>
       
-    <!--  <reference anchor="Paasch2021" target="https://www.iab.org/wp-content/IAB-uploads/2021/09/draft-cpaasch-ippm-responsiveness-1-1.pdf">
-        <front>
-          <title>Responsiveness under Working Conditions</title>
-          <author initials="C." surname="Paasch">
-            <organization/>
-          </author>
-          <author initials="R." surname="Meyer">
-            <organization/>
-          </author>
-          <author initials="S." surname="Cheshire">
-            <organization/>
-          </author>
-          <author initials="O." surname="Shapira">
-            <organization/>
-          </author>
-          <date year="2021" month="September"/>
-        </front>
-      </reference>-->
-
       <reference anchor="Briscoe2021" target="https://www.iab.org/wp-content/IAB-uploads/2021/09/single-delay-metric-1.pdf">
         <front>
           <title>A Single Common Metric to Characterize Varying Packet Delay</title>
@@ -1792,17 +1586,6 @@ Perhaps:
           </author>
         </front>
       </reference>
-
-<!--[rfced] Will readers be able to locate this reference or should a
-URL be added for ease/clarity? If so, please provide the URL.
-
-Original:
-   [NetworkQuality]
-       Apple, "Network Quality". 
--->
-
-<!-- Wes: Good point; this is incomplete.  I've added a target link to
-     https://support.apple.com/en-gb/HT212313 -->
       
       <reference anchor="NetworkQuality" target="https://support.apple.com/en-gb/HT212313">
         <front>
@@ -1956,21 +1739,6 @@ Original:
 	<li><t><contact fullname="Mingrui Zhang"/></t></li>
       </ul>
     </section>
-    
-      
-<!--[rfced] FYI - Since this document will no longer be under
-development once it is published, we removed this section.
-
-Original:
-Appendix D.  Github Version of this document
-
-   While this document is under development, it can be viewed and
-   tracked here:
-
-   https://github.com/intarchboard/network-quality-workshop-report
--->   
-
-<!-- Wes: agreed-->
 
     <section anchor="iab-members-at-the-time-of-approval" numbered="false" toc="default">
       <name>IAB Members at the Time of Approval</name>
@@ -2007,40 +1775,5 @@ of the IAB, and the program committee for creating and participating
 	  <li><t><contact fullname="Brian Trammell"/></t></li>
 	</ul>
       </section>
-      
-<!--[rfced] FYI: Throughout the text, "end user" and "end-user" are
-used inconsistently. For consistency, we hyphenated this term
-when in attributive position (i.e., when followed by a noun) and
-left the noun form open. Note that we left instances of
-"End-Users" (hyphenated) in the name of the workshop even though
-we would typically leave the noun form open; we did this to
-match the name of the workshop at
-https://www.iab.org/activities/workshops/network-quality/.
--->
-
-<!-- Wes: I'm fine with those decisions. -->
-
-<!-- [rfced] Please review the "Inclusive Language" portion of the online 
-Style Guide <https://www.rfc-editor.org/styleguide/part2/#inclusive_language> 
-and let us know if any changes are needed.  For example, please consider
-whether "Whiteboxes" should be updated.
-
-In addition, please consider whether "traditionally" should be updated for
-clarity.  While the NIST website 
-<https://www.nist.gov/nist-research-library/nist-technical-series-publications-author-instructions#table1> 
-indicates that this term is potentially biased, it is also ambiguous.  
-"Tradition" is a subjective term, as it is not the same for everyone.
--->
-
-<!-- Wes: 
-
-I've removed the whiteboxes text, as I don't think it's critical to
-cite the name.
-
-I've replaced the instance of traditionally with "typically" which I
-think works there.
-
--->
-
   </back>
 </rfc>
