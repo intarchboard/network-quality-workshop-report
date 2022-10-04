@@ -527,7 +527,7 @@ latency comprises several components:</t>
 link technologies (e.g., fiber vs. satellite). The propagation doesn't depend
 on the utilization of the network, to the extent that the network path
 remains constant.</li>
-            <li>The buffering delay, which reflects the time segments spend in the memory of
+            <li>The buffering delay, which reflects the time segments spent in the memory of
 the network equipment that connect the individual network links, as well as
 in the memory of the transmitting endpoint. The buffering delay depends on
 the network utilization, as well as on the algorithms that govern the queued segments.</li>
@@ -843,8 +843,8 @@ in unison.</t>
           <t>At the time of the workshop, the typical home router uses a single
 FIFO queue that is large enough to allow amortizing the lower-layer header
 overhead across multiple transport PDUs. These designs worked well
-with the Cubic congestion control algorithm, yet the newer generation
-of CCAs can operate on much smaller queues. To fully support latencies
+with the cubic congestion control algorithm, yet the newer generation
+of algorithms can operate on much smaller queues. To fully support latencies
 less than 1 ms, the home router needs to work efficiently on sequential
 transmissions of just a few segments vs. being optimized for large
 packet bursts.</t>
@@ -861,8 +861,7 @@ more suitable for the next generation of transport protocols.</t>
         <section anchor="cross-layer-keypoints" numbered="true" toc="default">
           <name>Cross-Layer Key Points</name>
           <ul spacing="normal">
-            <li>Significant differences exist in the characteristics of metrics to
-measured and required optimizations needed in wireless vs. wired
+            <li>Significant differences exist in the characteristics of metrics to be measured and the required optimizations needed in wireless vs. wired
 networks.</li>
             <li>Identification of an issue's root cause is hampered by the
 challenges in measuring multi-segment network paths.</li>
@@ -949,7 +948,7 @@ or a network with higher bandwidth?  Gamers may make different
 decisions than home office users or content producers, for example.</t>
           <t>Furthermore, how can users make these trade-offs in a fair manner that
 does not impact other users? There is a tension between solutions in
-this space vs. the cost associated with solving these solutions, as well as
+this space vs. the cost associated with solving these problems, as well as
 which customers are willing to front these improvement costs.</t>
           <t>Challenges in providing higher-priority traffic to users centers
 around the ability for networks to be willing to listen to client
