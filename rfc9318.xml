@@ -633,7 +633,7 @@ implemented in Apple's macOS Monterey.</t>
 this time frame, the M-Lab measurement platform underwent several
 upgrades that allowed the research team to compare the effect of
 different TCP congestion control algorithms (CCAs) on the measured
-end-to-end latency. The study showed that the use of Cubic CCA leads to
+end-to-end latency. The study showed that the use of cubic CCA leads to
 increased working latency, which is attributed to its use of larger
 queues.</t>
           <t><xref target="Schlinker2019" format="default"/> presented a large-scale study that aimed to
